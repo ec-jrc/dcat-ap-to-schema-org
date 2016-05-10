@@ -33,16 +33,6 @@
 <li><a href="#mapping-properties-optional">Properties for optional classes</a></li>
 </ul>
 </li>
-<!--
-<li><a href="#mapping-formal">Formal definition</a>
-<ul>
-<li><a href="#mapping-formal-mandatory">Mandatory classes</a></li>
-<li><a href="#mapping-formal-recommended">Recommended classes</a></li>
-<li><a href="#mapping-formal-optional">Optional classes</a></li>
-</ul>
-</li>
-</ul>
--->
 </nav>
 <section>
 <h2>Mapping summary</h2>
