@@ -1,22 +1,10 @@
-<article>
-
-<header>
-
 # Mappings defined in DCAT-AP+Schema.org
-
-</header>
-
-<section>
 
 ## Status of this document
 
 This document presents a proposal for mapping the relevant terms from the [DCAT Application Profile for European Data Portals](https://joinup.ec.europa.eu/asset/dcat_application_profile/) (DCAT-AP) to the [Schema.org vocabulary](http://schema.org/).
 
 This document is a draft meant to report work in progress. As such, it can be updated any time and it must be considered as unstable.
-
-</section>
-
-<section>
 
 ## Abstract
 
@@ -25,10 +13,6 @@ This documents illustrates the mappings defined in DCAT-AP+Schema.org.
 The background and methodology for the design of DCAT-AP+Schema.org are illustrated in a separate document:
 
 [<cite>DCAT-AP+Schema.org: Background & methodology</cite>](./Background.md)
-
-</section>
-
-<nav>
 
 ## Table of contents
 
@@ -45,10 +29,6 @@ The background and methodology for the design of DCAT-AP+Schema.org are illustra
     *   [Recommended classes](#mapping-formal-recommended)
     *   [Optional classes](#mapping-formal-optional)
 
-</nav>
-
-<section id="introduction">
-
 ## <a name="introduction">Introduction</a>
 
 The mappings illustrated in this document cover the metadata elements defined in the following specifications:
@@ -64,10 +44,6 @@ For Schema.org, the reference specification is [Schema.org 2.2](http://schema.or
 This document includes, in a separate section, also a tentative formal definition of the mappings, in form of SPARQL queries.
 
 **NB**: In the current version, this document does not include mappings concerning the GeoDCAT-AP representation of agent roles and conformance results based on the W3C PROV Ontology [[PROV-O](https://www.w3.org/TR/prov-o/)].
-
-</section>
-
-<section id="used-namespaces">
 
 ## <a name="used-namespaces">Used namespaces</a>
 
@@ -273,9 +249,7 @@ This document includes, in a separate section, also a tentative formal definitio
 
 </table>
 
-</section>
 
-<section id="ref-code-lists">
 
 ## <a name="ref-code-lists">Reference code lists for metadata elements</a>
 
@@ -633,9 +607,9 @@ This document includes, in a separate section, also a tentative formal definitio
 
 </table>
 
-</section>
 
-<section>
+
+
 
 ## <a name="mapping-summary">Mapping summary</a>
 
@@ -648,8 +622,6 @@ The alignments are grouped as follows:
     *   mandatory classes
     *   recommended classes
     *   optional classes
-
-<section id="mapping-classes">
 
 ### <a name="mapping-classes">Classes</a>
 
@@ -973,13 +945,9 @@ The alignments are grouped as follows:
 
 </table>
 
-</section>
 
-<section id="mapping-properties-mandatory">
 
 ### <a name="mapping-properties-mandatory">Properties for mandatory classes</a>
-
-<section id="mapping-properties-agent">
 
 #### <a name="mapping-properties-agent">Agent</a>
 
@@ -1077,9 +1045,7 @@ These properties should be used with [`schema:Organization`](http://schema.org/O
 
 </table>
 
-</section>
 
-<section id="mapping-properties-catalogue">
 
 #### <a name="mapping-properties-catalogue">Catalogue</a>
 
@@ -1333,9 +1299,7 @@ These properties should be used with [`schema:DataCatalog`](http://schema.org/Da
 
 </table>
 
-</section>
 
-<section id="mapping-properties-dataset">
 
 #### <a name="mapping-properties-dataset">Dataset</a>
 
@@ -1875,15 +1839,7 @@ These properties should be used with [`schema:Dataset`](http://schema.org/Datase
 
 </table>
 
-</section>
-
-</section>
-
-<section id="mapping-properties-recommended">
-
 ### <a name="mapping-properties-recommended">Properties for recommended classes</a>
-
-<section id="mapping-properties-category">
 
 #### <a name="mapping-properties-category">Category</a>
 
@@ -1953,9 +1909,7 @@ TBD [[formal definition](#mapping-formal-category)]
 
 </table>
 
-</section>
 
-<section id="mapping-properties-category-scheme">
 
 #### <a name="mapping-properties-category-scheme">Category scheme</a>
 
@@ -2051,9 +2005,7 @@ These properties should be used with [`schema:Enumeration`](http://schema.org/En
 
 </table>
 
-</section>
 
-<section id="mapping-properties-distribution">
 
 #### <a name="mapping-properties-distribution">Distribution</a>
 
@@ -2359,9 +2311,7 @@ These properties should be used with [`schema:DataDownload`](http://schema.org/D
 
 </table>
 
-</section>
 
-<section id="mapping-properties-licence">
 
 #### <a name="mapping-properties-licence">Licence document</a>
 
@@ -2433,15 +2383,11 @@ TBD [[formal definition](#mapping-formal-licence)]
 
 </table>
 
-</section>
 
-</section>
 
-<section id="mapping-properties-optional">
+
 
 ### <a name="mapping-properties-optional">Properties for optional classes</a>
-
-<section id="mapping-properties-catalogue-record">
 
 #### <a name="mapping-properties-catalogue-record">Catalogue record</a>
 
@@ -2655,9 +2601,7 @@ These properties should be used with [`schema:ListItem`](http://schema.org/ListI
 
 </table>
 
-</section>
 
-<section id="mapping-properties-checksum">
 
 #### <a name="mapping-properties-checksum">Checksum</a>
 
@@ -2729,9 +2673,7 @@ TBD [[formal definition](#mapping-formal-checksum)]
 
 </table>
 
-</section>
 
-<section id="mapping-properties-document">
 
 #### <a name="mapping-properties-document">Document</a>
 
@@ -2799,9 +2741,7 @@ TBD [[formal definition](#mapping-formal-document)]
 
 </table>
 
-</section>
 
-<section id="mapping-properties-identifier">
 
 #### <a name="mapping-properties-identifier">Identifier</a>
 
@@ -2855,9 +2795,7 @@ TBD [[formal definition](#mapping-formal-identifier)]
 
 </table>
 
-</section>
 
-<section id="mapping-properties-kind">
 
 #### <a name="mapping-properties-kind">Kind</a>
 
@@ -2981,9 +2919,7 @@ These properties should be used with [`schema:ContactPoint`](http://schema.org/C
 
 </table>
 
-</section>
 
-<section id="mapping-properties-location">
 
 #### <a name="mapping-properties-location">Location</a>
 
@@ -3093,9 +3029,7 @@ As a consequence, the [`locn:geometry`](http://www.w3.org/ns/locn#locn:geometry 
 
 </table>
 
-</section>
 
-<section id="mapping-properties-media-type">
 
 #### <a name="mapping-properties-media-type">Media type or extent</a>
 
@@ -3149,9 +3083,7 @@ TBD [[formal definition](#mapping-formal-media-type)]
 
 </table>
 
-</section>
 
-<section id="mapping-properties-period-of-time">
 
 #### <a name="mapping-properties-period-of-time">Period of time</a>
 
@@ -3219,9 +3151,7 @@ These properties should be used with [`schema:DateTime`](http://schema.org/DateT
 
 </table>
 
-</section>
 
-<section id="mapping-properties-reference-system">
 
 #### <a name="mapping-properties-reference-system">Reference system</a>
 
@@ -3337,9 +3267,7 @@ TBD
 
 </table>
 
-</section>
 
-<section id="mapping-properties-rights">
 
 #### <a name="mapping-properties-rights">Rights statement</a>
 
@@ -3395,9 +3323,7 @@ TBD
 
 </table>
 
-</section>
 
-<section id="mapping-properties-service">
 
 #### <a name="mapping-properties-service">Service</a>
 
@@ -3745,9 +3671,7 @@ These properties should be used with [`schema:Service`](http://schema.org/Servic
 
 </table>
 
-</section>
 
-<section id="mapping-properties-standard">
 
 #### <a name="mapping-properties-standard">Standard</a>
 
@@ -3857,11 +3781,3 @@ TBD
 
 </table>
 
-</section>
-
-</section>
-
-</section>
-
-
-</article>
