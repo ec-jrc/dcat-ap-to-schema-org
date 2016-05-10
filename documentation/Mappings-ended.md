@@ -173,7 +173,7 @@
 <!-- Properties: Checksum -->
 <section id="mapping-properties-checksum">
 <h4><a name="mapping-properties-checksum">Checksum</a></h4>
-<p>TBD <!--[<a href="../sparql/checksum.req">formal definition</a>]--></p>
+<p>TBD [<a href="../sparql/checksum.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -474,7 +474,7 @@
 <!-- Properties: Reference system -->
 <section id="mapping-properties-reference-system">
 <h4><a name="mapping-properties-reference-system">Reference system</a></h4>
-<p>TBD</p>
+<p>TBD [<a href="../sparql/reference-system.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -536,7 +536,7 @@
 <!-- Properties: Rights statement -->
 <section id="mapping-properties-rights">
 <h4><a name="mapping-properties-rights">Rights statement</a></h4>
-<p>TBD</p>
+<p>TBD [<a href="../sparql/rights.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -566,7 +566,7 @@
 <!-- Properties: Service -->
 <section id="mapping-properties-service">
 <h4><a name="mapping-properties-service">Service</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/Service"><code>schema:Service</code></a>.</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/Service"><code>schema:Service</code></a>. [<a href="../sparql/service.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -756,7 +756,7 @@
 <!-- Properties: Standard -->
 <section id="mapping-properties-standard">
 <h4><a name="mapping-properties-standard">Standard</a></h4>
-<p>TBD</p>
+<p>TBD [<a href="../sparql/standard.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
