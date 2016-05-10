@@ -1,0 +1,75 @@
+PREFIX adms:   <http://www.w3.org/ns/adms#>
+PREFIX cnt:    <http://www.w3.org/2011/content#>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?Dataset a schema:Dataset ;
+    schema:description ?description ;
+    schema:name ?title ;
+    schema:contactPoint ?Kind ;
+    schema:distribution ?Distribution ;
+    schema:keywords ?keyword ;
+    schema:publisher ?Publisher ;
+    schema:about ?Category ;
+#    schema:?? ?AccessRights ;
+    schema:creator ?Author ;
+#    schema:?? ?Standard ;
+    schema:dateCreated ?created ;
+    schema:mainEntityOfPage ?Document ;
+#    schema:?? ?Frequency ;
+#    schema:?? ?PreviousDatasetVersion ;
+    schema:productID ?identifier ;
+#    schema:?? ?NextDatasetVersion ;
+#    schema:?? ?AlternateIdentifier ;
+    schema:url ?LandingPage ;
+    schema:inLanguage ?Language ;
+    schema:copyrightHolder ?CopyrightHolder ;
+#    schema:?? ?ProvenanceStatement ;
+    schema:mentions ?RelatedResource ;
+    schema:datePublished ?issued ;
+#    schema:?? ?DatasetSample ;
+    schema:isBasedOnUrl ?SourceDataset ;
+    schema:spatial ?Location ;
+    schema:datasetTimeInterval ?PeriodOfTime ;
+    schema:about ?Subject ;
+    schema:dateModified ?modified ;
+    schema:version ?versionNumber 
+#    schema:?? ?versionNotes ;
+} WHERE {
+  OPTIONAL { ?Dataset a dcat:Dataset . }
+  OPTIONAL { ?Dataset dct:description ?description . }
+  OPTIONAL { ?Dataset dct:title ?title . }
+  OPTIONAL { ?Dataset dcat:contactPoint ?Kind . }
+  OPTIONAL { ?Dataset dcat:distribution ?Distribution . }
+  OPTIONAL { ?Dataset dcat:keyword ?keyword . }
+  OPTIONAL { ?Dataset dct:publisher ?Publisher . }
+  OPTIONAL { ?Dataset dcat:theme ?Category . }
+#  OPTIONAL { ?Dataset dct:accessRights ?AccessRights . }
+  OPTIONAL { ?Dataset dct:creator ?Author . }
+#  OPTIONAL { ?Dataset dct:conformsTo ?Standard . }
+  OPTIONAL { ?Dataset dct:created ?created . }
+  OPTIONAL { ?Dataset foaf:page ?Document . }
+#  OPTIONAL { ?Dataset dct:accrualPeriodicity ?Frequency . }
+#  OPTIONAL { ?Dataset dct:hasVersion ?PreviousDatasetVersion . }
+  OPTIONAL { ?Dataset dct:identifier ?identifier . }
+#  OPTIONAL { ?Dataset dct:isVersionOf ?NextDatasetVersion . }
+#  OPTIONAL { ?Dataset adms:identifier ?AlternateIdentifier . }
+  OPTIONAL { ?Dataset dcat:landingPage ?LandingPage . }
+  OPTIONAL { ?Dataset dct:language ?Language . }
+  OPTIONAL { ?Dataset dct:rightsHolder ?CopyrightHolder . }
+#  OPTIONAL { ?Dataset dct:provenance ?ProvenanceStatement . }
+  OPTIONAL { ?Dataset dct:relation ?RelatedResource . }
+  OPTIONAL { ?Dataset dct:issued ?issued . }
+#  OPTIONAL { ?Dataset adms:sample ?DatasetSample . }
+  OPTIONAL { ?Dataset dct:source ?SourceDataset . }
+  OPTIONAL { ?Dataset dct:spatial ?Location . }
+  OPTIONAL { ?Dataset dct:temporal ?PeriodOfTime . }
+  OPTIONAL { ?Dataset dct:subject ?Subject . }
+  OPTIONAL { ?Dataset dct:modified ?modified . }
+  OPTIONAL { ?Dataset owl:versionInfo ?versionNumber . }
+#  OPTIONAL { ?Dataset adms:versionNotes ?versionNotes . }
+}

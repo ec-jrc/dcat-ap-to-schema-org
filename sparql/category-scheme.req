@@ -1,0 +1,17 @@
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?CategoryScheme a schema:Enumeration ;
+    schema:name ?title ;
+    schema:dateCreated ?created ;
+    schema:datePublished ?issued ;
+    schema:dateModified ?modified 
+} WHERE {
+  OPTIONAL { ?CategoryScheme a skos:ConceptScheme . }
+  OPTIONAL { ?CategoryScheme dct:title ?title . }
+  OPTIONAL { ?CategoryScheme dct:created ?created . }
+  OPTIONAL { ?CategoryScheme dct:issued ?issued . }
+  OPTIONAL { ?CategoryScheme dct:modified ?modified . }
+}

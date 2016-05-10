@@ -1,0 +1,48 @@
+PREFIX dc:     <http://purl.org/dc/elements/1.1/>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX dctype: <http://purl.org/dc/dcmitype/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?Service a schema:Service ;
+#    schema:?? ?AccessRights ;
+    schema:creator ?Author ;
+#    schema:?? ?Standard ;
+    schema:contactPoint ?Kind ;
+    schema:hasPart ?Dataset ;
+    schema:dateCreated ?created ;
+    schema:description ?description ;
+    schema:keywords ?keyword ;
+    schema:about ?Category ;
+    schema:inLanguage ?Language ;
+    schema:publisher ?Publisher ;
+    schema:datePublished ?issued ;
+    schema:url ?Document ;
+    schema:spatial ?Location ;
+    schema:datasetTimeInterval ?PeriodOfTime ;
+    schema:name ?title ;
+#    schema:?? ?Type ;
+    schema:dateModified ?modified
+} WHERE {
+  OPTIONAL { ?Service a dctype:Service . }
+#  OPTIONAL { ?Service dct:accessRights ?AccessRights . }
+  OPTIONAL { ?Service dct:creator ?Author . }
+#  OPTIONAL { ?Service dct:conformsTo ?Standard . }
+  OPTIONAL { ?Service dcat:contactPoint ?Kind . }
+  OPTIONAL { ?Service dct:hasPart ?Dataset . }
+  OPTIONAL { ?Service dct:created ?created . }
+  OPTIONAL { ?Service dct:description ?description . }
+  OPTIONAL { ?Service dc:subject ?keyword . }
+  OPTIONAL { ?Service dct:subject ?Category . }
+  OPTIONAL { ?Service dct:language ?Language . }
+  OPTIONAL { ?Service dct:publisher ?Publisher . }
+  OPTIONAL { ?Service dct:issued ?issued . }
+  OPTIONAL { ?Service foaf:homepage ?Document . }
+  OPTIONAL { ?Service dct:spatial ?Location . }
+  OPTIONAL { ?Service dct:temporal ?PeriodOfTime . }
+#  OPTIONAL { ?Service dct:type ?Type . }
+  OPTIONAL { ?Service dct:title ?title . }
+  OPTIONAL { ?Service dct:modified ?modified . }
+}

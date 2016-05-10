@@ -1,0 +1,21 @@
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?Agent 
+    a ?schemaPerson ;
+    a ?schemaOrganization ;
+    schema:name ?name ;
+#    schema:?? ?AgentType ;
+    schema:email ?email ;
+    schema:url ?workplaceHomepage
+} WHERE {
+  OPTIONAL { ?Agent a foaf:Agent . }
+  OPTIONAL { ?Agent a foaf:Person BIND(schema:Person AS ?schemaPerson) . }
+  OPTIONAL { ?Agent a foaf:Organization BIND(schema:Organization AS ?schemaOrganization) . }
+  OPTIONAL { ?Agent foaf:name ?name . }
+#  OPTIONAL { ?Agent dct:type ?AgentType . }
+  OPTIONAL { ?Agent foaf:mbox ?email . }
+  OPTIONAL { ?Agent foaf:workplaceHomepage ?workplaceHomepage . }
+}

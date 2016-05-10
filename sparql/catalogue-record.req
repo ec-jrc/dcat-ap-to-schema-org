@@ -1,0 +1,36 @@
+PREFIX adms:   <http://www.w3.org/ns/adms#>
+PREFIX cnt:    <http://www.w3.org/2011/content#>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?CatalogueRecord a schema:ListItem ;
+    schema:item ?Dataset ;
+    schema:dateModified ?modified ;
+#    schema:?? ?MetadataStandard ;
+#    schema:?? ?ChangeType ;
+    schema:datePublished ?issued ;
+#    schema:?? ?characterEncoding ;
+    schema:contactPoint ?Kind ;
+    schema:description ?description ;
+    schema:productID ?identifier ;
+    schema:inLanguage ?Language ;
+    schema:isBasedOnUrl ?SourceMetadata ;
+    schema:name ?title 
+} WHERE {
+  OPTIONAL { ?CatalogueRecord a dcat:CatalogRecord . }
+  OPTIONAL { ?CatalogueRecord foaf:primaryTopic ?Dataset . }
+  OPTIONAL { ?CatalogueRecord dct:modified ?modified . }
+#  OPTIONAL { ?CatalogueRecord dct:conformsTo ?MetadataStandard . }
+#  OPTIONAL { ?CatalogueRecord adms:status ?ChangeType . }
+  OPTIONAL { ?CatalogueRecord dct:issued ?issued . }
+#  OPTIONAL { ?CatalogueRecord cnt:characterEncoding ?characterEncoding . }
+  OPTIONAL { ?CatalogueRecord dcat:contactPoint ?Kind . }
+  OPTIONAL { ?CatalogueRecord dct:description ?description . }
+  OPTIONAL { ?CatalogueRecord dct:identifier ?identifier . }
+  OPTIONAL { ?CatalogueRecord dct:language ?Language . }
+  OPTIONAL { ?CatalogueRecord dct:source ?SourceMetadata . }
+  OPTIONAL { ?CatalogueRecord dct:title ?title . }
+}

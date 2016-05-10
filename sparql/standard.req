@@ -1,0 +1,19 @@
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX schema: <http://schema.org/>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?Standard 
+#    a schema:?? ;
+    schema:dateCreated ?created ;
+    schema:datePublished ?issued ;
+    schema:name ?title ;
+    schema:dateModified ?modified 
+} WHERE {
+  OPTIONAL { ?Standard a dct:Standard . }
+  OPTIONAL { ?Standard dct:created ?created . }
+  OPTIONAL { ?Standard dct:issued ?issued . }
+  OPTIONAL { ?Standard dct:title ?title . }
+  OPTIONAL { ?Standard dct:modified ?modified . }
+}

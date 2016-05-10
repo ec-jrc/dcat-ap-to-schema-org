@@ -1,0 +1,15 @@
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?Licence 
+#    a schema:?? ;
+#    schema:?? ?LicenceType ;
+    schema:name ?label 
+} WHERE {
+  OPTIONAL { ?Resource dct:license ?Licence . }
+  OPTIONAL { ?Licence a dct:LicenseDocument . }
+#  OPTIONAL { ?Licence dct:type ?LicenceType . }
+  OPTIONAL { ?Licence rdfs:label ?label . }
+}

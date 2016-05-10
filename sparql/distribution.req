@@ -1,0 +1,43 @@
+PREFIX adms:   <http://www.w3.org/ns/adms#>
+PREFIX cnt:    <http://www.w3.org/2011/content#>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX schema: <http://schema.org/>
+PREFIX spdx:   <http://spdx.org/rdf/terms#>
+
+CONSTRUCT {
+  ?Distribution a schema:DataDownload ;
+    schema:contentURL ?accessURL ;
+    schema:description ?description ;
+    schema:encodingFormat ?Format ;
+    schema:license ?Licence ;
+    schema:contentSize ?byteSize ;
+    schema:mainEntityOfPage ?Document ;
+    schema:contentURL ?downloadURL ;
+    schema:inLanguage ?Language ;
+    schema:fileFormat ?MediaType ;
+    schema:datePublished ?issued ;
+    schema:dateModified ?modified ;
+    schema:name ?title 
+} WHERE {
+  OPTIONAL { ?Distribution a dcat:Distribution . }
+  OPTIONAL { ?Distribution dcat:accessURL ?accessURL . }
+  OPTIONAL { ?Distribution dct:description ?description . }
+  OPTIONAL { ?Distribution dct:format ?Format . }
+  OPTIONAL { ?Distribution dct:license ?Licence . }
+  OPTIONAL { ?Distribution dcat:byteSize ?byteSize . }
+  OPTIONAL { ?Distribution cnt:characterEncoding ?characterEncoding . }
+  OPTIONAL { ?Distribution spdx:checksum ?Checksum . }
+  OPTIONAL { ?Distribution foaf:page ?Document . }
+  OPTIONAL { ?Distribution dcat:downloadURL ?downloadURL . }
+  OPTIONAL { ?Distribution dct:language ?Language . }
+#  OPTIONAL { ?Distribution dct:conformsTo ?Standard . }
+  OPTIONAL { ?Distribution dcat:mediaType ?MediaType . }
+  OPTIONAL { ?Distribution dct:issued ?issued . }
+#  OPTIONAL { ?Distribution dct:rights ?Rights . }
+#  OPTIONAL { ?Distribution adms:representationTechnique ?SpatialRepresentationType . }
+#  OPTIONAL { ?Distribution adms:status ?Status . }
+  OPTIONAL { ?Distribution dct:title ?title . }
+  OPTIONAL { ?Distribution dct:modified ?modified . }
+}
