@@ -1,6 +1,6 @@
 <article>
 <header>
-<h1>Mappings defined in DCAT-AP+Schema.org</h1>
+<h1>Mappings defined in DCAT-AP+Schema.org (1/3)</h1>
 </header>
 <section>
 <h2>Status of this document</h2>
@@ -28,11 +28,12 @@
 <li><a href="#mapping-summary">Mapping summary</a>
 <ul>
 <li><a href="#mapping-classes">Classes</a></li>
-<li><a href="#mapping-properties-mandatory">Properties for mandatory classes</a></li>
-<li><a href="#mapping-properties-recommended">Properties for recommended classes</a></li>
-<li><a href="#mapping-properties-optional">Properties for optional classes</a></li>
+<li><a href="./Mapping-continued.md#mapping-properties-mandatory">Properties for mandatory classes</a></li>
+<li><a href="./Mapping-continued.md#mapping-properties-recommended">Properties for recommended classes</a></li>
+<li><a href="./Mapping-ended.md#mapping-properties-optional">Properties for optional classes</a></li>
 </ul>
 </li>
+<!--
 <li><a href="#mapping-formal">Formal definition</a>
 <ul>
 <li><a href="#mapping-formal-mandatory">Mandatory classes</a></li>
@@ -40,6 +41,7 @@
 <li><a href="#mapping-formal-optional">Optional classes</a></li>
 </ul>
 </li>
+-->
 </ul>
 </nav>
 <section id="introduction">

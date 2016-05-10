@@ -1,6 +1,6 @@
 <article>
 <header>
-<h1>Mappings defined in DCAT-AP+Schema.org (2/2)</h1>
+<h1>Mappings defined in DCAT-AP+Schema.org (2/3)</h1>
 </header>
 <section>
 <h2>Status of this document</h2>
@@ -30,7 +30,7 @@
 <li><a href="./Mappings.md#mapping-classes">Classes</a></li>
 <li><a href="#mapping-properties-mandatory">Properties for mandatory classes</a></li>
 <li><a href="#mapping-properties-recommended">Properties for recommended classes</a></li>
-<li><a href="#mapping-properties-optional">Properties for optional classes</a></li>
+<li><a href="./Mappings-ended.md#mapping-properties-optional">Properties for optional classes</a></li>
 </ul>
 </li>
 <!--
@@ -53,7 +53,7 @@
 <!-- Properties: Agent -->
 <section id="mapping-properties-agent">
 <h4><a name="mapping-properties-agent">Agent</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/Organization"><code>schema:Organization</code></a> or <a target="_blank" href="http://schema.org/Person"><code>schema:Person</code></a>. [<a href="#mapping-formal-agent">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/Organization"><code>schema:Organization</code></a> or <a target="_blank" href="http://schema.org/Person"><code>schema:Person</code></a>. [<a href="../sparql/agent.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -107,7 +107,7 @@
 <!-- Properties: Catalogue -->
 <section id="mapping-properties-catalogue">
 <h4><a name="mapping-properties-catalogue">Catalogue</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/DataCatalog"><code>schema:DataCatalog</code></a>. [<a href="#mapping-formal-catalogue">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/DataCatalog"><code>schema:DataCatalog</code></a>. [<a href="../sparql/catalogue.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -249,7 +249,7 @@
 <!-- Properties: Dataset -->
 <section id="mapping-properties-dataset">
 <h4><a name="mapping-properties-dataset">Dataset</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/Dataset"><code>schema:Dataset</code></a>. [<a href="#mapping-formal-dataset">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/Dataset"><code>schema:Dataset</code></a>. [<a href="../sparql/dataset.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -546,7 +546,7 @@
 <!-- Properties: Category -->
 <section id="mapping-properties-category">
 <h4><a name="mapping-properties-category">Category</a></h4>
-<p>TBD [<a href="#mapping-formal-category">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/category.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -584,7 +584,7 @@
 <!-- Properties: Category scheme -->
 <section id="mapping-properties-category-scheme">
 <h4><a name="mapping-properties-category-scheme">Category scheme</a></h4>
-<p>These properties should be used with <a target="_blank" title="http://schema.org/Enumeration" href="http://schema.org/Enumeration"><code>schema:Enumeration</code></a>. [<a href="#mapping-formal-category-scheme">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" title="http://schema.org/Enumeration" href="http://schema.org/Enumeration"><code>schema:Enumeration</code></a>. [<a href="../sparql/category-scheme.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -638,7 +638,7 @@
 <!-- Properties: Distribution -->
 <section id="mapping-properties-distribution">
 <h4><a name="mapping-properties-distribution">Distribution</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/DataDownload"><code>schema:DataDownload</code></a>. [<a href="#mapping-formal-distribution">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/DataDownload"><code>schema:DataDownload</code></a>. [<a href="../sparql/distribution.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -804,7 +804,7 @@
 <!-- Properties: Licence document -->
 <section id="mapping-properties-licence">
 <h4><a name="mapping-properties-licence">Licence document</a></h4>
-<p>TBD [<a href="#mapping-formal-licence">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/licence.req">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -840,5 +840,6 @@
 </table>
 </section>
 </section>
+<p><em>continued</em>&hellip; (<a href="./Mappings-ended.md">go to next page</a>)</p>
 </section>
 </article>
