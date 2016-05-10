@@ -355,7 +355,6 @@
     </ul>
     <section id="mapping-classes">
       <h3><a name="mapping-classes">Classes</a></h3>
-      
       <table>
         <thead>
           <tr>
