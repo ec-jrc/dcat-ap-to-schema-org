@@ -1,7 +1,9 @@
 <h1>SPARQL implementation of DCAT-AP+Schema.org</h1>
 <p>This folder includes a set of <code>.req</code> files, specifying a tentative implementation of the mappings defined in DCAT-AP+Schema.org, in the form of <a target="_blank" href="https://www.w3.org/TR/sparql11-query/#construct">SPARQL <code>CONSTRUCT</code> queries</a>.</p>
 <p>The mappings have been defined in a modular way, with a separate SPARQL query for each of the DCAT-AP classes, and related properties. A complete representation of a given resource (e.g., a dataset) and related resource (e.g., distribution, licence, publisher) can be obtained by combining the relevant SPARQL queries.</p>
+<!--
 <p>The defined SPARQL queries can be tested on the SPARQL endpoint of the <a target="_blank" href="http://inspire-sandbox.jrc.ec.europa.eu/geodcat-ap/">INSPIRE GeoDCAT-AP Sandbox</a>, that makes available a snapshot of the metadata records, in GeoDCAT-AP format, harvested by the <a target="_blank" href="http://inspire-geoportal.ec.europa.eu/">INSPIRE Geoportal</a>.</p>
+-->
 <h2>Mappings for mandatory classes</h2>
 <ul>
 <li><a href="./agent.req"><code>agent.req</code></a>: Mappings for class "Agent" and related properties</li>

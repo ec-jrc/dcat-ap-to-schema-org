@@ -123,7 +123,7 @@
      </section>
      <section>
      <h3>Conformance</h3>
-     <p>This concerns properties denoting the conformance of a resource with a standard. In DCAT-AP, this is typically done by using property <a target="_blank" title="http://purl.org/dc/terms/conformsTo" href="http://dublincore.org/documents/dcmi-terms/#terms-conformsTo"><code>dct:conformsTo</code></a>, which is used in different context (namely, to express conformance with a metadata standard, with a data schema, with a reference system, with given quality criteria).</p>
+     <p>This concerns properties denoting the conformance of a resource with a standard. In DCAT-AP, this is typically done by using property <a target="_blank" title="http://purl.org/dc/terms/conformsTo" href="http://dublincore.org/documents/dcmi-terms/#terms-conformsTo"><code>dct:conformsTo</code></a>, which is used in different contexts (namely, to express conformance with a metadata standard, with a data schema, with a reference system, with given quality criteria).</p>
      <p>Schema.org does not have properties for this purpose, and it seems there are no suitable candidates that can be used.</p>
      </section>
      <section>
