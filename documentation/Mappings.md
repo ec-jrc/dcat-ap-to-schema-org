@@ -357,6 +357,7 @@
 </ul>
 </li>
 </ul>
+<p>In the mapping tables included in the following sections, column "Obl." ("Obligation"), denotes whether the class / property is mandatory ("M"), recommended ("R"), or optional ("O").</p>
 <section id="mapping-classes">
 <h3><a name="mapping-classes">Classes</a></h3>
 <table>
