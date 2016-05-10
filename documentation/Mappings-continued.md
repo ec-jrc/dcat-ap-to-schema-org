@@ -1,24 +1,7 @@
 <article>
 <header>
-<h1>Mappings defined in DCAT-AP+Schema.org</h1>
+<h1>Mappings defined in DCAT-AP+Schema.org (2/2)</h1>
 </header>
-<section>
-<h2>Status of this document</h2>
-<p>This document presents a proposal for mapping the relevant terms from the <a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT Application Profile for European Data Portals</a> (DCAT-AP) to the <a target="_blank" href="http://schema.org/">Schema.org vocabulary</a>.</p>
-<p>This document is a draft meant to report work in progress. As such, it can be updated any time and it must be considered as unstable.</p>
-<!--    
-<p>Comments and queries should be sent to the <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT-AP Working Group</a> via <a href="mailto:dcat_application_profile@joinup.ec.europa.eu">dcat_application_profile@joinup.ec.europa.eu</a>.</p>
--->    
-</section>
-<section>
-<h2>Abstract</h2>
-<!--
-<p>This document presents a proposal for mapping the relevant terms from the <a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT Application Profile for European Data Portals</a> (DCAT-AP) to the <a target="_blank" href="http://schema.org/">Schema.org vocabulary</a>.</p>
--->
-<p>This documents illustrates the mappings defined in DCAT-AP+Schema.org<!--, as implemented in the <a href="../datacite-to-dcat-ap.xsl"><code>datacite-to-dcat-ap.xsl</code></a> XSLT-->.</p>
-<p>The background and methodology for the design of DCAT-AP+Schema.org are illustrated in a separate document:</p>
-<p><a href="./Background.md"><cite>DCAT-AP+Schema.org: Background &amp; methodology</cite></a></p>
-</section>
 <nav>
 <h2>Table of contents</h2>
 <ul>
