@@ -2,21 +2,6 @@
 <header>
 <h1>Mappings defined in DCAT-AP+Schema.org (2/2)</h1>
 </header>
-<nav>
-<h2>Table of contents</h2>
-<ul>
-<li><a href="./Mappings.md#introduction">Introduction</a></li>
-<li><a href="./Mappings.md#used-namespaces">Used namespaces</a></li>
-<li><a href="./Mappings.md#ref-code-lists">Reference code lists for metadata elements</a></li>
-<li><a href="./Mappings.md#mapping-summary">Mapping summary</a>
-<ul>
-<li><a href="./Mappings.md#mapping-classes">Classes</a></li>
-<li><a href="#mapping-properties-mandatory">Properties for mandatory classes</a></li>
-<li><a href="#mapping-properties-recommended">Properties for recommended classes</a></li>
-<li><a href="#mapping-properties-optional">Properties for optional classes</a></li>
-</ul>
-</li>
-</nav>
 <section>
 <h2>Mapping summary</h2>
 <p><em>continues</em>&hellip; (<a href="./Mappings.md">go to previous page</a>)</p>
