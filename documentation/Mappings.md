@@ -1,6 +1,7 @@
 <article>
 <header>
 <h1>Mappings defined in DCAT-AP+Schema.org (1/3)</h1>
+<p>Part 1 | <a href="./Mappings-continued.md">Part 2</a> | <a href="./Mappings-ended.md">Part 3</a></p>
 </header>
 <section>
 <h2>Status of this document</h2>
@@ -557,6 +558,6 @@
 </tbody>
 </table>
 </section>
-<p><em>continued</em>&hellip; (<a href="./Mappings-continued.md">go to next page</a>)</p>
+<p><em>continued</em>&hellip; (<a href="./Mappings-continued.md">go to part 2</a>)</p>
 </section>
 </article>

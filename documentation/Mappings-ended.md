@@ -1,6 +1,7 @@
 <article>
 <header>
 <h1>Mappings defined in DCAT-AP+Schema.org (3/3)</h1>
+<p><a href="./Mappings.md">Part 1</a> | <a href="./Mappings-continued.md">Part 2</a> | Part 3</p>
 </header>
 <section>
 <h2>Status of this document</h2>
@@ -46,7 +47,7 @@
 </nav>
 <section>
 <h2>Mapping summary</h2>
-<p><em>continues</em>&hellip; (<a href="./Mappings-continued.md">go to previous page</a>)</p>
+<p><em>continues</em>&hellip; (<a href="./Mappings-continued.md">back to part 2</a>)</p>
 <!-- Properties -->
 <section id="mapping-properties-optional">
 <h3><a name="mapping-properties-optional">Properties for optional classes</a></h3>

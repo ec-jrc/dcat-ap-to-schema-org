@@ -1,7 +1,7 @@
 <article>
 <header>
 <h1>Mappings defined in DCAT-AP+Schema.org (2/3)</h1>
-</header>
+<p><a href="./Mappings.md">Part 1</a> | Part 2 | <a href="./Mappings-ended.md">Part 3</a></p></header>
 <section>
 <h2>Status of this document</h2>
 <p>This document presents a proposal for mapping the relevant terms from the <a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT Application Profile for European Data Portals</a> (DCAT-AP) to the <a target="_blank" href="http://schema.org/">Schema.org vocabulary</a>.</p>
@@ -46,7 +46,7 @@
 </nav>
 <section>
 <h2>Mapping summary</h2>
-<p><em>continues</em>&hellip; (<a href="./Mappings.md">go to previous page</a>)</p>
+<p><em>continues</em>&hellip; (<a href="./Mappings.md">back to part 1</a>)</p>
 <!-- Properties -->
 <section id="mapping-properties-mandatory">
 <h3><a name="mapping-properties-mandatory">Properties for mandatory classes</a></h3>
@@ -840,6 +840,6 @@
 </table>
 </section>
 </section>
-<p><em>continued</em>&hellip; (<a href="./Mappings-ended.md">go to next page</a>)</p>
+<p><em>continued</em>&hellip; (<a href="./Mappings-ended.md">go to part 3</a>)</p>
 </section>
 </article>
