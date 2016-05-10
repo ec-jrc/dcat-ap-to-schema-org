@@ -17,7 +17,7 @@
 </ul>
 <h2>Mappings for optional classes</h2>
 <ul>
-<li><a href="./catalogue-record.req"><code>.req</code></a>: Mappings for class "Catalogue record" and related properties</li>
+<li><a href="./catalogue-record.req"><code>catalogue-record.req</code></a>: Mappings for class "Catalogue record" and related properties</li>
 <li><a href="./checksum.req"><code>checksum.req</code></a>: Mappings for class "Checksum" and related properties</li>
 <li><a href="./document.req"><code>document.req</code></a>: Mappings for class "Document" and related properties</li>
 <li><a href="./identifier.req"><code>identifier.req</code></a>: Mappings for class "Identifier" and related properties</li>
