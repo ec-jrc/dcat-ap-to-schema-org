@@ -9,7 +9,7 @@ This work is still a draft. As such, it can be updated any time, and must be con
 * [`documentation/`](./documentation/): Folder containing documentation on Schema.org+DCAT-AP:
     * [`Background.md`](./documentation/Background.md): Describes the background and methodology for the design of Schema.org+DCAT-AP.
     * [`Mappings.md`](./documentation/Mappings.md): Provides a summary of the mappings from Schema.org to Schema.org+DCAT-AP.
-* [`LICENCE.md`](./LICENCE.md): The XSLT's licence.
+* [`LICENCE.md`](./LICENCE.md): The licence for the resources available from this repository.
 * [`README.md`](./README.md): This document. 
   
 #  Credits
