@@ -47,7 +47,7 @@
 </nav>
 <section>
 <h2>Mapping summary</h2>
-<p><em>continues</em>&hellip; (<a href="./Mappings-continued.md">back to part 2</a>)</p>
+<p><em>continues from <a href="./Mappings-continued.md">part 2</a></em>&hellip;</p>
 <!-- Properties -->
 <section id="mapping-properties-optional">
 <h3><a name="mapping-properties-optional">Properties for optional classes</a></h3>

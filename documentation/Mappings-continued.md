@@ -18,6 +18,7 @@
 <p>This documents illustrates the mappings defined in DCAT-AP+Schema.org<!--, as implemented in the <a href="../datacite-to-dcat-ap.xsl"><code>datacite-to-dcat-ap.xsl</code></a> XSLT-->.</p>
 <p>The background and methodology for the design of DCAT-AP+Schema.org are illustrated in a separate document:</p>
 <p><a href="./Background.md"><cite>DCAT-AP+Schema.org: Background &amp; methodology</cite></a></p>
+<p>A SPARQL implementation of the defined mappings is available in a dedicated folder (<a href="../sparql/"><code>../sparql/</code></a>).</p>
 </section>
 <nav>
 <h2>Table of contents</h2>
@@ -46,7 +47,7 @@
 </nav>
 <section>
 <h2>Mapping summary</h2>
-<p><em>continues</em>&hellip; (<a href="./Mappings.md">back to part 1</a>)</p>
+<p><em>continues from <a href="./Mappings.md">part 1</a></em>&hellip;</p>
 <!-- Properties -->
 <section id="mapping-properties-mandatory">
 <h3><a name="mapping-properties-mandatory">Properties for mandatory classes</a></h3>
@@ -840,6 +841,6 @@
 </table>
 </section>
 </section>
-<p><em>continued</em>&hellip; (<a href="./Mappings-ended.md">go to part 3</a>)</p>
+<p><em>continued in <a href="./Mappings-ended.md">part 3</a></em>&hellip;</p>
 </section>
 </article>

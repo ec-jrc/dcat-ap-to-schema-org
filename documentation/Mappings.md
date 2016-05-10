@@ -558,6 +558,6 @@
 </tbody>
 </table>
 </section>
-<p><em>continued</em>&hellip; (<a href="./Mappings-continued.md">go to part 2</a>)</p>
+<p><em>continued in <a href="./Mappings-continued.md">part 2</a></em>&hellip;</p>
 </section>
 </article>
