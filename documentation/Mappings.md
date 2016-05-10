@@ -1276,9 +1276,7 @@
 </tbody>
 </table>
 </section>
-
 <!-- Properties: Reference system -->
-
 <section id="mapping-properties-reference-system">
 <h4><a name="mapping-properties-reference-system">Reference system</a></h4>
 <p>TBD</p>
