@@ -41,8 +41,8 @@
 <li><a href="#mapping-formal-optional">Optional classes</a></li>
 </ul>
 </li>
-</ul>
 -->
+</ul>
 </nav>
 <section>
 <h2>Mapping summary</h2>
