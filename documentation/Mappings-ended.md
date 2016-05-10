@@ -19,6 +19,7 @@
 <p>This documents illustrates the mappings defined in DCAT-AP+Schema.org<!--, as implemented in the <a href="../datacite-to-dcat-ap.xsl"><code>datacite-to-dcat-ap.xsl</code></a> XSLT-->.</p>
 <p>The background and methodology for the design of DCAT-AP+Schema.org are illustrated in a separate document:</p>
 <p><a href="./Background.md"><cite>DCAT-AP+Schema.org: Background &amp; methodology</cite></a></p>
+<p>A SPARQL implementation of the defined mappings is available in a dedicated folder (<a href="../sparql/"><code>../sparql/</code></a>).</p>
 </section>
 <nav>
 <h2>Table of contents</h2>
