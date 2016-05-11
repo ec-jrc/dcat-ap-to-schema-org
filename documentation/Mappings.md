@@ -56,7 +56,6 @@
 </ul>
 <p>For each of the mapped elements and the reference controlled vocabularies, the relevant specification is referred to in the tables included in the following sections.</p>
 <p>For Schema.org, the reference specification is <a target="_blank" href="http://schema.org/version/2.2/">Schema.org 2.2</a> (<time datetime="2015-11-05">5 November 2015</time>).</p>
-<p>This document includes, in a separate section, also a tentative formal definition of the mappings, in form of SPARQL queries.</p>
 <p><strong>NB</strong>: In the current version, this document does not include mappings concerning the GeoDCAT-AP representation of agent roles and conformance results based on the W3C PROV Ontology [<a target="_blank" href="https://www.w3.org/TR/prov-o/">PROV-O</a>].</p>
 </section>
 <section id="used-namespaces">
