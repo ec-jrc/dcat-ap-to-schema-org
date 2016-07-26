@@ -15,4 +15,4 @@ This work is still a draft. As such, it can be updated any time, and must be con
   
 #  Credits
   
-This work is an exercise carried out by Unit H.6 of the <a href="https://ec.europa.eu/jrc/">Joint Research Centre of the European Commission</a>.
+This work is an exercise carried out by Unit B.6 of the <a href="https://ec.europa.eu/jrc/">Joint Research Centre of the European Commission</a>.
