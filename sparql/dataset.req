@@ -33,7 +33,7 @@ CONSTRUCT {
     schema:datePublished ?issued ;
 #    schema:?? ?DatasetSample ;
     schema:isBasedOnUrl ?SourceDataset ;
-    schema:spatial ?Location ;
+    schema:spatialCoverage ?Location ;
     schema:datasetTimeInterval ?PeriodOfTime ;
     schema:about ?Subject ;
     schema:dateModified ?modified ;

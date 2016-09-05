@@ -75,7 +75,7 @@
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11">DCAT-AP v1.1</a> (<time datetime="2015-10-23">23 October 2015</time>)</li>
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/geodcat-ap-v10">GeoDCAT-AP v1.0</a> (<time datetime="2015-12-23">23 December 2015</time>)</li>
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat-ap_implementation_guidelines/">DCAT-AP Implementation Guidelines</a> (DCAT-AP IG)</li>
-<li><a target="_blank" href="http://schema.org/version/2.2/">Schema.org 2.2</a> (<time datetime="2015-11-05">5 November 2015</time>)</li>
+<li><a target="_blank" href="http://schema.org/version/3.1/">Schema.org 3.1</a> (<time datetime="2016-08-09">9 August 2016</time>)</li>
 </ul>
 <p>
 <p>For the mappings, existing work has been taken into account concerning the mapping of Schema.org to other metadata standards. In particular:</p>
@@ -114,7 +114,7 @@
 <section>
 <h3>Resource "types"</h3>
 <p>This concerns properties denoting the "type" of a resource, by using a <a target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/vocab-dcat/#class-concept"><code>skos:Concept</code></a>. In DCAT-AP, this is typically done by using property <a target="_blank" title="http://purl.org/dc/terms/type" href="http://dublincore.org/documents/dcmi-terms/#terms-type"><code>dct:type</code></a>.</p>
-<p>Schema.org has a generic property, namely <a target="_blank" title="http://schema.org/additionalType" href="http://schema.org/additionalType"><code>schema:additionalType</code></a> - defined as a sub-property of <a target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" href="https://www.w3.org/TR/rdf-schema/#ch_type"><code>rdf:type</code></a>, that is meant to be used to associated multiple types with the same resource. It is to be investigated whether it can be used for this purpose.</p>
+<p>Schema.org has a generic property, namely <a target="_blank" title="http://schema.org/additionalType" href="http://schema.org/additionalType"><code>schema:additionalType</code></a> - defined as a sub-property of <a target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" href="https://www.w3.org/TR/rdf-schema/#ch_type"><code>rdf:type</code></a>, that is meant to be used to associate multiple types with the same resource. It is to be investigated whether it can be used for this purpose.</p>
 </section>
 <section>
 <h3>Provenance</h3>

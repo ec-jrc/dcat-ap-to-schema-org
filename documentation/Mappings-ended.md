@@ -699,7 +699,7 @@
 <td><abbr title="Optional">O</abbr></td>
 <td>spatial / geographic coverage</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/spatial" href="http://dublincore.org/documents/dcmi-terms/#terms-spatial"><code>dct:spatial</code></a></td>
-<td><a target="_blank" title="http://schema.org/spatial" href="http://schema.org/spatial"><code>schema:spatial</code></a></td>
+<td><a target="_blank" title="http://schema.org/spatialCoverage" href="http://schema.org/spatialCoverage"><code>schema:spatialCoverage</code></a></td>
 <td></td>
 </tr>
 <tr>

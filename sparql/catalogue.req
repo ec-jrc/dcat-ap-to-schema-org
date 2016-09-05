@@ -16,7 +16,7 @@ CONSTRUCT {
     schema:dateModified ?modified ;
     schema:hasPart ?ChildCatalogue ;
     schema:itemListElement ?CatalogueRecord ;
-    schema:spatial ?Location
+    schema:spatialCoverage ?Location
 } WHERE {
   OPTIONAL { ?Catalogue a dcat:Catalog . }
   OPTIONAL { ?Catalogue dcat:dataset ?Dataset . }

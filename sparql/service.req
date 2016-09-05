@@ -20,7 +20,7 @@ CONSTRUCT {
     schema:publisher ?Publisher ;
     schema:datePublished ?issued ;
     schema:url ?Document ;
-    schema:spatial ?Location ;
+    schema:spatialCoverage ?Location ;
     schema:datasetTimeInterval ?PeriodOfTime ;
     schema:name ?title ;
 #    schema:?? ?Type ;
