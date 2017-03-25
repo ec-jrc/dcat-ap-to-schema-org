@@ -7,7 +7,7 @@ CONSTRUCT {
   ?ReferenceSystem 
 #    a schema:?? ;
 #    schema:?? ?referenceSystemAuthority ;
-#    schema:?? ?referenceSystemIdentifier ;
+    schema:identifier ?referenceSystemIdentifier ;
     schema:name ?referenceSystemName ;
 #    schema:?? ?ReferenceSystemType ;
     schema:version ?referenceSystemVersionNumber
@@ -15,7 +15,7 @@ CONSTRUCT {
   OPTIONAL { ?Resource dct:conformsTo ?ReferenceSystem . }
   OPTIONAL { ?ReferenceSystem a dct:Standard . }
 #  OPTIONAL { ?ReferenceSystem skos:inScheme ?referenceSystemAuthority . }
-#  OPTIONAL { ?ReferenceSystem dct:identifier ?referenceSystemIdentifier . }
+  OPTIONAL { ?ReferenceSystem dct:identifier ?referenceSystemIdentifier . }
   OPTIONAL { ?ReferenceSystem skos:prefLabel ?referenceSystemName . }
 #  OPTIONAL { ?ReferenceSystem dct:type ?ReferenceSystemType . }
   OPTIONAL { ?ReferenceSystem owl:versionInfo ?referenceSystemVersionNumber . }

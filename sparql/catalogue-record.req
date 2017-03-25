@@ -15,7 +15,7 @@ CONSTRUCT {
 #    schema:?? ?characterEncoding ;
     schema:contactPoint ?Kind ;
     schema:description ?description ;
-    schema:productID ?identifier ;
+    schema:identifier ?identifier ;
     schema:inLanguage ?Language ;
     schema:isBasedOnUrl ?SourceMetadata ;
     schema:name ?title 

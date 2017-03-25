@@ -5,14 +5,14 @@ PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
   ?Location a schema:Place ;
-#    schema:?? ?geographicalIdentifier ;
+    schema:identifier ?geographicalIdentifier ;
 #    schema:?? ?authority ;
     schema:name ?geographicalName ;
     schema:geo ?geometry 
 } WHERE {
   OPTIONAL { ?Resource dct:spatial ?Location . }
   OPTIONAL { ?Location a dct:Location . }
-#  OPTIONAL { ?Location dct:identifier ?geographicalIdentifier . }
+  OPTIONAL { ?Location dct:identifier ?geographicalIdentifier . }
 #  OPTIONAL { ?Location skos:inScheme ?authority . }
   OPTIONAL { ?Location skos:prefLabel ?geographicalName . }
   OPTIONAL { ?Location locn:geometry ?geometry . }

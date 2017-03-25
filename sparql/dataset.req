@@ -22,7 +22,7 @@ CONSTRUCT {
     schema:mainEntityOfPage ?Document ;
 #    schema:?? ?Frequency ;
 #    schema:?? ?PreviousDatasetVersion ;
-    schema:productID ?identifier ;
+    schema:identifier ?identifier ;
 #    schema:?? ?NextDatasetVersion ;
 #    schema:?? ?AlternateIdentifier ;
     schema:url ?LandingPage ;

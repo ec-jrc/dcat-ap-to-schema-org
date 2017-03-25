@@ -140,7 +140,7 @@
 <td><abbr title="Optional">O</abbr></td>
 <td>identifier</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a></td>
-<td><a target="_blank" title="http://schema.org/productID" href="http://schema.org/productID"><code>schema:productID</code></a></td>
+<td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
 <td></td>
 </tr>
 <tr>
@@ -369,7 +369,7 @@
 <td><abbr title="Optional">O</abbr></td>
 <td>geographical identifier</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a></td>
-<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
 <td>TBD</td>
 </tr>
 <tr>
@@ -392,7 +392,7 @@
 <td>GeoDCAT-AP 1.0</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>geometry</td>
-<td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>locn:geometry</code></a></td>
+<td><a target="_blank" title="http://www.w3.org/ns/locn#geometry" href="http://www.w3.org/ns/locn#locn:geometry"><code>locn:geometry</code></a></td>
 <td><a target="_blank" title="http://schema.org/geo" href="http://schema.org/geo"><code>schema:geo</code></a></td>
 <td>
 <p>Schema.org expects as value an instance of <a target="_blank" title="http://schema.org/GeoCoordinates" href="http://schema.org/GeoCoordinates"><code>schema:GeoCoordinates</code></a> (for points) or <a target="_blank" title="http://schema.org/GeoShape" href="http://schema.org/GeoShape"><code>schema:GeoShape</code></a> (for more complex geometries).</p>
@@ -503,7 +503,7 @@
 <td><abbr title="Optional">O</abbr></td>
 <td>reference system identifier</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a></td>
-<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
 <td>TBD</td>
 </tr>
 <tr>

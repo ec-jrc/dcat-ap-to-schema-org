@@ -391,7 +391,7 @@
 <td><abbr title="Optional">O</abbr></td>
 <td>identifier</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a></td>
-<td><a target="_blank" title="http://schema.org/productID" href="http://schema.org/productID"><code>schema:productID</code></a></td>
+<td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
 <td></td>
 </tr>
 <tr>
