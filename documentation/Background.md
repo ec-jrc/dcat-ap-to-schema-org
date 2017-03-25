@@ -75,7 +75,7 @@
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11">DCAT-AP v1.1</a> (<time datetime="2015-10-23">23 October 2015</time>)</li>
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/geodcat-ap-v10">GeoDCAT-AP v1.0</a> (<time datetime="2015-12-23">23 December 2015</time>)</li>
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat-ap_implementation_guidelines/">DCAT-AP Implementation Guidelines</a> (DCAT-AP IG)</li>
-<li><a target="_blank" href="http://schema.org/version/3.1/">Schema.org 3.1</a> (<time datetime="2016-08-09">9 August 2016</time>)</li>
+<li><a target="_blank" href="http://schema.org/version/3.2/">Schema.org 3.2</a> (<time datetime="2017-03-23">9 August 2016</time>)</li>
 </ul>
 <p>
 <p>For the mappings, existing work has been taken into account concerning the mapping of Schema.org to other metadata standards. In particular:</p>
@@ -98,18 +98,21 @@
 <p>One of the main consequences is that some information that is relevant in DCAT-AP it is not modelled in Schema.org with specific terms. This results in a relevant amount of (a) "missing" and (b) "many-to-one" mappings - i.e., different metadata elements of DCAT-AP are mapped to the same element in Schema.org.</p>
 <p>This is not necessarily a problem, since the objective of mapping DCAT-AP and Schema.org is to enhance discoverability of DCAT-AP metadata on the Web, which does not require a complete, 1-to-1 representation of DCAT-AP metadata. Actually, the result of this exercise can also include the identification of the subset of DCAT-AP metadata elements that is worth representing in a Schema.org-based description. On the other hand, this situation also implies that a reverse mapping (i.e., from Schema.org to DCAT-AP) may be problematic or not possible.</p>
 <p>The following sections describe the DCAT-AP metadata elements posing mapping issues.</p>
+<!--
 <section>
 <h3>Identifiers</h3>
 <p>This concerns properties<a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a> and <a target="_blank" title="http://www.w3.org/ns/adms#identifier" href="https://www.w3.org/TR/vocab-adms/#adms_identifier"><code>amds:identifier</code></a>, and class <a target="_blank" title="http://www.w3.org/ns/adms#Identifier" href="https://www.w3.org/TR/vocab-adms/#dt_identifier"><code>adms:Identifier</code></a>.</p>
 <p>Schema.org does not have generic properties for identifiers, but models identifiers only for some classes - e.g., <a target="_blank" title="http://schema.org/productID" href="http://schema.org/productID"><code>schema:productID</code></a>, which denotes the identifier of a <a target="_blank" title="http://schema.org/Product" href="http://schema.org/Product"><code>schema:Product</code></a>.</p>
 <p>It is to be investigated if properties as <a target="_blank" title="http://schema.org/productID" href="http://schema.org/productID"><code>schema:productID</code></a> could be used more broadly.</p>
 </section>
+-->
 <section>
 <h3>Categories and category schemes</h3>
 <p>This concerns classes <a target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme" href="https://www.w3.org/TR/vocab-dcat/#class-concept-scheme"><code>skos:ConceptScheme</code></a> and <a target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/vocab-dcat/#class-concept"><code>skos:Concept</code></a>.</p>
 <p>Only few of the categories and categories schemes used in DCAT-AP are supported in Schema.org. The re-use of "external" controlled vocabularies is allowed in Schema.org, but how this can be modelled is unclear.</p>
 <p>Based on the documentation found online [<a target="_blank" href="https://www.w3.org/wiki/WebSchemas/ExternalEnumerations">WebSchemas-EE</a>], the approach seems to be based on the use of <a target="_blank" title="http://schema.org/Enumeration" href="http://schema.org/Enumeration"><code>schema:Enumeration</code></a> for <a target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme" href="https://www.w3.org/TR/vocab-dcat/#class-concept-scheme"><code>skos:ConceptScheme</code></a>, but it is unclear how to state that a given <a target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/vocab-dcat/#class-concept"><code>skos:Concept</code></a> is in a given <a target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme" href="https://www.w3.org/TR/vocab-dcat/#class-concept-scheme"><code>skos:ConceptScheme</code></a>.</p>
 <p>Another option could be to use <a target="_blank" title="http://schema.org/ItemList" href="http://schema.org/ItemList"><code>schema:ItemList</code></a> for <a target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme" href="https://www.w3.org/TR/vocab-dcat/#class-concept-scheme"><code>skos:ConceptScheme</code></a>'s, and <a target="_blank" title="http://schema.org/ListItem" href="http://schema.org/ListItem"><code>schema:ListItem</code></a> for <a target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/vocab-dcat/#class-concept"><code>skos:Concept</code></a>'s, and to link the two with <a target="_blank" title="http://schema.org/itemListElement" href="http://schema.org/itemListElement"><code>schema:itemListElement</code></a>.</p>
+<p><strong>NB:</strong> In version 3.2, Schema.org introduced two "pending" types that are meant to model this information - namely, <a target="_blank" title="http://schema.org/CategoryCodeSet" href="http://pending.schema.org/CategoryCodeSet"><code>schema:CategoryCodeSet</code></a> and <a target="_blank" title="http://schema.org/CategoryCode" href="http://pending.schema.org/CategoryCode"><code>schema:CategoryCode</code></a>.</p>
 </section>
 <section>
 <h3>Resource "types"</h3>
