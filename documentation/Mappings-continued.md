@@ -205,6 +205,14 @@
 <td></td>
 </tr>
 <tr>
+<td>GeoDCAT-AP 1.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creation date</td>
+<td><a target="_blank" title="http://purl.org/dc/terms/created" href="http://dublincore.org/documents/dcmi-terms/#terms-created"><code>dct:created</code></a></td>
+<td><a target="_blank" title="http://schema.org/dateCreated" href="http://schema.org/dateCreated"><code>schema:dateCreated</code></a></td>
+<td></td>
+</tr>
+<tr>
 <td>DCAT-AP 1.1</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>has part</td>

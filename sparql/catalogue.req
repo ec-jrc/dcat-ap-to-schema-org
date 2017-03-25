@@ -14,6 +14,7 @@ CONSTRUCT {
     schema:license ?Licence ;
     schema:datePublished ?issued ;
     schema:dateModified ?modified ;
+    schema:dateCreated ?created ;
     schema:hasPart ?ChildCatalogue ;
     schema:itemListElement ?CatalogueRecord ;
     schema:spatialCoverage ?Location
@@ -29,6 +30,7 @@ CONSTRUCT {
   OPTIONAL { ?Catalogue dct:issued ?issued . }
 #  OPTIONAL { ?Catalogue dcat:themeTaxonomy ?CategoryScheme . }
   OPTIONAL { ?Catalogue dct:modified ?modified . }
+  OPTIONAL { ?Catalogue dct:created ?created . }
   OPTIONAL { ?Catalogue dct:hasPart ?ChildCatalogue . }
   OPTIONAL { ?Catalogue dcat:record ?CatalogueRecord . }
 #  OPTIONAL { ?Catalogue dct:rights ?Rights . }
