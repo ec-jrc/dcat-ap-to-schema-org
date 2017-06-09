@@ -2,9 +2,11 @@ PREFIX adms:   <http://www.w3.org/ns/adms#>
 PREFIX cnt:    <http://www.w3.org/2011/content#>
 PREFIX dcat:   <http://www.w3.org/ns/dcat#>
 PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX dqv:    <http://www.w3.org/ns/dqv#>
 PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
 PREFIX owl:    <http://www.w3.org/2002/07/owl#>
 PREFIX schema: <http://schema.org/>
+PREFIX stat:   <http://data.europa.eu/m8g/>
 
 CONSTRUCT {
   ?Dataset a schema:Dataset ;
@@ -16,26 +18,32 @@ CONSTRUCT {
     schema:publisher ?Publisher ;
     schema:about ?Category ;
 #    schema:?? ?AccessRights ;
+#    schema:?? ?Attribute ;
     schema:creator ?Author ;
 #    schema:?? ?Standard ;
     schema:dateCreated ?created ;
+#    schema:?? ?Dimension ;
     schema:mainEntityOfPage ?Document ;
 #    schema:?? ?Frequency ;
 #    schema:?? ?PreviousDatasetVersion ;
     schema:identifier ?identifier ;
 #    schema:?? ?NextDatasetVersion ;
-#    schema:?? ?AlternateIdentifier ;
+    schema:identifier ?AlternateIdentifier ;
     schema:url ?LandingPage ;
     schema:inLanguage ?Language ;
+#    schema:?? ?numberOfDataSeries ;
     schema:copyrightHolder ?CopyrightHolder ;
 #    schema:?? ?ProvenanceStatement ;
+    schema:review ?QualityAnnotation ;
     schema:mentions ?RelatedResource ;
     schema:datePublished ?issued ;
 #    schema:?? ?DatasetSample ;
     schema:isBasedOnUrl ?SourceDataset ;
     schema:spatialCoverage ?Location ;
+#    schema:?? ?SpatialResolution ;
     schema:datasetTimeInterval ?PeriodOfTime ;
     schema:about ?Subject ;
+#    schema:?? ?UoM ;
     schema:dateModified ?modified ;
     schema:version ?versionNumber 
 #    schema:?? ?versionNotes ;
@@ -49,26 +57,32 @@ CONSTRUCT {
   OPTIONAL { ?Dataset dct:publisher ?Publisher . }
   OPTIONAL { ?Dataset dcat:theme ?Category . }
 #  OPTIONAL { ?Dataset dct:accessRights ?AccessRights . }
+#  OPTIONAL { ?Dataset stat:attribute ?Attribute . }
   OPTIONAL { ?Dataset dct:creator ?Author . }
 #  OPTIONAL { ?Dataset dct:conformsTo ?Standard . }
   OPTIONAL { ?Dataset dct:created ?created . }
+#  OPTIONAL { ?Dataset stat:dimension ?Dimension . }
   OPTIONAL { ?Dataset foaf:page ?Document . }
 #  OPTIONAL { ?Dataset dct:accrualPeriodicity ?Frequency . }
 #  OPTIONAL { ?Dataset dct:hasVersion ?PreviousDatasetVersion . }
   OPTIONAL { ?Dataset dct:identifier ?identifier . }
 #  OPTIONAL { ?Dataset dct:isVersionOf ?NextDatasetVersion . }
-#  OPTIONAL { ?Dataset adms:identifier ?AlternateIdentifier . }
+  OPTIONAL { ?Dataset adms:identifier ?AlternateIdentifier . }
   OPTIONAL { ?Dataset dcat:landingPage ?LandingPage . }
   OPTIONAL { ?Dataset dct:language ?Language . }
+#  OPTIONAL { ?Dataset stat:numberOfDataSeries ?numberOfDataSeries . }
   OPTIONAL { ?Dataset dct:rightsHolder ?CopyrightHolder . }
 #  OPTIONAL { ?Dataset dct:provenance ?ProvenanceStatement . }
+  OPTIONAL { ?Dataset dqv:hasQualityAnnotation ?QualityAnnotation . }
   OPTIONAL { ?Dataset dct:relation ?RelatedResource . }
   OPTIONAL { ?Dataset dct:issued ?issued . }
 #  OPTIONAL { ?Dataset adms:sample ?DatasetSample . }
   OPTIONAL { ?Dataset dct:source ?SourceDataset . }
   OPTIONAL { ?Dataset dct:spatial ?Location . }
+#  OPTIONAL { ?Dataset rdfs:comment ?SpatialResolution . }
   OPTIONAL { ?Dataset dct:temporal ?PeriodOfTime . }
   OPTIONAL { ?Dataset dct:subject ?Subject . }
+#  OPTIONAL { ?Dataset stat:unitOfMeasurement ?UoM . }
   OPTIONAL { ?Dataset dct:modified ?modified . }
   OPTIONAL { ?Dataset owl:versionInfo ?versionNumber . }
 #  OPTIONAL { ?Dataset adms:versionNotes ?versionNotes . }

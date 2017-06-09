@@ -270,8 +270,8 @@
 <td><abbr title="Mandatory">M</abbr></td>
 <td>notation</td>
 <td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#notation" href="https://www.w3.org/2009/08/skos-reference/skos.html#notation"><code>skos:notation</code></a></td>
-<td><a target="_blank" title="http://schema.org/productID" href="http://schema.org/productID"><code>schema:productID</code></a></td>
-<td></td>
+<td><a target="_blank" title="http://schema.org/value" href="http://schema.org/value"><code>schema:value</code></a></td>
+<td>The type of identifier should be specified with <a target="_blank" title="http://schema.org/name" href="http://schema.org/name"><code>schema:name</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -370,7 +370,7 @@
 <td>geographical identifier</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a></td>
 <td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
-<td>TBD</td>
+<td></td>
 </tr>
 <tr>
 <td>GeoDCAT-AP 1.0</td>
@@ -471,6 +471,36 @@
 </tbody>
 </table>
 </section>
+<!-- Properties: Rights statement -->
+<section id="mapping-properties-provenance">
+<h4><a name="mapping-properties-provenance">Provenance statement</a></h4>
+<p>TBD [<a href="../sparql/provenance.req">formal definition</a>]</p>
+<table>
+<thead>
+<tr>
+<th colspan="4">DCAT-AP</th>
+<th rowspan="2">Schema.org</th>
+<th rowspan="2">Comments</th>
+</tr>
+<tr>
+<th>Specification</th>
+<th><abbr title="Obligation">Obl.</abbr></th>
+<th>Label</th>
+<th>QName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GeoDCAT-AP 1.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>name / description</td>
+<td><a target="_blank" title="http://www.w3.org/2000/01/rdf-schema#label" href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_label"><code>rdfs:label</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+</section>
 <!-- Properties: Reference system -->
 <section id="mapping-properties-reference-system">
 <h4><a name="mapping-properties-reference-system">Reference system</a></h4>
@@ -504,7 +534,7 @@
 <td>reference system identifier</td>
 <td><a target="_blank" title="http://purl.org/dc/terms/identifier" href="http://dublincore.org/documents/dcmi-terms/#terms-identifier"><code>dct:identifier</code></a></td>
 <td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
-<td>TBD</td>
+<td></td>
 </tr>
 <tr>
 <td>GeoDCAT-AP 1.0</td>

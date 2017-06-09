@@ -38,6 +38,7 @@ CONSTRUCT {
 #  OPTIONAL { ?Distribution dct:rights ?Rights . }
 #  OPTIONAL { ?Distribution adms:representationTechnique ?SpatialRepresentationType . }
 #  OPTIONAL { ?Distribution adms:status ?Status . }
+#  OPTIONAL { ?Distribution dct:type ?type . }
   OPTIONAL { ?Distribution dct:title ?title . }
   OPTIONAL { ?Distribution dct:modified ?modified . }
 }

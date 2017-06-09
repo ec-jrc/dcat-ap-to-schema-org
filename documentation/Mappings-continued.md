@@ -338,6 +338,16 @@
 <td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>StatDCAT-AP 1.0.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>attribute</td>
+<td><a target="_blank" title="http://data.europa.eu/m8g/attribute" href="http://data.europa.eu/m8g/attribute"><code>stat:attribute</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>GeoDCAT-AP 1.0</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -370,6 +380,16 @@
 <td><a target="_blank" title="http://schema.org/dateCreated" href="http://schema.org/dateCreated"><code>schema:dateCreated</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>StatDCAT-AP 1.0.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>dimension</td>
+<td><a target="_blank" title="http://data.europa.eu/m8g/dimension" href="http://data.europa.eu/m8g/dimension"><code>stat:dimension</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>DCAT-AP 1.1</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -426,13 +446,23 @@
 <td><a target="_blank" title="http://schema.org/inLanguage" href="http://schema.org/inLanguage"><code>schema:inLanguage</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>StatDCAT-AP 1.0.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>number of data series</td>
+<td><a target="_blank" title="http://data.europa.eu/m8g/numberOfDataSeries" href="http://data.europa.eu/m8g/numberOfDataSeries"><code>stat:numberOfDataSeries</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>DCAT-AP 1.1</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>other identifier</td>
-<td><a target="_blank" title="http://www.w3.org/ns/adms#identifier" href="https://www.w3.org/TR/vocab-adms/#adms_identifier"><code>amds:identifier</code></a></td>
-<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
-<td>TBD</td>
+<td><a target="_blank" title="http://www.w3.org/ns/adms#identifier" href="https://www.w3.org/TR/vocab-adms/#adms_identifier"><code>adms:identifier</code></a></td>
+<td><a target="_blank" title="http://schema.org/identifier" href="http://schema.org/identifier"><code>schema:identifier</code></a></td>
+<td>Schema.org does not currently provide a way to denote "other" identifiers.</td>
 </tr>
 <tr>
 <td>GeoDCAT-AP 1.0</td>
@@ -450,6 +480,16 @@
 <td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>StatDCAT-AP 1.0.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>quality annotation</td>
+<td><a target="_blank" title="http://www.w3.org/ns/dqv#hasQualityAnnotation" href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityAnnotation"><code>dqv:hasQualityAnnotation</code></a></td>
+<td><a target="_blank" title="http://schema.org/review" href="http://schema.org/review"><code>schema:review</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>GeoDCAT-AP 1.0</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -498,6 +538,13 @@
 <td><a target="_blank" title="http://schema.org/spatialCoverage" href="http://schema.org/spatialCoverage"><code>schema:spatialCoverage</code></a></td>
 <td></td>
 </tr>
+<td>GeoDCAT-AP 1.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution</td>
+<td><a target="_blank" title="http://www.w3.org/2000/01/rdf-schema#comment" href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_comment"><code>rdfs:comment</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
 <tr>
 <td>DCAT-AP 1.1</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -522,6 +569,16 @@
 <td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>StatDCAT-AP 1.0.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>unit of measurement</td>
+<td><a target="_blank" title="http://data.europa.eu/m8g/unitOfMeasurement" href="http://data.europa.eu/m8g/unitOfMeasurement"><code>stat:unitOfMeasurement</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>DCAT-AP 1.1</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -799,6 +856,16 @@
 <td><a target="_blank" title="http://schema.org/name" href="http://schema.org/name"><code>schema:name</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>StatDCAT-AP 1.0.0</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>type</td>
+<td><a target="_blank" title="http://purl.org/dc/terms/type" href="http://dublincore.org/documents/dcmi-terms/#terms-type"><code>dct:type</code></a></td>
+<td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>DCAT-AP 1.1</td>
 <td><abbr title="Optional">O</abbr></td>
