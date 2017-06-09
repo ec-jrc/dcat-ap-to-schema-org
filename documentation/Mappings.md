@@ -71,11 +71,6 @@
 </thead>
 <tbody>
 <tr>
-<td><code>oa</code></td>
-<td><code><a target="_blank" href="http://www.w3.org/ns/adms#">http://www.w3.org/ns/adms#</a></code></td>
-<td><a target="_blank" href="https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/" title="OA">Web Annotation Vocabulary</a></td>
-</tr>
-<tr>
 <td><code>adms</code></td>
 <td><code><a target="_blank" href="http://www.w3.org/ns/adms#">http://www.w3.org/ns/adms#</a></code></td>
 <td><a target="_blank" href="http://www.w3.org/TR/2013/NOTE-vocab-adms-20130801/" title="ADMS">Asset Description Metadata Schema</a></td>
@@ -174,6 +169,11 @@
 <td><code>vcard</code></td>
 <td><code><a target="_blank" href="http://www.w3.org/2006/vcard/ns#">http://www.w3.org/2006/vcard/ns#</a></code></td>
 <td><a target="_blank" href="http://www.w3.org/TR/2013/WD-vcard-rdf-20130924/" title="vCard">vCard Ontology</a></td>
+</tr>
+<tr>
+<td><code>oa</code></td>
+<td><code><a target="_blank" href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a></code></td>
+<td><a target="_blank" href="https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/" title="OA">Web Annotation Vocabulary</a></td>
 </tr>
 <tr>
 <td><code>xsd</code></td>
