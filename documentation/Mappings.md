@@ -91,16 +91,6 @@
 <td><a target="_blank" href="http://www.w3.org/TR/2014/REC-vocab-dcat-20140116/" title="DCAT">Data Catalog Vocabulary</a></td>
 </tr>
 <tr>
-<td><code>dcat</code></td>
-<td><code><a target="_blank" href="http://www.w3.org/ns/dqv#">http://www.w3.org/ns/dqv#</a></code></td>
-<td><a target="_blank" href="https://www.w3.org/TR/2016/NOTE-vocab-dqv-20161215/" title="DQV">Data Quality Vocabulary</a></td>
-</tr>
-<tr>
-<td><code>qb</code></td>
-<td><code><a target="_blank" href="http://www.w3.org/ns/dcat#">http://purl.org/linked-data/cube#</a></code></td>
-<td><a target="_blank" href="http://www.w3.org/TR/2014/REC-vocab-data-cube-20140116/" title="QB">Data Cube Vocabulary</a></td>
-</tr>
-<tr>
 <td><code>dct</code></td>
 <td><code><a target="_blank" href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a></code></td>
 <td><a target="_blank" href="http://dublincore.org/documents/2012/06/14/dcmi-terms/" title="DCTerms">DCMI Metadata Terms</a></td>
@@ -109,6 +99,11 @@
 <td><code>dctype</code></td>
 <td><code><a target="_blank" href="http://purl.org/dc/dcmitype/">http://purl.org/dc/dcmitype/</a></code></td>
 <td><a target="_blank" href="http://dublincore.org/documents/2012/06/14/dcmi-terms/#H7" title="DCMIType">DCMI Type Vocabulary</a></td>
+</tr>
+<tr>
+<td><code>dqv</code></td>
+<td><code><a target="_blank" href="http://www.w3.org/ns/dqv#">http://www.w3.org/ns/dqv#</a></code></td>
+<td><a target="_blank" href="https://www.w3.org/TR/2016/NOTE-vocab-dqv-20161215/" title="DQV">Data Quality Vocabulary</a></td>
 </tr>
 <tr>
 <td><code>foaf</code></td>
@@ -126,6 +121,11 @@
 <td><a target="_blank" href="http://www.w3.org/ns/locn" title="LOCN">ISA Programme Core Location Vocabulary</a></td>
 </tr>
 <tr>
+<td><code>oa</code></td>
+<td><code><a target="_blank" href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a></code></td>
+<td><a target="_blank" href="https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/" title="OA">Web Annotation Vocabulary</a></td>
+</tr>
+<tr>
 <td><code>owl</code></td>
 <td><code><a target="_blank" href="http://www.w3.org/2002/07/owl#">http://www.w3.org/2002/07/owl#</a></code></td>
 <td><a target="_blank" href="http://www.w3.org/TR/2004/REC-owl-ref-20040210/" title="OWL">OWL Web Ontology Language Reference</a></td>
@@ -134,6 +134,11 @@
 <td><code>prov</code></td>
 <td><code><a target="_blank" href="http://www.w3.org/ns/prov#">http://www.w3.org/ns/prov#</a></code></td>
 <td><a target="_blank" href="http://www.w3.org/TR/2013/REC-prov-o-20130430/" title="PROV-O">PROV-O: The PROV Ontology</a></td>
+</tr>
+<tr>
+<td><code>qb</code></td>
+<td><code><a target="_blank" href="http://purl.org/linked-data/cube#">http://purl.org/linked-data/cube#</a></code></td>
+<td><a target="_blank" href="http://www.w3.org/TR/2014/REC-vocab-data-cube-20140116/" title="QB">Data Cube Vocabulary</a></td>
 </tr>
 <tr>
 <td><code>rdf</code></td>
@@ -162,18 +167,13 @@
 </tr>
 <tr>
 <td><code>stat</code></td>
-<td><code><a target="_blank" href="http://www.w3.org/2004/02/skos/core#">http://data.europa.eu/m8g/</a></code></td>
-<td><a target="_blank" href="http://www.w3.org/TR/2009/REC-skos-reference-20090818/" title="StatDCAT-AP">StatDCAT-AP</a></td>
+<td><code><a target="_blank" href="http://data.europa.eu/m8g/">http://data.europa.eu/m8g/</a></code></td>
+<td><a target="_blank" href="http://data.europa.eu/r5r/" title="StatDCAT-AP">StatDCAT-AP</a></td>
 </tr>
 <tr>
 <td><code>vcard</code></td>
 <td><code><a target="_blank" href="http://www.w3.org/2006/vcard/ns#">http://www.w3.org/2006/vcard/ns#</a></code></td>
 <td><a target="_blank" href="http://www.w3.org/TR/2013/WD-vcard-rdf-20130924/" title="vCard">vCard Ontology</a></td>
-</tr>
-<tr>
-<td><code>oa</code></td>
-<td><code><a target="_blank" href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a></code></td>
-<td><a target="_blank" href="https://www.w3.org/TR/2017/REC-annotation-vocab-20170223/" title="OA">Web Annotation Vocabulary</a></td>
 </tr>
 <tr>
 <td><code>xsd</code></td>
