@@ -4,9 +4,10 @@ PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
   ?Identifier 
-#    a schema:?? ;
-    schema:productID ?notation 
+    schema:name ?identifierType ;
+    schema:value ?notation 
 } WHERE {
   OPTIONAL { ?Identifier a adms:Identifier . }
   OPTIONAL { ?Identifier skos:notation ?notation . }
+  OPTIONAL { ?Identifier skos:notation ?notation bind(str(datatype(?notation)) as ?identifierType) . }
 }
