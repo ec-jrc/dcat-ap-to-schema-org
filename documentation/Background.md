@@ -76,7 +76,7 @@
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/geodcat-ap-v10">GeoDCAT-AP v1.0</a> (<time datetime="2015-12-23">23 December 2015</time>)</li>
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/StatDCAT-AP/release/Version_1.0.0">StatDCAT-AP v1.0.0</a> (<time datetime="2016-12-15">15 December 2016</time>)</li>
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat-ap_implementation_guidelines/">DCAT-AP Implementation Guidelines</a> (DCAT-AP IG)</li>
-<li><a target="_blank" href="http://schema.org/version/3.2/">Schema.org 3.2</a> (<time datetime="2017-03-23">23 March 2017</time>)</li>
+<li><a target="_blank" href="http://schema.org/version/3.3/">Schema.org 3.3</a> (<time datetime="2017-08-14">14 August 2017</time>)</li>
 </ul>
 <p>
 <p>For the mappings, existing work has been taken into account concerning the mapping of Schema.org to other metadata standards. In particular:</p>

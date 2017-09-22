@@ -56,7 +56,7 @@
 <li><a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat-ap_implementation_guidelines/">DCAT-AP Implementation Guidelines</a> (DCAT-AP IG)</li>
 </ul>
 <p>For each of the mapped elements and the reference controlled vocabularies, the relevant specification is referred to in the tables included in the following sections.</p>
-<p>For Schema.org, the reference specification is <a target="_blank" href="http://schema.org/version/3.2/">Schema.org 3.2</a> (<time datetime="2017-03-23">23 March 2017</time>).</p>
+<p>For Schema.org, the reference specification is <a target="_blank" href="http://schema.org/version/3.3/">Schema.org 3.3</a> (<time datetime="2017-08-14">14 August 2017</time>).</p>
 <p><strong>NB</strong>: In the current version, this document does not include mappings concerning the GeoDCAT-AP representation of agent roles and conformance results based on the W3C PROV Ontology [<a target="_blank" href="https://www.w3.org/TR/prov-o/">PROV-O</a>].</p>
 </section>
 <section id="used-namespaces">
