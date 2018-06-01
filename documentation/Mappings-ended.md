@@ -55,7 +55,7 @@
 <!-- Properties: Catalogue record -->
 <section id="mapping-properties-catalogue-record">
 <h4><a name="mapping-properties-catalogue-record">Catalogue record</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/ListItem"><code>schema:ListItem</code></a>. [<a href="../sparql/catalogue-record.req">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/ListItem"><code>schema:ListItem</code></a>. [<a href="../sparql/catalogue-record.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -173,7 +173,7 @@
 <!-- Properties: Checksum -->
 <section id="mapping-properties-checksum">
 <h4><a name="mapping-properties-checksum">Checksum</a></h4>
-<p>TBD [<a href="../sparql/checksum.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/checksum.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -211,7 +211,7 @@
 <!-- Properties: Document -->
 <section id="mapping-properties-document">
 <h4><a name="mapping-properties-document">Document</a></h4>
-<p>TBD [<a href="../sparql/document.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/document.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -249,7 +249,7 @@
 <!-- Properties: Identifier -->
 <section id="mapping-properties-identifier">
 <h4><a name="mapping-properties-identifier">Identifier</a></h4>
-<p>TBD [<a href="../sparql/identifier.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/identifier.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -279,7 +279,7 @@
 <!-- Properties: Kind -->
 <section id="mapping-properties-kind">
 <h4><a name="mapping-properties-kind">Kind</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/ContactPoint"><code>schema:ContactPoint</code></a>. [<a href="../sparql/kind.req">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/ContactPoint"><code>schema:ContactPoint</code></a>. [<a href="../sparql/kind.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -348,7 +348,7 @@
 <!-- Properties: Location -->
 <section id="mapping-properties-location">
 <h4><a name="mapping-properties-location">Location</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/Place"><code>schema:Place</code></a>. [<a href="../sparql/location.req">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/Place"><code>schema:Place</code></a>. [<a href="../sparql/location.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -406,7 +406,7 @@
 <!-- Properties: Media type or extent -->
 <section id="mapping-properties-media-type">
 <h4><a name="mapping-properties-media-type">Media type or extent</a></h4>
-<p>TBD [<a href="../sparql/media-type.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/media-type.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -436,7 +436,7 @@
 <!-- Properties: Period of time -->
 <section id="mapping-properties-period-of-time">
 <h4><a name="mapping-properties-period-of-time">Period of time</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/DateTime"><code>schema:DateTime</code></a>. [<a href="../sparql/period-of-time.req">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/DateTime"><code>schema:DateTime</code></a>. [<a href="../sparql/period-of-time.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -474,7 +474,7 @@
 <!-- Properties: Rights statement -->
 <section id="mapping-properties-provenance">
 <h4><a name="mapping-properties-provenance">Provenance statement</a></h4>
-<p>TBD [<a href="../sparql/provenance.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/provenance.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -504,7 +504,7 @@
 <!-- Properties: Reference system -->
 <section id="mapping-properties-reference-system">
 <h4><a name="mapping-properties-reference-system">Reference system</a></h4>
-<p>TBD [<a href="../sparql/reference-system.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/reference-system.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -566,7 +566,7 @@
 <!-- Properties: Rights statement -->
 <section id="mapping-properties-rights">
 <h4><a name="mapping-properties-rights">Rights statement</a></h4>
-<p>TBD [<a href="../sparql/rights.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/rights.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -596,7 +596,7 @@
 <!-- Properties: Service -->
 <section id="mapping-properties-service">
 <h4><a name="mapping-properties-service">Service</a></h4>
-<p>These properties should be used with <a target="_blank" href="http://schema.org/Service"><code>schema:Service</code></a>. [<a href="../sparql/service.req">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/Service"><code>schema:Service</code></a>. [<a href="../sparql/service.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
@@ -786,7 +786,7 @@
 <!-- Properties: Standard -->
 <section id="mapping-properties-standard">
 <h4><a name="mapping-properties-standard">Standard</a></h4>
-<p>TBD [<a href="../sparql/standard.req">formal definition</a>]</p>
+<p>TBD [<a href="../sparql/standard.rq">formal definition</a>]</p>
 <table>
 <thead>
 <tr>
