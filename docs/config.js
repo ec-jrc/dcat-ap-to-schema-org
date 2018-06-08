@@ -1,8 +1,8 @@
 var respecConfig = {
 // ISA specific
 //    version: "1.0.2",
-    versionURL: "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
-    latestVersionURL: "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
+    versionURL: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
+    latestVersionURL: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
 
 //	preProcess: [dfn_index],
     logos: [{
@@ -38,12 +38,12 @@ var respecConfig = {
     license: "isa-open-metadata",
     specStatus: "unofficial",
     shortName: "dcat-ap-to-schema-org",
-    canonicalURI: "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
+    canonicalURI: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
 //    prevRecURI:           "https://joinup.ec.europa.eu/release/dcat-ap-to-schema-org/v101",
 //    previousPublishDate:  "2016-08-02",
 //    previousMaturity:     "final",
 //    previousURI:          "https://joinup.ec.europa.eu/release/dcat-ap-to-schema-org/v101",
-    edDraftURI:           "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
+    edDraftURI:           "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
     issueBase:            "https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/",
     github:               "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
     editors: [
