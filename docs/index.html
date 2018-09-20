@@ -1981,7 +1981,7 @@
 <!-- Properties: Identifier -->
 <section id="mapping-properties-identifier">
 <h4>Identifier</h4>
-<p>TBD [<a href="https://github.com/ec-jrc/dcat-ap-to-schema-org/blob/master/sparql/identifier.rq">formal definition</a>]</p>
+<p>These properties should be used with <a target="_blank" href="http://schema.org/PropertyValue"><code>schema:PropertyValue</code></a>. [<a href="https://github.com/ec-jrc/dcat-ap-to-schema-org/blob/master/sparql/identifier.rq">formal definition</a>]</p>
 <table class="simple">
 <thead>
 <tr>
@@ -2003,8 +2003,15 @@
 <td>notation</td>
 <td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#notation" href="https://www.w3.org/2009/08/skos-reference/skos.html#notation"><code>skos:notation</code></a></td>
 <td><a target="_blank" title="http://schema.org/value" href="http://schema.org/value"><code>schema:value</code></a></td>
-<td>The type of identifier should be specified with <a target="_blank" title="http://schema.org/name" href="http://schema.org/name"><code>schema:name</code></a></td>
+<td>The actual identifier string</td>
 </tr>
+<tr>
+<td>DCAT-AP 1.1</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>notation</td>
+<td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#notation" href="https://www.w3.org/2009/08/skos-reference/skos.html#notation"><code>skos:notation/@rdf:datatype</code></a></td>
+<td><a target="_blank" title="http://schema.org/propertyID" href="http://schema.org/propertyID"><code>schema:propertyID</code></a></td>
+<td>The type of identifier</td>
 </tbody>
 </table>
 </section>
