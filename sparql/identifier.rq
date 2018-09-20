@@ -4,7 +4,7 @@ PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 
 CONSTRUCT {
   ?Identifier 
-    schema:name ?identifierType ;
+    schema:propertyID ?identifierType ;
     schema:value ?notation 
 } WHERE {
   OPTIONAL { ?Identifier a adms:Identifier . }
