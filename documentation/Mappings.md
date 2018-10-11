@@ -1,3 +1,8 @@
+> ## :warning: Warning
+> This documentation is out of date and no longer maintained. 
+>
+> The reference and up to date documentation is available at: https://ec-jrc.github.io/dcat-ap-to-schema-org/
+
 <article>
 <header>
 <h1>Mappings defined in DCAT-AP+Schema.org (1/3)</h1>
