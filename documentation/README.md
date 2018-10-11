@@ -1,3 +1,8 @@
+> ## :warning: Warning
+> This documentation is out of date and no longer maintained. 
+>
+> The reference and up to date documentation is available at: https://ec-jrc.github.io/dcat-ap-to-schema-org/
+
 This folder includes documentation concerning the design and use of DCAT-AP+Schema.org.
 
 More precisely:
