@@ -6,9 +6,8 @@ This work is still a draft. As such, it can be updated any time, and must be con
 
 # Content
 
-* [`documentation/`](./documentation/): Folder containing documentation on DCAT-AP+Schema.org:
-    * [`Background.md`](./documentation/Background.md): Describes the background and methodology for the design of DCAT-AP+Schema.org.
-    * [`Mappings.md`](./documentation/Mappings.md): Provides a summary of the mappings from Schema.org to DCAT-AP+Schema.org.
+* [`docs/`](./docs/): Folder containing documentation on DCAT-AP+Schema.org, published at: https://ec-jrc.github.io/dcat-ap-to-schema-org/
+* [`documentation/`](./documentation/): Folder containing old and out-of-date documentation on DCAT-AP+Schema.org
 * [`sparql/`](./sparql/): Folder containing a SPARQL implementation of DCAT-AP+Schema.org.
 * [`LICENCE.md`](./LICENCE.md): The licence for the resources available from this repository.
 * [`README.md`](./README.md): This document. 
