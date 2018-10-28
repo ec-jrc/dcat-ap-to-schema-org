@@ -41,7 +41,7 @@ CONSTRUCT {
     schema:isBasedOnUrl ?SourceDataset ;
     schema:spatialCoverage ?Location ;
 #    schema:?? ?SpatialResolution ;
-    schema:datasetTimeInterval ?PeriodOfTime ;
+    schema:temporalCoverage ?PeriodOfTime ;
     schema:about ?Subject ;
 #    schema:?? ?UoM ;
     schema:dateModified ?modified ;

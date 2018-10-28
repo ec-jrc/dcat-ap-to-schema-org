@@ -21,7 +21,7 @@ CONSTRUCT {
     schema:datePublished ?issued ;
     schema:url ?Document ;
     schema:spatialCoverage ?Location ;
-    schema:datasetTimeInterval ?PeriodOfTime ;
+    schema:temporalCoverage ?PeriodOfTime ;
     schema:name ?title ;
 #    schema:?? ?Type ;
     schema:dateModified ?modified
