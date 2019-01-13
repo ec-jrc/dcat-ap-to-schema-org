@@ -84,9 +84,38 @@
 </ul>
 -->
 </nav>
-<section id="background">
 
+<section id="introduction">
+<h2>Introduction</h2>
+<p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP+Schema.org), as well as the defined mappings.</p>
+
+<p>The motivation for investigating the possiblity of aligning DCAT-AP metadata with Schema.org is twofold:</p>
+<ol>
+<li>To identify how to create a DCAT-AP-compliant representation of Schema.org metadata, in order to enable their sharing across DCAT-AP-enabled data catalogues.</li>
+<li>To identify how to create a Schema.org-compliant representation of DCAT-AP metadata, in order to enhance their discoverability on the Web.</li>
+</ol>
+
+<p>The following sections first illustrate the background (<a class="sectionRef" href="#background"></a>) and methodology (<a class="sectionRef" href="#methodology"></a>) for the design of DCAT-AP+Schema.org, followed by a summary of the mapping issues (<a class="sectionRef" href="#alignment-issues"></a>).</p>
+
+<p>The defined mappings are introduced in <a class="sectionRef" href="#mapping-summary"></a>, and grouped as follows:</p>
+<ul>
+<li>DCAT-AP classes (<a class="sectionRef" href="#mapping-classes"></a>)</li>
+<li>DCAT-AP properties concerning:
+<ul>
+<li>mandatory classes (<a class="sectionRef" href="#mapping-properties-mandatory"></a>)</li>
+<li>recommended classes (<a class="sectionRef" href="#mapping-properties-recommended"></a>)</li>
+<li>optional classes (<a class="sectionRef" href="#mapping-properties-optional"></a>)</li>
+</ul>
+</li>
+</ul>
+
+<p>A formal definition of the proposed mappings, encoded in the form of SPARQL queries, is included in appendix (<a class="sectionRef" href="#formal-definition-sparql"></a>).</p>
+
+</section>
+
+<section id="background">
 <h2>Background</h2>
+
 <section id="background-dcat-ap">
 <h3>The <em>DCAT Application Profile for Data Portals in Europe</em> (DCAT-AP)</h3>
 <p>DCAT-AP [[DCAT-AP]] is a metadata profile developed in the framework of the EU Programme <a href="http://ec.europa.eu/isa/"><em>Interoperability Solutions for European Public Administrations</em></a> (ISA), and based on and compliant with the W3C Data Catalog vocabulary (DCAT) [[VOCAB-DCAT]] - currently, one of the most widely used Semantic Web vocabularies for describing datasets and data catalogues.</p>
@@ -134,13 +163,15 @@
 <li><strong>DCAT-AP+Schema.org</strong>: This profile defines alignments for the metadata elements defined in DCAT-AP</li>
 <li><strong>GeoDCAT-AP+Schema.org</strong>: This profile defines alignments covering the geospatial extension of DCAT-AP (GeoDCAT-AP)</li>
 </ul>
--->  
+-->
+<!--  
 <p>The following sections include:</p>
 <ul>
 <li>A summary of the mapping issues (<a class="sectionRef" href="#alignment-issues"></a>).</li>
 <li>A set of tables providing an overview of the proposed mappings (<a class="sectionRef" href="#mapping-summary"></a>).</li>
 <li>A formal definition of the proposed mappings, encoded in the form of SPARQL queries (<a class="sectionRef" href="#formal-definition-sparql"></a>).</li>
 </ul>
+-->
 </section>
 <section id="alignment-issues">
 <h2>Summary of alignment issues</h2>
