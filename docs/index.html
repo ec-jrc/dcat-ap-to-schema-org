@@ -32,11 +32,6 @@
 <!--
 <p>This document presents a proposal for mapping the relevant terms from the <a target="_blank" href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT Application Profile for European Data Portals</a> (DCAT-AP) to the <a target="_blank" href="http://schema.org/">Schema.org vocabulary</a>.</p>
 -->
-<!--
-<p>The mappings defined in DCAT-AP+Schema.org are illustrated in a separate document:</p>
-<p><a href="./Mappings.md"><cite>Mappings defined in DCAT-AP+Schema.org</cite></a></p>
-<p>A SPARQL implementation of the defined mappings is available in the dedicated <a href="">Commission's Git repository</a>.</p>
--->
 <aside class="ednote">
 <p>This document is a draft meant to report work in progress concerning an exercise, carried out at the <a href="https://ec.europa.eu/jrc/">Joint Research Centre of the European Commission</a> (Unit B.6), for mapping the relevant terms from the DCAT Application Profile for European Data Portals (DCAT-AP) to the Schema.org vocabulary.</p>
 <p>As such, it can be updated any time and it must be considered as unstable.</p>
@@ -49,40 +44,10 @@
 <p>The views expressed are purely those of the author and may not in any circumstances be regarded as stating an official position of the European Commission.</p>
 </section>
 
-<section id="sotd" class="introductory">
-<!--
-<h2>Status of this document</h2>
--->
-<!--    
-<p>Comments and queries should be sent to the <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT-AP Working Group</a> via <a href="mailto:dcat_application_profile@joinup.ec.europa.eu">dcat_application_profile@joinup.ec.europa.eu</a>.</p>
--->    
+<section id="sotd" class="introductory">    
 </section>
 
 <nav id="toc">
-<!--
-<h2>Table of contents</h2>
-<ul>
-<li><a href="#background">Background</a>
-<ul>
-<li><a href="#background-dcat-ap">The <em>DCAT Application Profile for Data Portals in Europe</em> (DCAT-AP)</a></li>
-<li><a href="#background-schema.org">Schema.org</a></li>
-<li><a href="#background-why">Aligning DCAT-AP with Schema.org</a></li>
-</ul>
-</li>
-<li><a href="#methodology">Methodology</a></li>
--->
-<!--
-<li><a href="#comparison">Schema.org and DCAT-AP at a glance</a>
-<ul>
-<li><a href="#comparison-schema.org-vs-dcat-ap">Schema.org metadata elements supported in DCAT-AP</a></li>
-<li><a href="#comparison-dcat-ap-vs-schema.org">DCAT-AP classes and properties supported in Schema.org</a></li>
-</ul>
-</li>
--->
-<!--
-<li><a href="#alignment-issues">Summary of alignment issues</a>
-</ul>
--->
 </nav>
 
 <section id="introduction">
@@ -609,7 +574,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-agent">Agent</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-agent">Agent</a></td>
 <td><a target="_blank" title="http://xmlns.com/foaf/0.1/Agent" href="http://xmlns.com/foaf/spec/#term_Agent"><code>foaf:Agent</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/Organization" href="http://schema.org/Organization"><code>schema:Organization</code></a>
@@ -621,7 +586,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-catalogue">Catalogue</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-catalogue">Catalogue</a></td>
 <td><a target="_blank" title="http://www.w3.org/ns/dcat#Catalog" href="https://www.w3.org/TR/vocab-dcat/#class-catalog"><code>dcat:Catalog</code></a></td>
 <td><a target="_blank" title="http://schema.org/DataCatalog" href="http://schema.org/DataCatalog"><code>schema:DataCatalog</code></a></td>
 <td></td>
@@ -629,7 +594,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-dataset">Dataset</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-dataset">Dataset</a></td>
 <td><a target="_blank" title="http://www.w3.org/ns/dcat#Dataset" href="https://www.w3.org/TR/vocab-dcat/#class-dataset"><code>dcat:Dataset</code></a></td>
 <td><a target="_blank" title="http://schema.org/Dataset" href="http://schema.org/Dataset"><code>schema:Dataset</code></a></td>
 <td></td>
@@ -637,7 +602,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-category">Category</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-category">Category</a></td>
 <td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/vocab-dcat/#class-concept"><code>skos:Concept</code></a></td>
 <td><a target="_blank" title="http://schema.org/Thing" href="http://schema.org/Thing"><code>schema:Thing</code></a></td>
 <td><abbr title="To be done">TBD</abbr></td>
@@ -645,7 +610,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-category-scheme">Category Scheme</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-category-scheme">Category Scheme</a></td>
 <td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme" href="https://www.w3.org/TR/vocab-dcat/#class-concept-scheme"><code>skos:ConceptScheme</code></a></td>
 <td><a target="_blank" title="http://schema.org/Enumeration" href="http://schema.org/Enumeration"><code>schema:Enumeration</code></a></td>
 <td>TBD</td>
@@ -653,7 +618,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-distribution">Distribution</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-distribution">Distribution</a></td>
 <td><a target="_blank" title="http://www.w3.org/ns/dcat#Distribution" href="https://www.w3.org/TR/vocab-dcat/#class-distribution"><code>dcat:Distribution</code></a></td>
 <td><a target="_blank" title="http://schema.org/DataDownload" href="http://schema.org/DataDownload"><code>schema:DataDownload</code></a></td>
 <td></td>
@@ -661,7 +626,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-licence">Licence Document</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-licence">Licence Document</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/LicenseDocument" href="http://dublincore.org/documents/dcmi-terms/#terms-LicenseDocument"><code>dct:LicenseDocument</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/CreativeWork" href="http://schema.org/CreativeWork"><code>schema:CreativeWork</code></a>
@@ -674,7 +639,7 @@
 <tr>
 <td>StatDCAT-AP 1.0.0</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-annotation">Annotation</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-annotation">Annotation</a></td>
 <td><a target="_blank" title="http://www.w3.org/ns/oa#Annotation" href="https://www.w3.org/TR/annotation-vocab/#annotation"><code>oa:Annotation</code></a></td>
 <td><a target="_blank" title="http://schema.org/Review" href="http://schema.org/Review"><code>schema:Review</code></a></td>
 <td></td>
@@ -684,7 +649,7 @@
 <tr>
 <td>StatDCAT-AP 1.0.0</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-attribute-property">Attribute Property</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-attribute-property">Attribute Property</a></td>
 <td><a target="_blank" title="http://purl.org/linked-data/cube#AttributeProperty" href="https://www.w3.org/TR/vocab-data-cube/#dfn-qb-attributeproperty"><code>qb:AttributeProperty</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a>
@@ -697,7 +662,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-catalogue-record">Catalogue Record</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-catalogue-record">Catalogue Record</a></td>
 <td><a target="_blank" title="http://www.w3.org/ns/dcat#CatalogRecord" href="https://www.w3.org/TR/vocab-dcat/#class-catalog-record"><code>dcat:CatalogRecord</code></a></td>
 <td><a target="_blank" title="http://schema.org/ListItem" href="http://schema.org/ListItem"><code>schema:ListItem</code></a></td>
 <td></td>
@@ -705,7 +670,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-checksum">Checksum</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-checksum">Checksum</a></td>
 <td><a target="_blank" title="http://spdx.org/rdf/terms/classes/Checksum___-238837136.html" href="http://spdx.org/rdf/terms#Checksum"><code>spdx:Checksum</code></a></td>
 <td><a target="_blank" title="http://schema.org/Thing" href="http://schema.org/Thing"><code>schema:Thing</code></a></td>
 <td>TBD</td>
@@ -714,7 +679,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-concept">Concept</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-concept">Concept</a></td>
 <td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/vocab-dcat/#class-concept"><code>skos:Concept</code></a></td>
 <td><a target="_blank" title="http://schema.org/Thing" href="http://schema.org/Thing"><code>schema:Thing</code></a></td>
 <td>TBD</td>
@@ -724,7 +689,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-continued.md#mapping-properties-concept-scheme">Concept Scheme</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-concept-scheme">Concept Scheme</a></td>
 <td><a target="_blank" title="http://www.w3.org/2004/02/skos/core#ConceptScheme" href="https://www.w3.org/TR/vocab-dcat/#class-concept-scheme"><code>skos:ConceptScheme</code></a></td>
 <td><a target="_blank" title="http://schema.org/Enumeration" href="http://schema.org/Enumeration"><code>schema:Enumeration</code></a></td>
 <td>TBD</td>
@@ -734,7 +699,7 @@
 <tr>
 <td>StatDCAT-AP 1.0.0</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-dimension-property">Dimension Property</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-dimension-property">Dimension Property</a></td>
 <td><a target="_blank" title="http://purl.org/linked-data/cube#DimensionProperty" href="https://www.w3.org/TR/vocab-data-cube/#dfn-qb-dimensionproperty"><code>qb:DimensionProperty</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a>
@@ -747,7 +712,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-document">Document</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-document">Document</a></td>
 <td><a target="_blank" title="http://xmlns.com/foaf/0.1/Document" href="http://xmlns.com/foaf/spec/#term_Document"><code>foaf:Document</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/CreativeWork" href="http://schema.org/CreativeWork"><code>schema:CreativeWork</code></a>
@@ -760,7 +725,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-frequency">Frequency</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-frequency">Frequency</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/Frequency" href="http://dublincore.org/documents/dcmi-terms/#terms-Frequency"><code>dct:Frequency</code></a></td>
 <td><a target="_blank" title="http://schema.org/??" href="http://schema.org/??"><code>schema:??</code></a></td>
 <td>TBD</td>
@@ -769,7 +734,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-identifier">Identifier</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-identifier">Identifier</a></td>
 <td><a target="_blank" title="http://www.w3.org/ns/adms#Identifier" href="https://www.w3.org/TR/vocab-adms/#dt_identifier"><code>adms:Identifier</code></a></td>
 <td><a target="_blank" title="http://schema.org/PropertyValue" href="http://schema.org/PropertyValue"><code>schema:PropertyValue</code></a></td>
 <td><a target="_blank" title="http://schema.org/PropertyValue" href="http://schema.org/PropertyValue"><code>schema:PropertyValue</code></a> is the mechanism currently recommended in Schema.org to specify identifiers modelled as structured objects.</td>
@@ -777,7 +742,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-kind">Kind</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-kind">Kind</a></td>
 <td><a target="_blank" title="http://www.w3.org/2006/vcard/ns#Kind" href="https://www.w3.org/TR/vcard-rdf/#d4e1819"><code>vcard:Kind</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/ContactPoint" href="http://schema.org/ContactPoint"><code>schema:ContactPoint</code></a>
@@ -788,7 +753,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-linguistic-system">Linguistic System</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-linguistic-system">Linguistic System</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/LinguisticSystem" href="http://dublincore.org/documents/dcmi-terms/#terms-LinguisticSystem"><code>dct:LinguisticSystem</code></a></td>
 <td><a target="_blank" title="http://schema.org/Language" href="http://schema.org/Language"><code>schema:Language</code></a></td>
 <td></td>
@@ -798,7 +763,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-literal">Literal</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-literal">Literal</a></td>
 <td><a target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Literal" href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_literal"><code>rdfs:Literal</code></a></td>
 <td><a target="_blank" title="http://schema.org/Text" href="http://schema.org/Text"><code>schema:Text</code></a></td>
 <td></td>
@@ -807,7 +772,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-location">Location</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-location">Location</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/Location" href="http://dublincore.org/documents/dcmi-terms/#terms-Location"><code>dct:Location</code></a></td>
 <td><a target="_blank" title="http://schema.org/Place" href="http://schema.org/Place"><code>schema:Place</code></a></td>
 <td></td>
@@ -815,7 +780,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-media-type">Media Type or Extent</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-media-type">Media Type or Extent</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/MediaTypeOrExtent" href="http://dublincore.org/documents/dcmi-terms/#terms-MediaTypeOrExtent"><code>dct:MediaTypeOrExtent</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/Text" href="http://schema.org/Text"><code>schema:Text</code></a>
@@ -827,7 +792,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-period-of-time">Period of Time</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-period-of-time">Period of Time</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/PeriodOfTime" href="http://dublincore.org/documents/dcmi-terms/#terms-PeriodOfTime"><code>dct:PeriodOfTime</code></a></td>
 <td><a target="_blank" title="http://schema.org/DateTime" href="http://schema.org/DateTime"><code>schema:DateTime</code></a></td>
 <td></td>
@@ -835,7 +800,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-provenance">Provenance Statement</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-provenance">Provenance Statement</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/RightsStatement" href="http://dublincore.org/documents/dcmi-terms/#terms-ProvenanceStatement"><code>dct:ProvenanceStatement</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/CreativeWork" href="http://schema.org/CreativeWork"><code>schema:CreativeWork</code></a>
@@ -847,7 +812,7 @@
 <tr>
 <td>GeoDCAT-AP 1.0</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-reference-system">Reference System</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-reference-system">Reference System</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/Standard" href="http://dublincore.org/documents/dcmi-terms/#terms-Standard"><code>dct:Standard</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/CreativeWork" href="http://schema.org/CreativeWork"><code>schema:CreativeWork</code></a>
@@ -860,7 +825,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-resource">Resource</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-resource">Resource</a></td>
 <td><a target="_blank" title="http://www.w3.org/2000/01/rdf-schema#Resource" href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_resource"><code>rdfs:Resource</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/Thing" href="http://schema.org/Thing"><code>schema:Thing</code></a>
@@ -873,7 +838,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-rights">Rights Statement</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-rights">Rights Statement</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/RightsStatement" href="http://dublincore.org/documents/dcmi-terms/#terms-RightsStatement"><code>dct:RightsStatement</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/CreativeWork" href="http://schema.org/CreativeWork"><code>schema:CreativeWork</code></a>
@@ -885,7 +850,7 @@
 <tr>
 <td>GeoDCAT-AP 1.0</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-service">Service</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-service">Service</a></td>
 <td><a target="_blank" title="http://purl.org/dc/dcmitype/Service" href="http://dublincore.org/documents/2012/06/14/dcmi-terms/#dcmitype-Service"><code>dctype:Service</code></a></td>
 <td><a target="_blank" title="http://schema.org/Service" href="http://schema.org/Service"><code>schema:Service</code></a></td>
 <td></td>
@@ -894,7 +859,7 @@
 <tr>
 <td>StatDCAT-AP 1.0.0</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-size-or-duration">Size of duration</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-size-or-duration">Size of duration</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/SizeOrDuration" href="http://dublincore.org/documents/dcmi-terms/#terms-SizeOrDuration"><code>dct:SizeOrDuration</code></a></td>
 </code></a></td>
 <td><a target="_blank" title="http://schema.org/??" href="http://schema.org/Integer"><code>schema:Integer</code></a></td>
@@ -904,7 +869,7 @@
 <tr>
 <td>DCAT-AP 1.2</td>
 <td><abbr title="Optional">O</abbr></td>
-<td><a title="Detailed mapping" href="./Mappings-ended.md#mapping-properties-standard">Standard</a></td>
+<td><a title="Detailed mapping" href="#mapping-properties-standard">Standard</a></td>
 <td><a target="_blank" title="http://purl.org/dc/terms/Standard" href="http://dublincore.org/documents/dcmi-terms/#terms-Standard"><code>dct:Standard</code></a></td>
 <td>
 <a target="_blank" title="http://schema.org/CreativeWork" href="http://schema.org/CreativeWork"><code>schema:CreativeWork</code></a>
