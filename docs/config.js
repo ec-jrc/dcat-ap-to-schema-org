@@ -1,8 +1,4 @@
 var respecConfig = {
-// ISA specific
-//    version: "1.0.2",
-    versionURL: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
-    latestVersionURL: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
 
 //	preProcess: [dfn_index],
 //    logos: [{
@@ -15,11 +11,12 @@ var respecConfig = {
 //      id: 'logo-eu-ec',
 //    }],
 //    includePermalinks: true,
+    addSectionLinks: true,
     doJsonLd: true,
     noRecTrack: true,    
 //    subtitle: "",
-    copyrightHolder: "European Union",
-    copyrightURL: "https://europa.eu/",
+//    copyrightHolder: "European Union",
+//    copyrightURL: "https://europa.eu/",
     copyrightStart: 2016,
 //    publishDate: "2016-08-02",
 /*
@@ -42,9 +39,11 @@ var respecConfig = {
     edDraftURI:           "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
     issueBase:            "https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/",
     github:               "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
+    overrideCopyright: '<p class="copyright"><a href="https://europa.eu/european-union/abouteuropa/legal_notices_en#copyright_notice">Copyright</a> © 2016-2019 <a href="https://europa.eu/">European Union</a>. This document is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.</p>',
     editors: [
     {
       name:       "Andrea Perego",
+      orcid:      "0000-0001-9300-2694",
       company:    "European Commission, Joint Research Centre",
       url: "",
       companyURL: "https://ec.europa.eu/jrc/"
@@ -53,6 +52,7 @@ var respecConfig = {
     authors: [
     {
       name:       "Andrea Perego",
+      orcid:      "0000-0001-9300-2694",
       company:    "European Commission, Joint Research Centre",
       url: "",
       companyURL: "https://ec.europa.eu/jrc/"
