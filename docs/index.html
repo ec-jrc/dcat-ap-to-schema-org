@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>DCAT-AP to Schema.org Mapping</title>
 <meta charset="utf-8"/>
-<meta http-equiv="content-language" content="en-GB"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!--
@@ -12,8 +11,9 @@
 -->
 <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
 <script class="remove" src="./config.js"></script>
-<style type="text/css">
+<style>
 table {font-size:small;}
+.disclaimer {font-size:.9em;}
 </style>
 </head>
 <body>
@@ -23,6 +23,11 @@ table {font-size:small;}
 <h1>DCAT-AP+Schema.org: Background &amp; methodology</h1>
 </header>
 -->
+
+<aside id="disclaimer" class="disclaimer">
+<p>&#x2605;&nbsp;<strong>Disclaimer</strong>: The views expressed are purely those of the author and may not in any circumstances be regarded as stating an official position of the European Commission.</p>
+</aside>
+
 <section id="abstract" class="introductory">
 <h2>Abstract</h2>
 <p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP+Schema.org), as well as the defined mappings.</p>
@@ -35,12 +40,12 @@ table {font-size:small;}
 <p>Comments and queries should be sent via <a href="https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/">the issue tracker of the dedicated GitHub repository</a>.</p>
 </aside>
 </section>
-
+<!--
 <section id="disclaimer" class="introductory">
 <h2>Disclaimer</h2>
 <p>The views expressed are purely those of the author and may not in any circumstances be regarded as stating an official position of the European Commission.</p>
 </section>
-
+-->
 <section id="sotd" class="introductory">    
 </section>
 
@@ -190,8 +195,8 @@ table {font-size:small;}
 <p>The mapping of <a target="_blank" title="http://www.w3.org/ns/locn#geometry" href="http://www.w3.org/ns/locn#locn:geometry"><code>locn:geometry</code></a> to Schema.org may therefore require further processing to convert the original geometry encoding / representation to the target one.</p>
 </section>
 </section>
-</section>
 <!--
+</section>
 <section id="introduction">
 <h2>Introduction</h2>
 <p>The mappings illustrated in this document cover the metadata elements defined in the following specifications:</p>
@@ -1370,6 +1375,7 @@ table {font-size:small;}
 <td><a target="_blank" title="http://schema.org/spatialCoverage" href="http://schema.org/spatialCoverage"><code>schema:spatialCoverage</code></a></td>
 <td></td>
 </tr>
+<tr>
 <td>GeoDCAT-AP 1.0</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>spatial resolution</td>
