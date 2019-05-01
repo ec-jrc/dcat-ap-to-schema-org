@@ -211,17 +211,17 @@ var respecConfig = {
         "publisher":"OJ L 108",
         "date":"25 April 2007"
       },
-      "INSPIRE-SDSS-REG": {
-        "href":"http://data.europa.eu/eli/reg/2010/1089",
-        "title":"Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services",
-        "publisher":"OJ L 323",
-        "date":"8 December 2010"
+      "INSPIRE-DoC": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/",
+        "title":"INSPIRE Registry: Degrees of conformity",
+        "publisher":"European Commission"
       },
-      "INSPIRE-MD-REG": {
-        "href":"http://data.europa.eu/eli/reg/2008/1205",
-        "title":"Commission Regulation (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata",
-        "publisher":"OJ L 326",
-        "date":"4 December 2008"
+      "INSPIRE-DS": {
+        "href":"http://inspire.jrc.ec.europa.eu/documents/Network_Services/TechnicalGuidance_DiscoveryServices_v3.1.pdf",
+        "title":"Technical Guidance for the implementation of INSPIRE Discovery Services. Version 3.1",
+//        "authors":["European Commission"],
+        "publisher":"European Commission",
+        "date":"7 November 2011"
       },
       "INSPIRE-GLOSSARY": {
         "href":"http://inspire.ec.europa.eu/glossary/",
@@ -230,12 +230,23 @@ var respecConfig = {
         "publisher":"European Commission",
 //        "date":"7 November 2011"
       },
+      "INSPIRE-MD-REG": {
+        "href":"http://data.europa.eu/eli/reg/2008/1205",
+        "title":"Commission Regulation (EC) No 1205/2008 of 3 December 2008 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards metadata",
+        "publisher":"OJ L 326",
+        "date":"4 December 2008"
+      },
       "INSPIRE-MT": {
         "href":"http://inspire.ec.europa.eu/media-types/",
         "title":"INSPIRE Media Type Register",
 //        "authors":["European Commission"],
         "publisher":"European Commission",
 //        "date":"7 November 2011"
+      },
+      "INSPIRE-RPR": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/ResponsiblePartyRole/",
+        "title":"INSPIRE Registry: Responsible party roles",
+        "publisher":"European Commission"
       },
       "INSPIRE-RT": {
         "href":"http://inspire.ec.europa.eu/metadata-codelist/ResourceType/",
@@ -244,19 +255,33 @@ var respecConfig = {
         "publisher":"European Commission",
 //        "date":"7 November 2011"
       },
+      "INSPIRE-SDSC": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/",
+        "title":"INSPIRE Registry: Classification of spatial data services",
+        "publisher":"European Commission"
+      },
+      "INSPIRE-SDSS-REG": {
+        "href":"http://data.europa.eu/eli/reg/2010/1089",
+        "title":"Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services",
+        "publisher":"OJ L 323",
+        "date":"8 December 2010"
+      },
+      "INSPIRE-SDST": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/",
+        "title":"INSPIRE Registry: Spatial data service types",
+        "publisher":"European Commission"
+      },
+      "INSPIRE-TC": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/",
+        "title":"INSPIRE Registry: Topic categories in accordance with EN ISO 19115",
+        "publisher":"European Commission"
+      },
       "INSPIRE-THEMES": {
         "href":"http://inspire.ec.europa.eu/theme/",
         "title":"INSPIRE Theme Register",
 //        "authors":["European Commission"],
         "publisher":"European Commission",
 //        "date":"7 November 2011"
-      },
-      "INSPIRE-DS": {
-        "href":"http://inspire.jrc.ec.europa.eu/documents/Network_Services/TechnicalGuidance_DiscoveryServices_v3.1.pdf",
-        "title":"Technical Guidance for the implementation of INSPIRE Discovery Services. Version 3.1",
-//        "authors":["European Commission"],
-        "publisher":"European Commission",
-        "date":"7 November 2011"
       },
       "KML": {
         "href": "http://www.opengeospatial.org/standards/kml",
