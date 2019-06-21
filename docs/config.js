@@ -362,6 +362,11 @@ var respecConfig = {
         "href":"http://schema.org/",
         "title":"Schema.org"
       },
+      "SCHEMA-ORG-20190601":{
+        "href":"http://schema.org/version/3.7/",
+        "title":"Schema.org version 3.7",
+        "date":"1 June 2019"
+      },
       "SCHEMA-ORG-20190501":{
         "href":"http://schema.org/version/3.6/",
         "title":"Schema.org version 3.6",
