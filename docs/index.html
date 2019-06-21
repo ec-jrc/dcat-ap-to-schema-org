@@ -21,7 +21,7 @@ table {font-size:small;}
 <!--
 <article>
 <header>
-<h1>DCAT-AP+Schema.org: Background &amp; methodology</h1>
+<h1>DCAT-AP-2-SDO: Background &amp; methodology</h1>
 </header>
 -->
 
@@ -31,7 +31,7 @@ The views expressed are purely those of the author and may not in any circumstan
 
 <section id="abstract" class="introductory">
 <h2>Abstract</h2>
-<p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP+Schema.org), as well as the defined mappings.</p>
+<p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP-2-SDO), as well as the defined mappings.</p>
 <!--
 <p>This document presents a proposal for mapping the relevant terms from the <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT Application Profile for European Data Portals</a> (DCAT-AP) to the <a href="http://schema.org/">Schema.org vocabulary</a>.</p>
 -->
@@ -55,7 +55,7 @@ The views expressed are purely those of the author and may not in any circumstan
 
 <section id="introduction">
 <h2>Introduction</h2>
-<p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP+Schema.org), as well as the defined mappings.</p>
+<p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP-2-SDO), as well as the defined mappings.</p>
 
 <p>The motivation for investigating the possiblity of aligning DCAT-AP metadata with Schema.org is twofold:</p>
 <ol>
@@ -63,7 +63,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <li>To identify how to create a Schema.org-compliant representation of DCAT-AP metadata, in order to enhance their discoverability on the Web.</li>
 </ol>
 
-<p>The following sections first illustrate the background (<a class="no-sectionRef" href="#background"></a>) and methodology (<a class="no-sectionRef" href="#methodology"></a>) for the design of DCAT-AP+Schema.org, followed by a summary of the mapping issues (<a class="no-sectionRef" href="#alignment-issues"></a>).</p>
+<p>The following sections first illustrate the background (<a class="no-sectionRef" href="#background"></a>) and methodology (<a class="no-sectionRef" href="#methodology"></a>) for the design of DCAT-AP-2-SDO, followed by a summary of the mapping issues (<a class="no-sectionRef" href="#alignment-issues"></a>).</p>
 
 <p>The defined mappings are introduced in <a class="no-sectionRef" href="#mapping-summary"></a>, and grouped as follows:</p>
 <ul>
@@ -124,12 +124,12 @@ The views expressed are purely those of the author and may not in any circumstan
 <li>Schema.org to Dublin Core Map (<time datetime="2011-12-12">12 December 2011</time>) [[DC-SCHEMA-ORG]]</li>
 <li>WebSchemas/SKOS (W3C WebSchemas wiki) [[WEBSCHEMAS-SKOS]]</li>
 </ul>
-<p>DCAT-AP+Schema.org re-uses these specifications, and extends them to provide an as much as possible complete mapping of the metadata elements in [[DCAT-AP]], [[GeoDCAT-AP]], and [[StatDCAT-AP]].</p>
+<p>DCAT-AP-2-SDO re-uses these specifications, and extends them to provide an as much as possible complete mapping of the metadata elements in [[DCAT-AP]], [[GeoDCAT-AP]], and [[StatDCAT-AP]].</p>
 <!--    
-<p>The resulting mappings have been grouped into two classes, corresponding to two different DCAT-AP+Schema.org profiles:</p>
+<p>The resulting mappings have been grouped into two classes, corresponding to two different DCAT-AP-2-SDO profiles:</p>
 <ul>
-<li><strong>DCAT-AP+Schema.org</strong>: This profile defines alignments for the metadata elements defined in DCAT-AP</li>
-<li><strong>GeoDCAT-AP+Schema.org</strong>: This profile defines alignments covering the geospatial extension of DCAT-AP (GeoDCAT-AP)</li>
+<li><strong>DCAT-AP-2-SDO</strong>: This profile defines alignments for the metadata elements defined in DCAT-AP</li>
+<li><strong>GeoDCAT-AP-2-SDO</strong>: This profile defines alignments covering the geospatial extension of DCAT-AP (GeoDCAT-AP)</li>
 </ul>
 -->
 <!--  
@@ -221,7 +221,7 @@ The views expressed are purely those of the author and may not in any circumstan
 
 <section id="mapping-summary">
 <h2>Mapping summary</h2>
-<p>The following sections summarise the alignments defined in DCAT-AP+Schema.org.</p>
+<p>The following sections summarise the alignments defined in DCAT-AP-2-SDO.</p>
 <p>The alignments cover the metadata elements defined in the following specifications:</p>
 <ul>
 <li>DCAT-AP 1.2.1 (<time datetime="2019-05-28">May 2019</time>) [[DCAT-AP-20190528]]</li>
@@ -2572,7 +2572,7 @@ The views expressed are purely those of the author and may not in any circumstan
 
 <section id="formal-definition-sparql" class="appendix">
 <h2>SPARQL implementation</h2>
-<p>This section illustrates a tentative implementation of the mappings defined in DCAT-AP+Schema.org, in the form of <a data-cite="SPARQL11-QUERY#construct">SPARQL <code>CONSTRUCT</code> queries</a>.</p>
+<p>This section illustrates a tentative implementation of the mappings defined in DCAT-AP-2-SDO, in the form of <a data-cite="SPARQL11-QUERY#construct">SPARQL <code>CONSTRUCT</code> queries</a>.</p>
 <p>The mappings have been defined in a modular way, with a separate SPARQL query for each of the DCAT-AP classes, and related properties. A complete representation of a given resource (e.g., a dataset) and related resource (e.g., distribution, licence, publisher) can be obtained by combining the relevant SPARQL queries.</p>
 <p>The source SPARQL queries are maintained in the dedicated <a href="https://github.com/ec-jrc/dcat-ap-to-schema-org/">GitHub repository</a>.</p>
 
