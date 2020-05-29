@@ -1,7 +1,8 @@
 var respecConfig = {
 
 //	preProcess: [dfn_index],
-//    logos: [{
+    logos: [
+//    {
 //      src: './images/eu-ec.png',
 //      url: "https://ec.europa.eu/",
 //      alt: "European Commission",
@@ -9,7 +10,8 @@ var respecConfig = {
 //      width: 150,
 ////      height: 42,
 //      id: 'logo-eu-ec',
-//    }],
+//    }
+    ],
 //    includePermalinks: true,
     addSectionLinks: true,
     doJsonLd: true,
@@ -18,7 +20,7 @@ var respecConfig = {
 //    copyrightHolder: "European Union",
 //    copyrightURL: "https://europa.eu/",
     copyrightStart: 2016,
-//    publishDate: "2016-08-02",
+    publishDate: "2019-09-13",
 /*
     alternateFormats: [{
       label: "PDF",
@@ -39,7 +41,7 @@ var respecConfig = {
     edDraftURI:           "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
     issueBase:            "https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/",
     github:               "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
-    overrideCopyright: '<p class="copyright"><a href="https://europa.eu/european-union/abouteuropa/legal_notices_en#copyright_notice">Copyright</a> © 2016-2019 <a href="https://europa.eu/">European Union</a>. This document is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.</p>',
+//    overrideCopyright: '<p class="copyright"><a href="https://europa.eu/european-union/abouteuropa/legal_notices_en#copyright_notice">Copyright</a> © 2016-2019 <a href="https://europa.eu/">European Union</a>. This document is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.</p>',
     editors: [
     {
       name:       "Andrea Perego",
@@ -91,7 +93,7 @@ var respecConfig = {
 //        }]
 //      }],
     wg: "JRC Data Support Team",
-    wgURI: "",
+    wgURI: "https://data.jrc.ec.europa.eu/contact",
 //    wgPublicList: "",
 //    wgPatentURI: "",
     inlineCSS: "true",
