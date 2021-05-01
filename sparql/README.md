@@ -19,17 +19,26 @@
 </ul>
 <h2>Mappings for optional classes</h2>
 <ul>
+<li><a href="./address-agent.rq"><code>address-agent.rq</code></a>: Mappings for class "Address" (<code>locn:Address</code>) and related properties</li>
+<li><a href="./address-kind.rq"><code>address-kind.rq</code></a>: Mappings for class "Address" (<code>vcard:Address</code>) and related properties</li>
 <li><a href="./catalogue-record.rq"><code>catalogue-record.rq</code></a>: Mappings for class "Catalogue record" and related properties</li>
 <li><a href="./checksum.rq"><code>checksum.rq</code></a>: Mappings for class "Checksum" and related properties</li>
+<li><a href="./data-service.rq"><code>data-service.rq</code></a>: Mappings for class "Data service" and related properties</li>
 <li><a href="./document.rq"><code>document.rq</code></a>: Mappings for class "Document" and related properties</li>
 <li><a href="./identifier.rq"><code>identifier.rq</code></a>: Mappings for class "Identifier" and related properties</li>
 <li><a href="./kind.rq"><code>kind.rq</code></a>: Mappings for class "Kind" and related properties</li>
 <li><a href="./location.rq"><code>location.rq</code></a>: Mappings for class "Location" and related properties</li>
 <li><a href="./media-type.rq"><code>media-type.rq</code></a>: Mappings for class "Media type or extent" and related properties</li>
 <li><a href="./period-of-time.rq"><code>period-of-time.rq</code></a>: Mappings for class "Period of time" and related properties</li>
+<li><a href="./provenance.rq"><code>provenance.rq</code></a>: Mappings for class "Provenance statement" and related properties</li>
+<li><a href="./quality-measurement.rq"><code>quality-measurement.rq</code></a>: Mappings for class "Quality measurement" and related properties</li>
+<!--
 <li><a href="./reference-system.rq"><code>reference-system.rq</code></a>: Mappings for class "Reference system" and related properties</li>
+-->
 <li><a href="./rights.rq"><code>rights.rq</code></a>: Mappings for class "Rights statement" and related properties</li>
+<!--
 <li><a href="./service.rq"><code>service.rq</code></a>: Mappings for class "Service" and related properties</li>
+-->
 <li><a href="./standard.rq"><code>standard.rq</code></a>: Mappings for class "Standard" and related properties</li>
 </ul>
 

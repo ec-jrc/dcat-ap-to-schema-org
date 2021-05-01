@@ -1,0 +1,19 @@
+PREFIX locn:   <http://www.w3.org/ns/locn#>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?Address a schema:PostalAddress ;
+    schema:addressRegion ?administrativeArea ;
+    schema:addressLocality ?city ;
+    schema:addressCountry ?country ;
+    schema:postalCode ?postalCode ;
+    schema:streetAddress ?streetAddress ;
+  .
+} WHERE {
+  OPTIONAL { ?Address a locn:Address . }
+  OPTIONAL { ?Address locn:adminUnitL2 ?administrativeArea . }
+  OPTIONAL { ?Address locn:postName ?city . }
+  OPTIONAL { ?Address locn:adminUnitL1 ?country . }
+  OPTIONAL { ?Address locn:postCode ?postalCode . }
+  OPTIONAL { ?Address locn:thoroughfare ?streetAddress . }
+}

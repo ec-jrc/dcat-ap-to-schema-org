@@ -8,13 +8,16 @@
 <!--
 <script class="remove" src="./respec-ec-common.js"></script>
 <script class="remove" src="respec-w3c-common.js"></script>
--->
 <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+-->
+<script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
 <script class="remove" src="./config.js"></script>
 <style>
-table {font-size:small;}
 .disclaimer {font-size:.9em;}
 .disclaimer:before {content:"\2605\00a0 Disclaimer: ";font-weight:bold;}
+table.simple {width:100%;}
+table.simple {font-size:small;}
+/*
 table code, table pre {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -30,6 +33,7 @@ table code, table pre {
   background: #E9FBE9;
   overflow: auto;
 }
+*/
 </style>
 </head>
 <body>
@@ -40,30 +44,37 @@ table code, table pre {
 </header>
 -->
 
-<p class="copyright"><a href="https://europa.eu/european-union/abouteuropa/legal_notices_en#copyright_notice">Copyright</a> © 2016-2019 <a href="https://europa.eu/">European Union</a>. This document is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.</p>
+<p class="copyright"><a href="https://europa.eu/european-union/abouteuropa/legal_notices_en#copyright-notice">Copyright</a> © 2016-2021 <a href="https://europa.eu/">European Union</a>. This document is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.</p>
 
 <aside id="disclaimer" class="disclaimer">
 The views expressed are purely those of the author and may not in any circumstances be regarded as stating an official position of the European Commission.
 </aside>
 
 <section id="abstract" class="introductory">
+
 <h2>Abstract</h2>
+
 <p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP-SDO), as well as the defined mappings.</p>
+
 <!--
 <p>This document presents a proposal for mapping the relevant terms from the <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/">DCAT Application Profile for European Data Portals</a> (DCAT-AP) to the <a href="http://schema.org/">Schema.org vocabulary</a>.</p>
 -->
+
 <aside class="ednote">
 <p>This document is a draft meant to report work in progress concerning an exercise, carried out at the <a href="https://ec.europa.eu/jrc/">Joint Research Centre of the European Commission</a> (Unit B.6), for mapping the relevant terms from the DCAT Application Profile for European Data Portals (DCAT-AP) to the Schema.org vocabulary.</p>
 <p>As such, it can be updated any time and it must be considered as unstable.</p>
 <p>Comments and queries should be sent via <a href="https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/">the issue tracker of the dedicated GitHub repository</a>.</p>
 </aside>
+
 </section>
+
 <!--
 <section id="disclaimer" class="introductory">
 <h2>Disclaimer</h2>
 <p>The views expressed are purely those of the author and may not in any circumstances be regarded as stating an official position of the European Commission.</p>
 </section>
 -->
+
 <section id="sotd" class="introductory">    
 </section>
 
@@ -71,10 +82,13 @@ The views expressed are purely those of the author and may not in any circumstan
 </nav>
 
 <section id="introduction">
+
 <h2>Introduction</h2>
+
 <p>This document describes the background and methodology for the design of the Schema.org profile of DCAT-AP (DCAT-AP-SDO), as well as the defined mappings.</p>
 
 <p>The motivation for investigating the possiblity of aligning DCAT-AP metadata with Schema.org is twofold:</p>
+
 <ol>
 <li>To identify how to create a DCAT-AP-compliant representation of Schema.org metadata, in order to enable their sharing across DCAT-AP-enabled data catalogues.</li>
 <li>To identify how to create a Schema.org-compliant representation of DCAT-AP metadata, in order to enhance their discoverability on the Web.</li>
@@ -83,6 +97,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <p>The following sections first illustrate the background (<a class="no-sectionRef" href="#background"></a>) and methodology (<a class="no-sectionRef" href="#methodology"></a>) for the design of DCAT-AP-SDO, followed by a summary of the mapping issues (<a class="no-sectionRef" href="#alignment-issues"></a>).</p>
 
 <p>The defined mappings are introduced in <a class="no-sectionRef" href="#mapping-summary"></a>, and grouped as follows:</p>
+
 <ul>
 <li>DCAT-AP classes (<a class="no-sectionRef" href="#mapping-classes"></a>)</li>
 <li>DCAT-AP properties concerning:
@@ -99,49 +114,87 @@ The views expressed are purely those of the author and may not in any circumstan
 </section>
 
 <section id="background">
+
 <h2>Background</h2>
 
 <section id="background-dcat-ap">
+
 <h3>The <em>DCAT Application Profile for Data Portals in Europe</em> (DCAT-AP)</h3>
+
 <p>DCAT-AP [[DCAT-AP]] is a metadata profile developed in the framework of the EU Programme <a href="http://ec.europa.eu/isa/"><em>Interoperability Solutions for European Public Administrations</em></a> (ISA), and based on and compliant with the W3C Data Catalog vocabulary (DCAT) [[VOCAB-DCAT]] - currently, one of the most widely used Semantic Web vocabularies for describing datasets and data catalogues.</p>
+
 <p>The purpose of DCAT-AP is to define a common interchange metadata format for data portals of the EU and of EU Member States. In order to achieve this, DCAT-AP defines a set of classes and properties, grouped into mandatory, recommended and optional. Such classes and properties correspond to information on datasets and data catalogues that are shared by many European data portals, aiding interoperability. Although DCAT-AP is designed to be independent from its actual implementation, RDF [[RDF-CONCEPTS]] and Linked Data [[LD-BOOK]] are the reference technologies.</p>
+
 </section>
+
 <section id="background-schema.org">
+
 <h3>Schema.org</h3>
+
 <p>Schema.org [[SCHEMA-ORG]] is an initiative promoted by Google, Microsoft, Yahoo and Yandex, aiming to develop and maintain metadata vocabularies for the description of Web resources, to be re-used by search engines to enhance online content indexing and discovery.</p>
-<p>Since its launch in 2011, Schema.org has incrementally grown to cover a variety of domains, also through the re-use of existing popular vocabularies - as Dublin Core [[DCTERMS]], the Friend Of A Friend (FOAF) vocabulary [[FOAF]], vCard [[vCARD-RDF]], as well as DCAT [[VOCAB-DCAT]]. According to an estimation reported in [[GUHA-2015]], at the end of 2015 the adoption of Schema.org concerned around 12,000,000 Web sites.</p>
+
+<p>Since its launch in 2011, Schema.org has incrementally grown to cover a variety of domains, also through the re-use of existing popular vocabularies - as Dublin Core [[DCTERMS]], the Friend Of A Friend (FOAF) vocabulary [[FOAF]], vCard [[VCARD-RDF]], as well as DCAT [[VOCAB-DCAT]]. According to an estimation reported in [[GUHA-2015]], at the end of 2015 the adoption of Schema.org concerned around 12,000,000 Web sites.</p>
+
 <p>Typically, Schema.org is used to embed metadata in Web pages, using mechanisms as Microdata [[MICRODATA]], RDFa [[HTML-RDFa]] and JSON-LD [[JSON-LD]]. The data model is based on and compliant with RDF.</p>
+
 </section>
+
 <section id="background-why">
+
 <h3>Aligning DCAT-AP with Schema.org</h3>
+
 <!--
 <p>The motivation for investigating the possiblity of aligning DCAT-AP metadata with Schema.org is to define an alternative, harmonised representation of records compliant with DCAT-AP and its thematic extensions (e.g., geospatial and statistical), that will enhance their discoverability on the Web.</p>
 -->
+
 <p>The motivation for investigating the possiblity of aligning DCAT-AP metadata with Schema.org is twofold:</p>
+
 <ol>
 <li>To identify how to create a DCAT-AP-compliant representation of Schema.org metadata, in order to enable their sharing across DCAT-AP-enabled data catalogues.</li>
 <li>To identify how to create a Schema.org-compliant representation of DCAT-AP metadata, in order to enhance their discoverability on the Web.</li>
 </ol>
+
 <p>In both cases, this analysis is not meant to provide a complete representation of all DCAT-AP metadata elements and those included in its thematic extensions (e.g., geospatial and statistical), but only of those supported by Schema.org.</p>
+
 </section>
+
 </section>
+
 <section id="methodology">
+
 <h2>Methodology</h2>
+
 <p>The reference DCAT-AP and Schema.org specifications used in this exercise are the following ones:</p>
+
 <ul>
+<li>DCAT 2 (<time datetime="2020-02-04">February 2020</time>) [[VOCAB-DCAT-2]]</li>
+<!--
 <li>DCAT-AP 1.2.1 (<time datetime="2019-05-28">May 2019</time>) [[DCAT-AP-20190528]]</li>
+-->
+<li>DCAT-AP 2.0.1 (<time datetime="2020-06-08">June 2020</time>) [[DCAT-AP-20200608]]</li>
+<!--
 <li>GeoDCAT-AP 1.0.1 (<time datetime="2016-08-02">August 2016</time>) [[GeoDCAT-AP-20160802]]</li>
+-->
+<li>GeoDCAT-AP 2.0.0 (<time datetime="2020-12-23">December 2020</time>) [[GeoDCAT-AP-20201223]]</li>
 <li>StatDCAT-AP 1.0.1 (<time datetime="2019-05-28">May 2019</time>) [[StatDCAT-AP-20190528]]</li>
 <li>DCAT-AP Implementation Guidelines (DCAT-AP IG) [[DCAT-AP-IG]]</li>
+<!--
 <li>Schema.org 3.9 (<time datetime="2019-08-01">August 2019</time>) [[SCHEMA-ORG-20190801]]</li>
+-->
+<li>Schema.org 12.0 (<time datetime="2021-03-08">March 2021</time>) [[SCHEMA-ORG-20210308]]</li>
 </ul>
-<p>
+
 <p>For the mappings, existing work has been taken into account concerning the mapping of Schema.org to other metadata standards. In particular:</p>
+
 <ul>
+<li>DCAT 2 to Schema.org mappings specified in [[VOCAB-DCAT-2]]</li>
 <li>Schema.org to Dublin Core Map (<time datetime="2011-12-12">12 December 2011</time>) [[DC-SCHEMA-ORG]]</li>
 <li>WebSchemas/SKOS (W3C WebSchemas wiki) [[WEBSCHEMAS-SKOS]]</li>
+<li>The guidelines for creating records for the <a href="https://datasetsearch.research.google.com/">Google Dataset Search</a> service [[GSC-DATASET]].</li>
 </ul>
+
 <p>DCAT-AP-SDO re-uses these specifications, and extends them to provide an as much as possible complete mapping of the metadata elements in [[DCAT-AP]], [[GeoDCAT-AP]], and [[StatDCAT-AP]].</p>
+
 <!--    
 <p>The resulting mappings have been grouped into two classes, corresponding to two different DCAT-AP-SDO profiles:</p>
 <ul>
@@ -149,6 +202,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <li><strong>GeoDCAT-AP-SDO</strong>: This profile defines alignments covering the geospatial extension of DCAT-AP (GeoDCAT-AP)</li>
 </ul>
 -->
+
 <!--  
 <p>The following sections include:</p>
 <ul>
@@ -157,68 +211,185 @@ The views expressed are purely those of the author and may not in any circumstan
 <li>A formal definition of the proposed mappings, encoded in the form of SPARQL queries (<a class="no-sectionRef" href="#formal-definition-sparql"></a>).</li>
 </ul>
 -->
+
 </section>
+
 <section id="alignment-issues">
+
 <h2>Summary of alignment issues</h2>
-<p>A general issue is determined by the fact that Schema.org and DCAT-AP address different use cases. More precisely, the main purpose of Schema.org is to enhance discovery and indexing of online resources via search engines. As such, it is addressing more general objectives compared with DCAT-AP, that is instead meant to model in detail information on datasets and data catalogues.</p>
-<p>One of the main consequences is that some information that is relevant in DCAT-AP it is not modelled in Schema.org with specific terms. This results in a relevant amount of (a) "missing" and (b) "many-to-one" mappings - i.e., different metadata elements of DCAT-AP are mapped to the same element in Schema.org.</p>
+
+<p>A general issue is determined by the fact that Schema.org and DCAT-AP address different use cases. More precisely, the main purpose of Schema.org is to enhance discovery and indexing of online resources via search engines. As such, it is addressing more general objectives compared with DCAT-AP, that is instead meant to represent in detail information on datasets and data catalogues.</p>
+
+<p>One of the main consequences is that some information that is relevant in DCAT-AP it is not described in Schema.org with specific terms. This results in a relevant amount of (a) "missing" and (b) "many-to-one" mappings - i.e., different metadata elements of DCAT-AP are mapped to the same element in Schema.org.</p>
+
 <p>This is not necessarily a problem, since the objective of mapping DCAT-AP and Schema.org is to enhance discoverability of DCAT-AP metadata on the Web, which does not require a complete, 1-to-1 representation of DCAT-AP metadata. Actually, the result of this exercise can also include the identification of the subset of DCAT-AP metadata elements that is worth representing in a Schema.org-based description. On the other hand, this situation also implies that a reverse mapping (i.e., from Schema.org to DCAT-AP) may be problematic or not possible.</p>
+
 <p>The following sections describe the DCAT-AP metadata elements posing mapping issues.</p>
+
 <!--
 <section>
 <h3>Identifiers</h3>
-<p>This concerns properties <a data-cite="DCTERMS#terms-identifier"><code title="http://purl.org/dc/terms/identifier">dct:identifier</code></a> and <a data-cite="VOCAB-ADMS#adms_identifier"><code title="http://www.w3.org/ns/adms#identifier">amds:identifier</code></a>, and class <a data-cite="VOCAB-ADMS#dt_identifier"><code title="http://www.w3.org/ns/adms#Identifier">adms:Identifier</code></a>.</p>
-<p>Schema.org does not have generic properties for identifiers, but models identifiers only for some classes - e.g., <a href="http://schema.org/productID"><code title="http://schema.org/productID">schema:productID</code></a>, which denotes the identifier of a <a href="http://schema.org/Product"><code title="http://schema.org/Product">schema:Product</code></a>.</p>
+<p>This concerns properties <a data-cite="DCTERMS#terms-identifier"><code title="http://purl.org/dc/terms/identifier">dct:identifier</code></a> and <a data-cite="VOCAB-ADMS#adms_identifier"><code title="http://www.w3.org/ns/adms#identifier">adms:identifier</code></a>, and class <a data-cite="VOCAB-ADMS#dt_identifier"><code title="http://www.w3.org/ns/adms#Identifier">adms:Identifier</code></a>.</p>
+<p>Schema.org does not have generic properties for identifiers, but supports identifiers only for some classes - e.g., <a href="http://schema.org/productID"><code title="http://schema.org/productID">schema:productID</code></a>, which denotes the identifier of a <a href="http://schema.org/Product"><code title="http://schema.org/Product">schema:Product</code></a>.</p>
 <p>It is to be investigated if properties as <a href="http://schema.org/productID"><code title="http://schema.org/productID">schema:productID</code></a> could be used more broadly.</p>
 </section>
 -->
+
 <section>
+
 <h3>Categories and category schemes</h3>
-<p>This concerns classes <a data-cite="VOCAB-DCAT#class-concept-scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a> and <a data-cite="VOCAB-DCAT#class-concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>.</p>
-<p>Only few of the categories and categories schemes used in DCAT-AP are supported in Schema.org. The re-use of "external" controlled vocabularies is allowed in Schema.org, but how this can be modelled is unclear.</p>
-<p>Based on the documentation found online [[WEBSCHEMAS-EE]], the approach seems to be based on the use of <a href="http://schema.org/Enumeration"><code title="http://schema.org/Enumeration">schema:Enumeration</code></a> for <a data-cite="VOCAB-DCAT#class-concept-scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a>, but it is unclear how to state that a given <a data-cite="VOCAB-DCAT#class-concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a> is in a given <a data-cite="VOCAB-DCAT#class-concept-scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a>.</p>
-<p>Another option could be to use <a href="http://schema.org/ItemList"><code title="http://schema.org/ItemList">schema:ItemList</code></a> for <a data-cite="VOCAB-DCAT#class-concept-scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a>'s, and <a href="http://schema.org/ListItem"><code title="http://schema.org/ListItem">schema:ListItem</code></a> for <a data-cite="VOCAB-DCAT#class-concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>'s, and to link the two with <a href="http://schema.org/itemListElement"><code title="http://schema.org/itemListElement">schema:itemListElement</code></a>.</p>
+
+<p>This concerns classes <a data-cite="VOCAB-DCAT#Class:Concept_Scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a> and <a data-cite="VOCAB-DCAT#Class:Concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>.</p>
+
+<p>Only few of the categories and categories schemes used in DCAT-AP are supported in Schema.org. The re-use of "external" controlled vocabularies is allowed in Schema.org, but how this can be specified is unclear.</p>
+
+<p>Based on the documentation found online [[WEBSCHEMAS-EE]], the approach seems to be based on the use of <a href="http://schema.org/Enumeration"><code title="http://schema.org/Enumeration">schema:Enumeration</code></a> for <a data-cite="VOCAB-DCAT#Class:Concept_Scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a>, but it is unclear how to state that a given <a data-cite="VOCAB-DCAT#Class:Concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a> is in a given <a data-cite="VOCAB-DCAT#Class:Concept_Scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a>.</p>
+
+<p>Another option could be to use <a href="http://schema.org/ItemList"><code title="http://schema.org/ItemList">schema:ItemList</code></a> for <a data-cite="VOCAB-DCAT#Class:Concept_Scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a>'s, and <a href="http://schema.org/ListItem"><code title="http://schema.org/ListItem">schema:ListItem</code></a> for <a data-cite="VOCAB-DCAT#Class:Concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>'s, and to link the two with <a href="http://schema.org/itemListElement"><code title="http://schema.org/itemListElement">schema:itemListElement</code></a>.</p>
+
 <aside class="ednote">
-<p>In version 3.2 [[SCHEMA-ORG-20170323]], Schema.org introduced two "pending" types that are meant to model this information - namely, <a href="http://pending.schema.org/CategoryCodeSet"><code title="http://schema.org/CategoryCodeSet">schema:CategoryCodeSet</code></a> and <a href="http://pending.schema.org/CategoryCode"><code title="http://schema.org/CategoryCode">schema:CategoryCode</code></a>.</p>
+<p>In version 3.2 [[SCHEMA-ORG-20170323]], Schema.org introduced two "pending" types that are meant to specify this information - namely, <a href="http://pending.schema.org/CategoryCodeSet"><code title="http://schema.org/CategoryCodeSet">schema:CategoryCodeSet</code></a> and <a href="http://pending.schema.org/CategoryCode"><code title="http://schema.org/CategoryCode">schema:CategoryCode</code></a>.</p>
+<p>In version 3.4 [[SCHEMA-ORG-20180615]], Schema.org has also defined "pending" super types for the above terms - namely, <a href="http://pending.schema.org/DefinedTermSet"><code title="http://schema.org/DefinedTermSet">schema:DefinedTermSet</code></a> and <a href="http://pending.schema.org/DefinedTerm"><code title="http://schema.org/DefinedTerm">schema:DefinedTerm</code></a>, respectively.</p>
 </aside>
+
 </section>
+
 <section>
+
 <h3>Resource "types"</h3>
-<p>This concerns properties denoting the "type" of a resource, by using a <a data-cite="VOCAB-DCAT#class-concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>. In DCAT-AP, this is typically done by using property <a data-cite="DCTERMS#terms-type"><code title="http://purl.org/dc/terms/type">dct:type</code></a>.</p>
+
+<p>This concerns properties denoting the "type" of a resource, by using a <a data-cite="VOCAB-DCAT#Class:Concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>. In DCAT-AP, this is typically done by using property <a data-cite="DCTERMS#terms-type"><code title="http://purl.org/dc/terms/type">dct:type</code></a>.</p>
+
 <p>Schema.org has a generic property, namely <a href="http://schema.org/additionalType"><code title="http://schema.org/additionalType">schema:additionalType</code></a> - defined as a sub-property of <a data-cite="RDF-SCHEMA#ch_type"><code title="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</code></a>, that is meant to be used to associate multiple types with the same resource. It is to be investigated whether it can be used for this purpose.</p>
+
 </section>
+
 <section>
-<h3>Provenance</h3>
-<p>DCAT-AP uses property <a data-cite="DCTERMS#terms-provenance"><code title="http://purl.org/dc/terms/provenance">dct:provenance</code></a> to specify "provenance statements" about datasets (typically, their lineage).</p>
-<p>Schema.org does not have specific terms for this purpose, so a possible option is to use more generic ones, like <a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a>.</p>
-</section>
-<section>
-<h3>Conformance</h3>
-<p>This concerns properties denoting the conformance of a resource with a standard. In DCAT-AP, this is typically done by using property <a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a>, which is used in different contexts (namely, to express conformance with a metadata standard, with a data schema, with a reference system, with given quality criteria).</p>
+
+<h3>Resource status</h3>
+
+<p>This concerns properties denoting the status of a resource in its lifecycle, by using a <a data-cite="VOCAB-DCAT#Class:Concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a>. In DCAT-AP, this is done by using property <a data-cite="VOCAB-ADMS#adms_status"><code title="http://www.w3.org/ns/adms#status">adms:status</code></a>.</p>
+
 <p>Schema.org does not have properties for this purpose, and it seems there are no suitable candidates that can be used.</p>
+
+<aside class="note">
+<p>In version 3.8 [[SCHEMA-ORG-20190701]], Schema.org introduced a "pending" property <a href="http://schema.org/creativeWorkStatus"><code title="http://schema.org/creativeWorkStatus">schema:hasMeasurement</code></a>, which might be used to map property <a data-cite="VOCAB-ADMS#adms_status"><code title="http://www.w3.org/ns/adms#status">adms:status</code></a>.</p>
+</aside>
+
 </section>
+
 <section>
+
+<h3>Rights</h3>
+
+<p>This concerns properties denoting the rights (as use and access conditions) applying to a resource. In DCAT-AP, this is specified by using property <a data-cite="DCTERMS#terms-rights"><code title="http://purl.org/dc/terms/rights">dct:rights</code></a>, and its subproperties <a data-cite="DCTERMS#terms-accessRights"><code title="http://purl.org/dc/terms/accessRights">dct:accessRights</code></a> and <a data-cite="DCTERMS#terms-license"><code title="http://purl.org/dc/terms/license">dct:license</code></a>.</p>
+
+<p>Schema.org only supports one of these properties, namely <a href="http://schema.org/license"><code title="http://schema.org/license">schema:license</code></a>.</p>
+
+<aside class="note">
+<p>In version 3.8 [[SCHEMA-ORG-20190701]], Schema.org introduced a "pending" property <a href="http://schema.org/conditionsOfAccess"><code title="http://schema.org/conditionsOfAccess">schema:conditionsOfAccess</code></a>, which corresponds to <a data-cite="DCTERMS#terms-accessRights"><code title="http://purl.org/dc/terms/accessRights">dct:accessRights</code></a>.</p>
+<p>Moreover, in version 11.0 [[SCHEMA-ORG-20201130]], Schema.org introduced a "pending" property <a href="http://schema.org/copyrightNotice"><code title="http://schema.org/copyrightNotice">schema:copyrightNotice</code></a>, which partially covers the semantics of <a data-cite="DCTERMS#terms-rights"><code title="http://purl.org/dc/terms/rights">dct:rights</code></a>.</p>
+<p>However, both these properties have a literal as range, whereas the relevant [[DCTERMS]] terms are object properties.</p>
+</aside>
+
+</section>
+
+<section>
+
+<h3>Versioning</h3>
+
+<p>This concerns properties denoting the different versions of a resource, as well as other versioning aspects - as the update frequency, version numbers, and version notes. In DCAT-AP, this is typically done by using properties <a data-cite="DCTERMS#terms-hasVersion"><code title="http://purl.org/dc/terms/hasVersion">dct:hasVersion</code></a>, <a data-cite="DCTERMS#terms-isVersionOf"><code title="http://purl.org/dc/terms/isVersionOf">dct:isVersionOf</code></a>, <a data-cite="DCTERMS#terms-accrualPeriodicity"><code title="http://purl.org/dc/terms/accrualPeriodicity">dct:accrualPeriodicity</code></a>, <a data-cite="OWL-REF#versionInfo-def"><code title="http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</code></a>, and  <a data-cite="VOCAB-ADMS#adms-versionnotes"><code title="http://www.w3.org/ns/adms#versionNotes">adms:versionNotes</code></a>.</p>
+
+<p>Schema.org only supports one of these properties, namely <a href="http://schema.org/version"><code title="http://schema.org/version">schema:version</code></a>, corresponding to  <a data-cite="OWL-REF#versionInfo-def"><code title="http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</code></a>.</p>
+
+</section>
+
+<section>
+
+<h3>Provenance</h3>
+
+<p>DCAT-AP uses property <a data-cite="DCTERMS#terms-provenance"><code title="http://purl.org/dc/terms/provenance">dct:provenance</code></a> to specify "provenance statements" about datasets (typically, their lineage).</p>
+
+<p>Schema.org does not have specific terms for this purpose, so a possible option is to use more generic ones, like <a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a>.</p>
+
+</section>
+
+<section>
+
+<h3>Conformance</h3>
+
+<p>This concerns properties denoting the conformance of a resource with a standard. In DCAT-AP, this is typically done by using property <a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a>, which is used in different contexts (namely, to express conformance with a metadata standard, with a data schema, with a reference system, with given quality criteria).</p>
+
+<p>Schema.org does not have properties for this purpose, and it seems there are no suitable candidates that can be used. The only one currently available is <a href="http://schema.org/publishingPrinciples"><code title="http://schema.org/publishingPrinciples">schema:publishingPrinciples</code></a>, which might be used to specify, e.g., data policies.</p>
+
+</section>
+
+<section>
+
+<h3>Data quality</h3>
+
+<p>This concerns properties used to specify quality aspects, as spatial and temporal resolution. DCAT-AP supports this with two specific properties: <a data-cite="VOCAB-DCAT#Property:dataset_spatial_resolution"><code title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">dcat:spatialResolutionInMeters</code></a> and <a data-cite="VOCAB-DCAT#Property:dataset_temporal_resolution"><code title="http://www.w3.org/ns/dcat#temporalResolution">dcat:temporalResolution</code></a>. In addition, [[GeoDCAT-AP]], following [[VOCAB-DCAT-2]] recommendations, makes use of property <a data-cite="VOCAB-DQV#dqv:hasQualityMeasurement"><code title="http://www.w3.org/ns/dqv#hasQualityMeasurement">dqv:hasQualityMeasurement</code></a> to specify the different types of spatial resolution.</p>
+
+<p>Schema.org does not have properties for this purpose, and it seems there are no suitable candidates that can be used.</p>
+
+<aside class="note">
+<p>In version 12.0 [[SCHEMA-ORG-20210308]], Schema.org introduced a "pending" property <a href="http://schema.org/hasMeasurement"><code title="http://schema.org/hasMeasurement">schema:hasMeasurement</code></a>, which might be used to map property <a data-cite="VOCAB-DQV#dqv:hasQualityMeasurement"><code title="http://www.w3.org/ns/dqv#hasQualityMeasurement">dqv:hasQualityMeasurement</code></a>, and possibly also properties <a data-cite="VOCAB-DCAT#Property:dataset_spatial_resolution"><code title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">dcat:spatialResolutionInMeters</code></a> and <a data-cite="VOCAB-DCAT#Property:dataset_temporal_resolution"><code title="http://www.w3.org/ns/dcat#temporalResolution">dcat:temporalResolution</code></a>.</p>
+</aside>
+
+</section>
+
+<section>
+
 <h3>Checksum</h3>
+
 <p>DCAT-AP allows the specification of the checksum of a dataset distribution by using specific classes and properties from the Software Package Data Exchange (SDPX) vocabulary [[SPDX]].</p>
+
 <p>Schema.org does not have terms for this purpose, and it seems there are no suitable candidates that can be used.</p>
+
 </section>
+
 <section>
+
 <h3>Licences, standards &amp; al.</h3>
-<p>Resources as licences and standards are modelled by specific classes and properties in DCAT-AP.</p>
-<p>In Schema.org, there is a general "type", namely <a href="http://schema.org/CreativeWork"><code title="http://schema.org/CreativeWork">schema:CreativeWork</code></a>, further refined with a number of "sub-types" (e.g., <a href="http://schema.org/Dataset"><code title="http://schema.org/Dataset">schema:Dataset</code></a> is one of these sub-types). However, none of them is specifically modelling resources as, e.g., licences and standards.</p>
+
+<p>Resources as licences and standards are represented by specific classes and properties in DCAT-AP.</p>
+
+<p>In Schema.org, there is a general "type", namely <a href="http://schema.org/CreativeWork"><code title="http://schema.org/CreativeWork">schema:CreativeWork</code></a>, further refined with a number of "sub-types" (e.g., <a href="http://schema.org/Dataset"><code title="http://schema.org/Dataset">schema:Dataset</code></a> is one of these sub-types). However, none of them is specifically denoting resources as, e.g., licences and standards.</p>
+
 <!--
 <aside class="ednote">
-<p>In version 3.4 [[SCHEMA-ORG-20180615]], Schema.org introduced a "pending" type that is meant to model licences - namely, <a href="http://pending.schema.org/sdLicense"><code title="http://schema.org/sdLicense">schema:sdLicense</code></a>.</p>
+<p>In version 3.4 [[SCHEMA-ORG-20180615]], Schema.org introduced a "pending" type that is meant to specify licences - namely, <a href="http://pending.schema.org/sdLicense"><code title="http://schema.org/sdLicense">schema:sdLicense</code></a>.</p>
 </aside>
 -->
+
 </section>
+
 <section>
+
 <h3>Geometries</h3>
-<p>This concerns property <a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a>.</p>
-<p>Schema.org uses a specific representation for geometries, whereas <a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a> supports any type of geometry encoding / representation.</p>
-<p>The mapping of <a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a> to Schema.org may therefore require further processing to convert the original geometry encoding / representation to the target one.</p>
+
+<p>This concerns properties <a data-cite="VOCAB-DCAT#Property:location_bbox"><code title="http://www.w3.org/ns/dcat#bbox">dcat:bbox</code></a>, <a data-cite="VOCAB-DCAT#Property:location_centroid"><code title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</code></a>, and <a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a>.</p>
+
+<p>Schema.org uses a specific representation for geometries, whereas <a data-cite="VOCAB-DCAT#Property:location_bbox"><code title="http://www.w3.org/ns/dcat#bbox">dcat:bbox</code></a>, <a data-cite="VOCAB-DCAT#Property:location_centroid"><code title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</code></a>, and <a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a> support any type of geometry encoding / representation.</p>
+
+<p>The mapping of <a data-cite="VOCAB-DCAT#Property:location_bbox"><code title="http://www.w3.org/ns/dcat#bbox">dcat:bbox</code></a>, <a data-cite="VOCAB-DCAT#Property:location_centroid"><code title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</code></a>, and <a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a> to Schema.org may therefore require further processing to convert the original geometry encoding / representation to the target one.</p>
+
+<p>For more details, see <a href="#mapping-properties-location"></a>.</p>
+
 </section>
+
+<section>
+
+<h3>Dimensions and attributes</h3>
+
+<p>[[StatDCAT-AP]] defines properties <code>stat:dimension</code> and <code>stat:attribute</code> to specify, respectively, the dimensions an observation applies to (time, area, gender) and information needed to qualify and interpret the observed values (unit of measure, scaling factors, status of the observation).</p>
+
+<p>Schema.org does not have properties for this purpose, and it seems there are no suitable candidates that can be used.</p>
+
 </section>
+
+</section>
+
 <!--
 </section>
 <section id="introduction">
@@ -237,18 +408,32 @@ The views expressed are purely those of the author and may not in any circumstan
 -->
 
 <section id="mapping-summary">
+
 <h2>Mapping summary</h2>
+
 <p>The following sections summarise the alignments defined in DCAT-AP-SDO.</p>
+
 <p>The alignments cover the metadata elements defined in the following specifications:</p>
+
 <ul>
+<!--
 <li>DCAT-AP 1.2.1 (<time datetime="2019-05-28">May 2019</time>) [[DCAT-AP-20190528]]</li>
+-->
+<li>DCAT-AP 2.0.1 (<time datetime="2020-06-08">June 2020</time>) [[DCAT-AP-20200608]]</li>
+<!--
 <li>GeoDCAT-AP 1.0.1 (<time datetime="2016-08-02">August 2016</time>) [[GeoDCAT-AP-20160802]]</li>
+-->
+<li>GeoDCAT-AP 2.0.0 (<time datetime="2020-12-23">December 2020</time>) [[GeoDCAT-AP-20201223]]</li>
 <li>StatDCAT-AP 1.0.1 (<time datetime="2019-05-28">May 2019</time>) [[StatDCAT-AP-20190528]]</li>
 <li>DCAT-AP Implementation Guidelines (DCAT-AP IG) [[DCAT-AP-IG]]</li>
 </ul>
+
 <p>For each of the mapped elements and the reference controlled vocabularies, the relevant specification is referred to in the tables included in the following sections.</p>
-<p>For Schema.org, the reference specification is Schema.org 3.9 (<time datetime="2019-09-01">August 2019</time>) [[SCHEMA-ORG-20190801]].</p>
+
+<p>For Schema.org, the reference specification is Schema.org 12.0 (<time datetime="2031-03-08">March 2021</time>) [[SCHEMA-ORG-20210308]].</p>
+
 <p>The alignments are grouped as follows:</p>
+
 <ul>
 <li>Alignments for DCAT-AP classes (<a class="no-sectionRef" href="#mapping-classes"></a>)</li>
 <li>Alignments for DCAT-AP properties concerning:
@@ -259,13 +444,21 @@ The views expressed are purely those of the author and may not in any circumstan
 </ul>
 </li>
 </ul>
+
 <p>In the mapping tables included in the following sections, column "Obl." ("Obligation"), denotes whether the class / property is mandatory ("<strong>M</strong>"), recommended ("<em>R</em>"), or optional ("O").</p>
+
 <aside class="note">
+<!--
 <p>In the current version, this document does not include mappings concerning the GeoDCAT-AP representation of agent roles and conformance results based on the W3C PROV Ontology [[PROV-O]].</p>
+-->
+<p>In the current version, this document does not include mappings qualified relationships supported in [[VOCAB-DCAT]], [[DCAT-AP]], and related profiles / extensions.</p>
+<p>Moreover, Schema.org terms which are still in "pending" status are not taken into account in the mappings.</p>
 </aside>
 
 <section id="used-namespaces">
+
 <h2>Used namespaces</h2>
+
 <table class="simple">
 <thead>
 <tr>
@@ -275,116 +468,181 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td><code>adms</code></td>
 <td><a href="http://www.w3.org/ns/adms#"><code>http://www.w3.org/ns/adms#</code></a></td>
 <td>[[VOCAB-ADMS]]</td>
 </tr>
+
 <tr>
 <td><code>cnt</code></td>
 <td><a href="http://www.w3.org/2011/content#"><code>http://www.w3.org/2011/content#</code></a></td>
 <td>[[Content-in-RDF]]</td>
 </tr>
+
+<!--
 <tr>
 <td><code>dc</code></td>
 <td><a href="http://purl.org/dc/elements/1.1/"><code>http://purl.org/dc/elements/1.1/</code></a></td>
 <td>[[DC11]]</td>
 </tr>
+-->
+
 <tr>
 <td><code>dcat</code></td>
 <td><a href="http://www.w3.org/ns/dcat#"><code>http://www.w3.org/ns/dcat#</code></a></td>
 <td>[[VOCAB-DCAT]]</td>
 </tr>
+
+<tr>
+<td><code>dcatap</code></td>
+<td><a href="http://data.europa.eu/r5r/"><code>http://data.europa.eu/r5r/</code></a></td>
+<td>[[DCAT-AP]]</td>
+</tr>
+
 <tr>
 <td><code>dct</code></td>
 <td><a href="http://purl.org/dc/terms/"><code>http://purl.org/dc/terms/</code></a></td>
 <td>[[DCTERMS]]</td>
 </tr>
+
+<!--
 <tr>
 <td><code>dctype</code></td>
 <td><a href="http://purl.org/dc/dcmitype/"><code>http://purl.org/dc/dcmitype/</code></a></td>
 <td>[[DCTERMS]]</td>
 </tr>
+-->
+
 <tr>
 <td><code>dqv</code></td>
 <td><a href="http://www.w3.org/ns/dqv#"><code>http://www.w3.org/ns/dqv#</code></a></td>
 <td>[[VOCAB-DQV]]</td>
 </tr>
+
 <tr>
 <td><code>foaf</code></td>
 <td><a href="http://xmlns.com/foaf/0.1/"><code>http://xmlns.com/foaf/0.1/</code></a></td>
 <td>[[FOAF]]</td>
 </tr>
+
+<tr>
+<td><code>geodcat</code></td>
+<td><a href="http://data.europa.eu/930/"><code>http://data.europa.eu/930/</code></a></td>
+<td>[[GeoDCAT-AP]]</td>
+</tr>
+
 <tr>
 <td><code>gsp</code></td>
 <td><a href="http://www.opengis.net/ont/geosparql#"><code>http://www.opengis.net/ont/geosparql#</code></a></td>
 <td>[[GeoSPARQL]]</td>
 </tr>
+
 <tr>
 <td><code>locn</code></td>
 <td><a href="http://www.w3.org/ns/locn#"><code>http://www.w3.org/ns/locn#</code></a></td>
 <td>[[LOCN]]</td>
 </tr>
+
 <tr>
 <td><code>oa</code></td>
 <td><a href="http://www.w3.org/ns/oa#"><code>http://www.w3.org/ns/oa#</code></a></td>
 <td>[[ANNOTATION-VOCAB]]</td>
 </tr>
+
+<tr>
+<td><code>odrl</code></td>
+<td><a href="http://www.w3.org/ns/odrl/2/"><code>http://www.w3.org/ns/odrl/2/</code></a></td>
+<td>[[VOCAB-ODRL]]</td>
+</tr>
+
+<tr>
+<td><code>org</code></td>
+<td><a href="http://www.w3.org/ns/org#"><code>http://www.w3.org/ns/org#</code></a></td>
+<td>[[VOCAB-ORG]]</td>
+</tr>
+
 <tr>
 <td><code>owl</code></td>
 <td><a href="http://www.w3.org/2002/07/owl#"><code>http://www.w3.org/2002/07/owl#</code></a></td>
 <td>[[OWL-REF]]</td>
 </tr>
+
 <tr>
 <td><code>prov</code></td>
 <td><a href="http://www.w3.org/ns/prov#"><code>http://www.w3.org/ns/prov#</code></a></td>
 <td>[[PROV-O]]</td>
 </tr>
+
+<!--
 <tr>
 <td><code>qb</code></td>
 <td><a href="http://purl.org/linked-data/cube#"><code>http://purl.org/linked-data/cube#</code></a></td>
 <td>[[VOCAB-DATA-CUBE]]</td>
 </tr>
+-->
+
 <tr>
 <td><code>rdf</code></td>
 <td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></a></td>
 <td>[[RDF-CONCEPTS]]</td>
 </tr>
+
 <tr>
 <td><code>rdfs</code></td>
 <td><a href="http://www.w3.org/2000/01/rdf-schema#"><code>http://www.w3.org/2000/01/rdf-schema#</code></a></td>
 <td>[[RDF-SCHEMA]]</td>
 </tr>
+
 <tr>
 <td><code>schema</code></td>
 <td><a href="http://schema.org/"><code>http://schema.org/</code></a></td>
 <td>[[SCHEMA-ORG]]</td>
 </tr>
+
+<tr>
+<td><code>sdmx-attribute</code></td>
+<td><a href="http://purl.org/linked-data/sdmx/2009/attribute#"><code>http://purl.org/linked-data/sdmx/2009/attribute#</code></a></td>
+<td>[[VOCAB-DATA-CUBE]]</td>
+</tr>
+
 <tr>
 <td><code>skos</code></td>
 <td><a href="http://www.w3.org/2004/02/skos/core#"><code>http://www.w3.org/2004/02/skos/core#</code></a></td>
 <td>[[SKOS-REFERENCE]]</td>
 </tr>
+
 <tr>
 <td><code>spdx</code></td>
 <td><a href="http://spdx.org/rdf/terms#"><code>http://spdx.org/rdf/terms#</code></a></td>
 <td>[[SPDX]]</td>
 </tr>
+
 <tr>
 <td><code>stat</code></td>
 <td><a href="http://data.europa.eu/m8g/"><code>http://data.europa.eu/m8g/</code></a></td>
 <td>[[StatDCAT-AP]]</td>
 </tr>
+
+<tr>
+<td><code>time</code></td>
+<td><a href="http://www.w3.org/2006/time#"><code>http://www.w3.org/2006/time#</code></a></td>
+<td>[[OWL-TIME]]</td>
+</tr>
+
 <tr>
 <td><code>vcard</code></td>
 <td><a href="http://www.w3.org/2006/vcard/ns#"><code>http://www.w3.org/2006/vcard/ns#</code></a></td>
-<td>[[vCARD-RDF]]</td>
+<td>[[VCARD-RDF]]</td>
 </tr>
+
 <tr>
 <td><code>xsd</code></td>
 <td><a href="http://www.w3.org/2001/XMLSchema"><code>http://www.w3.org/2001/XMLSchema#</code></a></td>
 <td>[[XMLSCHEMA11-2]]</td>
 </tr>
+
 </tbody>
 </table>
 
@@ -405,6 +663,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Catalogue record change type</td>
@@ -412,6 +671,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>ADMS Change Type controlled vocabulary [[ADMS-SKOS]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Degree of conformity</td>
@@ -419,6 +679,15 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-DoC]]</td>
 <td>stable</td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td>Distribution availability</td>
+<td><a href="http://data.europa.eu/r5r/availability/"><code>http://data.europa.eu/r5r/availability</code></a></td>
+<td>[[DCAT-AP-DA]]</td>
+<td>stable</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Distribution status</td>
@@ -431,7 +700,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[StatDCAT-AP]]</td>
 <td>Distribution type</td>
 <td><a href="http://publications.europa.eu/resource/authority/distribution-type"><code>http://publications.europa.eu/resource/authority/distribution-type</code></a></td>
-<td>[[MDR-DT]]</td>
+<td>[[EUV-DT]]</td>
 <td>stable</td>
 </tr>
 
@@ -439,9 +708,10 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[DCAT-AP]]</td>
 <td>Format</td>
 <td><a href="http://publications.europa.eu/resource/authority/file-type"><code>http://publications.europa.eu/resource/authority/file-type</code></a></td>
-<td>[[MDR-FT]]</td>
+<td>[[EUV-FT]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>INSPIRE spatial data themes</td>
@@ -449,21 +719,22 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-THEMES]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td rowspan="4">[[DCAT-AP]]</td>
 <td rowspan="4">Geographical names</td>
 <td><a href="http://publications.europa.eu/resource/authority/continent"><code>http://publications.europa.eu/resource/authority/continent</code></a></td>
-<td>[[MDR-CONT]]</td>
+<td>[[EUV-CONT]]</td>
 <td>stable</td>
 </tr>
 <tr>
 <td><a href="http://publications.europa.eu/resource/authority/country"><code>http://publications.europa.eu/resource/authority/country</code></a></td>
-<td>[[MDR-COUNTRIES]]</td>
+<td>[[EUV-COUNTRIES]]</td>
 <td>stable</td>
 </tr>
 <tr>
 <td><a href="http://publications.europa.eu/resource/authority/place"><code>http://publications.europa.eu/resource/authority/place</code></a></td>
-<td>[[MDR-PLACES]]</td>
+<td>[[EUV-PLACES]]</td>
 <td>stable</td>
 </tr>
 <tr>
@@ -471,13 +742,15 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[GEONAMES]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Language</td>
 <td><a href="http://publications.europa.eu/resource/authority/language"><code>http://publications.europa.eu/resource/authority/language</code></a></td>
-<td>[[MDR-LANG]]</td>
+<td>[[EUV-LANG]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Licence type</td>
@@ -485,26 +758,29 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>ADMS Licence Type controlled vocabulary [[ADMS-SKOS]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td rowspan="2">Maintenance frequency (Maintenance information)</td>
 <td><a href="http://publications.europa.eu/resource/authority/frequency"><code>http://publications.europa.eu/resource/authority/frequency</code></a></td>
-<td>[[MDR-FREQ]]</td>
+<td>[[EUV-FREQ]]</td>
 <td>stable</td>
 </tr>
 <tr>
 <td>[[GeoDCAT-AP]]</td>
-<td><code>http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequencyCode</code></td>
-<td>Register operated by the INSPIRE Registry for maintenance frequency codes defined in ISO 19115 [[ISO-19115]]. The register is not yet available, and the code list URI is tentative.</td>
-<td><strong>unstable</strong></td>
-</tr>
-<tr>
-<td>[[DCAT-AP]]</td>
-<td>MDR Data themes</td>
-<td><a href="http://publications.europa.eu/resource/authority/theme"><code>http://publications.europa.eu/resource/authority/theme</code></a></td>
-<td>[[MDR-THEMES]]</td>
+<td><code>http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequency</code></td>
+<td>[[INSPIRE-MF]].</td>
 <td>stable</td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td>EU Vocabularies Data themes</td>
+<td><a href="http://publications.europa.eu/resource/authority/theme"><code>http://publications.europa.eu/resource/authority/theme</code></a></td>
+<td>[[EUV-THEMES]]</td>
+<td>stable</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Media type</td>
@@ -512,13 +788,23 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[IANA-MEDIA-TYPES]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Publisher</td>
 <td><a href="http://publications.europa.eu/resource/authority/corporate-body"><code>http://publications.europa.eu/resource/authority/corporate-body</code></a></td>
-<td>[[MDR-CB]]</td>
+<td>[[EUV-CB]]</td>
 <td>stable</td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td>Reference system</td>
+<td><a href="http://www.opengis.net/def/crs/EPSG/"><code>http://www.opengis.net/def/crs/EPSG/</code></a></td>
+<td>[[OGC-EPSG]]</td>
+<td>stable</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td>Publisher type</td>
@@ -526,6 +812,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>ADMS Publisher Type controlled vocabulary [[ADMS-SKOS]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td rowspan="2">[[GeoDCAT-AP]]</td>
 <td rowspan="2">Reference system type</td>
@@ -536,6 +823,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <tr>
 <td><a href="http://inspire.ec.europa.eu/glossary/TemporalReferenceSystem"><code>http://inspire.ec.europa.eu/glossary/TemporalReferenceSystem</code></a></td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Resource type</td>
@@ -543,6 +831,8 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-RT]]</td>
 <td>stable</td>
 </tr>
+
+<!-- Used only with qualified relationships
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Responsible party role</td>
@@ -550,6 +840,8 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-RPR]]</td>
 <td>stable</td>
 </tr>
+-->
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Service type</td>
@@ -557,6 +849,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-SDST]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Spatial data service categories</td>
@@ -564,13 +857,15 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-SDSC]]</td>
 <td>stable</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Spatial representation type</td>
-<td><code>http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationTypeCode</code></td>
-<td>Register operated by the INSPIRE Registry for spatial representation type codes defined in ISO 19115 [[ISO-19115]]. The register is not yet available, and the code list URI is tentative.</td>
-<td><strong>unstable</strong></td>
+<td><code>http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType</code></td>
+<td>[[INSPIRE-SRT]]</td>
+<td>stable</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td>Topic category</td>
@@ -578,6 +873,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[INSPIRE-TC]]</td>
 <td>stable</td>
 </tr>
+
 </tbody>
 </table>
 </section>
@@ -585,7 +881,9 @@ The views expressed are purely those of the author and may not in any circumstan
 </section>
 
 <section id="mapping-classes">
+
 <h3>Classes</h3>
+
 <table class="simple">
 <thead>
 <tr>
@@ -601,6 +899,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
@@ -613,46 +912,52 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
 <td><a title="Detailed mapping" href="#mapping-properties-catalogue">Catalogue</a></td>
-<td><a data-cite="VOCAB-DCAT#class-catalog"><code title="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Catalog"><code title="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</code></a></td>
 <td><a href="http://schema.org/DataCatalog"><code title="http://schema.org/DataCatalog">schema:DataCatalog</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
 <td><a title="Detailed mapping" href="#mapping-properties-dataset">Dataset</a></td>
-<td><a data-cite="VOCAB-DCAT#class-dataset"><code title="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Dataset"><code title="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</code></a></td>
 <td><a href="http://schema.org/Dataset"><code title="http://schema.org/Dataset">schema:Dataset</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
 <td><a title="Detailed mapping" href="#mapping-properties-category">Category</a></td>
-<td><a data-cite="VOCAB-DCAT#class-concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Concept"><code title="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</code></a></td>
 <td><a href="http://schema.org/Thing"><code title="http://schema.org/Thing">schema:Thing</code></a></td>
 <td><abbr title="To be done">TBD</abbr></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
 <td><a title="Detailed mapping" href="#mapping-properties-category-scheme">Category Scheme</a></td>
-<td><a data-cite="VOCAB-DCAT#class-concept-scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Concept_Scheme"><code title="http://www.w3.org/2004/02/skos/core#ConceptScheme">skos:ConceptScheme</code></a></td>
 <td><a href="http://schema.org/Enumeration"><code title="http://schema.org/Enumeration">schema:Enumeration</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
 <td><a title="Detailed mapping" href="#mapping-properties-distribution">Distribution</a></td>
-<td><a data-cite="VOCAB-DCAT#class-distribution"><code title="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Distribution"><code title="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</code></a></td>
 <td><a href="http://schema.org/DataDownload"><code title="http://schema.org/DataDownload">schema:DataDownload</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -665,6 +970,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TDB</td>
 </tr>
+
 <!--
 <tr>
 <td>[[StatDCAT-AP]]</td>
@@ -675,6 +981,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td></td>
 </tr>
 -->
+
 <!--
 <tr>
 <td>[[StatDCAT-AP]]</td>
@@ -689,14 +996,32 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>TBD</td>
 </tr>
 -->
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td rowspan="2"><a title="Detailed mapping" href="#mapping-properties-address">Address</a></td>
+<td><a data-cite="LOCN#locn:Address"><code title="http://www.w3.org/ns/locn#Address">locn:Address</code></a></td>
+<td rowspan="2"><a href="http://schema.org/PostalAddress"><code title="http://schema.org/PostalAddress">schema:PostalAddress</code></a></td>
+<td>Used with class <a title="Detailed mapping" href="#mapping-properties-agent">Agent</a>, via property <code>locn:address</code>.</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td><a data-cite="VCARD-RDF#d4e1292"><code title="http://www.w3.org/2006/vcard/ns#Address">vcard:Address</code></a></td>
+<td>Used with class <a title="Detailed mapping" href="#mapping-properties-kind">Kind</a>, via property <code>vcard:hasAddress</code>.</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td><a title="Detailed mapping" href="#mapping-properties-catalogue-record">Catalogue Record</a></td>
-<td><a data-cite="VOCAB-DCAT#class-catalog-record"><code title="http://www.w3.org/ns/dcat#CatalogRecord">dcat:CatalogRecord</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Catalog_Record"><code title="http://www.w3.org/ns/dcat#CatalogRecord">dcat:CatalogRecord</code></a></td>
 <td><a href="http://schema.org/ListItem"><code title="http://schema.org/ListItem">schema:ListItem</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -705,6 +1030,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/Thing"><code title="http://schema.org/Thing">schema:Thing</code></a></td>
 <td>TBD</td>
 </tr>
+
 <!--
 <tr>
 <td>[[DCAT-AP]]</td>
@@ -715,6 +1041,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>TBD</td>
 </tr>
 -->
+
 <!--
 <tr>
 <td>[[DCAT-AP]]</td>
@@ -725,6 +1052,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>TBD</td>
 </tr>
 -->
+
 <!--
 <tr>
 <td>[[StatDCAT-AP]]</td>
@@ -739,6 +1067,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>TBD</td>
 </tr>
 -->
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td><a title="Detailed mapping" href="#mapping-properties-data-service">Data Service</a></td>
+<td><a data-cite="VOCAB-DCAT#Class:Data_Service"><code title="http://www.w3.org/ns/dcat#DataService">dcat:DataService</code></a></td>
+<td><a href="http://schema.org/WebAPI"><code title="http://schema.org/WebAPI">schema:WebAPI</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -751,6 +1089,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TBD</td>
 </tr>
+
 <!--
 <tr>
 <td>[[DCAT-AP]]</td>
@@ -761,24 +1100,27 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>TBD</td>
 </tr>
 -->
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td><a title="Detailed mapping" href="#mapping-properties-identifier">Identifier</a></td>
 <td><a data-cite="VOCAB-ADMS#dt_identifier"><code title="http://www.w3.org/ns/adms#Identifier">adms:Identifier</code></a></td>
 <td><a href="http://schema.org/PropertyValue"><code title="http://schema.org/PropertyValue">schema:PropertyValue</code></a></td>
-<td><a href="http://schema.org/PropertyValue"><code title="http://schema.org/PropertyValue">schema:PropertyValue</code></a> is the mechanism currently recommended in Schema.org to specify identifiers modelled as structured objects.</td>
+<td><a href="http://schema.org/PropertyValue"><code title="http://schema.org/PropertyValue">schema:PropertyValue</code></a> is the mechanism currently recommended in Schema.org to specify identifiers represented as structured objects.</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td><a title="Detailed mapping" href="#mapping-properties-kind">Kind</a></td>
-<td><a data-cite="vCARD-RDF#d4e1819"><code title="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</code></a></td>
+<td><a data-cite="VCARD-RDF#d4e1819"><code title="http://www.w3.org/2006/vcard/ns#Kind">vcard:Kind</code></a></td>
 <td>
 <a href="http://schema.org/ContactPoint"><code title="http://schema.org/ContactPoint">schema:ContactPoint</code></a>
 </td>
 <td></td>
 </tr>
+
 <!--
 <tr>
 <td>[[DCAT-AP]]</td>
@@ -789,6 +1131,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td></td>
 </tr>
 -->
+
 <!--
 <tr>
 <td>[[DCAT-AP]]</td>
@@ -799,6 +1142,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td></td>
 </tr>
 -->
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -807,6 +1151,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/Place"><code title="http://schema.org/Place">schema:Place</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -819,6 +1164,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -827,6 +1173,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/DateTime"><code title="http://schema.org/DateTime">schema:DateTime</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -839,6 +1186,19 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td><a title="Detailed mapping" href="#mapping-properties-quality-measurement">Quality Measurement</a></td>
+<td><a data-cite="VOCAB-DQV#dqv:QualityMeasurement"><code title="http://www.w3.org/ns/dqv#QualityMeasurement">dqv:QualityMeasurement</code></a></td>
+<td>
+<a href="http://schema.org/QuantitativeValue"><code title="http://schema.org/QuantitativeValue">schema:QuantitativeValue</code></a>
+</td>
+<td></td>
+</tr>
+
+<!-- Merged into Standard
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -851,6 +1211,8 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TBD</td>
 </tr>
+-->
+
 <!--
 <tr>
 <td>[[DCAT-AP]]</td>
@@ -865,6 +1227,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td></td>
 </tr>
 -->
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -877,6 +1240,8 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TBD</td>
 </tr>
+
+<!-- DEPRECATED in GeoDCAT-AP 2
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -885,6 +1250,8 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/Service"><code title="http://schema.org/Service">schema:Service</code></a></td>
 <td></td>
 </tr>
+-->
+
 <!--
 <tr>
 <td>[[StatDCAT-AP]]</td>
@@ -896,6 +1263,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>TBD</td>
 </tr>
 -->
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -908,16 +1276,24 @@ The views expressed are purely those of the author and may not in any circumstan
 </td>
 <td>TBD</td>
 </tr>
+
 </tbody>
 </table>
+
 </section>
 
 <!-- Properties -->
+
 <section id="mapping-properties-mandatory">
+
 <h3>Properties for mandatory classes</h3>
+
 <!-- Properties: Agent -->
+
 <section id="mapping-properties-agent">
+
 <h4>Agent</h4>
+
 <p>These properties should be used with <a href="http://schema.org/Organization"><code>schema:Organization</code></a> or <a href="http://schema.org/Person"><code>schema:Person</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-agent"></a>).</p>
 
 <table class="simple">
@@ -951,6 +1327,25 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>address</td>
+<td><a data-cite="LOCN#locn:address"><code title="http://www.w3.org/locn#address">locn:address</code></a></td>
+<td><a href="http://schema.org/address"><code title="http://schema.org/address">schema:address</code></a></td>
+<td>See <a href="#mapping-properties-address"></a>.</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>affiliation</td>
+<td><a data-cite="VOCAB-ORG#property-memberof"><code title="http://www.w3.org/org#memberOf">org:memberOf</code></a></td>
+<td><a href="http://schema.org/memberOf"><code title="http://schema.org/memberOf">schema:memberOf</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -967,13 +1362,30 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/url"><code title="http://schema.org/url">schema:url</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>phone</td>
+<td><a data-cite="FOAF#term_phone"><code title="http://xmlns.com/foaf/0.1/phone">foaf:phone</code></a></td>
+<td><a href="http://schema.org/telephone"><code title="http://schema.org/telephone">schema:telephone</code></a></td>
+<td></td>
+</tr>
+
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Catalogue -->
+
 <section id="mapping-properties-catalogue">
+
+
 <h4>Catalogue</h4>
+
 <p>These properties should be used with <a href="http://schema.org/DataCatalog"><code>schema:DataCatalog</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-catalogue"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1053,6 +1465,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/datePublished"><code title="http://schema.org/datePublished">schema:datePublished</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>spatial / geographic coverage</td>
+<td><a data-cite="DCTERMS#terms-spatial"><code title="http://purl.org/dc/terms/spatial">dct:spatial</code></a></td>
+<td><a href="http://schema.org/spatialCoverage"><code title="http://schema.org/spatialCoverage">schema:spatialCoverage</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1069,6 +1491,43 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/dateModified"><code title="http://schema.org/dateModified">schema:dateModified</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>access rights</td>
+<td><a data-cite="DCTERMS#terms-accessRights"><code title="http://purl.org/dc/terms/accessRights">dct:accessRights</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>catalogue</td>
+<td><a data-cite="VOCAB-DCAT#Property:catalog_catalog"><code title="http://www.w3.org/ns/dcat#catalog">dcat:catalog</code></a></td>
+<td><a href="http://schema.org/hasPart"><code title="http://schema.org/hasPart">schema:hasPart</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>conformance result / conformity (data quality)</td>
+<td><a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>contact point</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_contactPoint"><code title="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</code></a></td>
+<td><a href="http://schema.org/contactPoint"><code title="http://schema.org/contactPoint">schema:contactPoint</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1077,6 +1536,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/dateCreated"><code title="http://schema.org/dateCreated">schema:dateCreated</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creator</td>
+<td><a data-cite="DCTERMS#terms-creator"><code title="http://purl.org/dc/terms/creator">dct:creator</code></a></td>
+<td><a href="http://schema.org/creator"><code title="http://schema.org/creator">schema:creator</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1085,6 +1554,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/hasPart"><code title="http://schema.org/hasPart">schema:hasPart</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>identifier</td>
+<td><a data-cite="DCTERMS#terms-identifier"><code title="http://purl.org/dc/terms/identifier">dct:identifier</code></a></td>
+<td><a href="http://schema.org/identifier"><code title="http://schema.org/identifier">schema:identifier</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1093,6 +1572,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/isPartOf"><code title="http://schema.org/isPartOf">schema:isPartOf</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>keyword</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_keyword"><code title="http://www.w3.org/ns/dcat#keyword">dcat:keyword</code></a></td>
+<td><a href="http://schema.org/keywords"><code title="http://schema.org/keywords">schema:keywords</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1101,6 +1590,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/itemListElement"><code title="http://schema.org/itemListElement">schema:itemListElement</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>reference system</td>
+<td><a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1109,6 +1608,115 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>rights holder</td>
+<td><a data-cite="DCTERMS#terms-rightsHolder"><code title="http://purl.org/dc/terms/rightsHolder">dct:rightsHolder</code></a></td>
+<td><a href="http://schema.org/copyrightHolder"><code title="http://schema.org/copyrightHolder">schema:copyrightHolder</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>service</td>
+<td><a data-cite="VOCAB-DCAT#Property:catalog_service"><code title="http://www.w3.org/ns/dcat#service">dcat:service</code></a></td>
+<td><a href="http://schema.org/hasPart"><code title="http://schema.org/hasPart">schema:hasPart</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>temporal coverage</td>
+<td><a data-cite="DCTERMS#terms-temporal"><code title="http://purl.org/dc/terms/temporal">dct:temporal</code></a></td>
+<td><a href="http://schema.org/temporalCoverage"><code title="http://schema.org/temporalCoverage">schema:temporalCoverage</code></a></td>
+<td></td>
+</tr>
+
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>theme / category</td>
+<td><a data-cite="VOCAB-DCAT#Property:resource_theme"><code title="http://www.w3.org/ns/dcat#theme">dcat:theme</code></a></td>
+<td><a href="http://schema.org/about"><code title="http://schema.org/about">schema:about</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>topic category</td>
+<td><a data-cite="DCTERMS#terms-subject"><code title="http://purl.org/dc/terms/subject">dct:subject</code></a></td>
+<td><a href="http://schema.org/about"><code title="http://schema.org/about">schema:about</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>custodian</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-custodian"><code title="http://data.europa.eu/930/custodian">geodcat:custodian</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>distributor</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-distributor"><code title="http://data.europa.eu/930/distributor">geodcat:distributor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>originator</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-originator"><code title="http://data.europa.eu/930/originator">geodcat:originator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>principal investigator</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-principalInvestigator"><code title="http://data.europa.eu/930/principalInvestigator">geodcat:principalInvestigator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>processor</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-processor"><code title="http://data.europa.eu/930/processor">geodcat:processor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>resource provider</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-resourceProvider"><code title="http://data.europa.eu/930/resourceProvider">geodcat:resourceProvider</code></a></td>
+<td><a href="http://schema.org/provider"><code title="http://schema.org/provider">schema:provider</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>user</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-user"><code title="http://data.europa.eu/930/user">geodcat:user</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<!-- Moved to RECOMMENDED to comply with DCAT-AP 2
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1117,13 +1725,21 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/spatialCoverage"><code title="http://schema.org/spatialCoverage">schema:spatialCoverage</code></a></td>
 <td></td>
 </tr>
+-->
+
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Dataset -->
+
 <section id="mapping-properties-dataset">
+
 <h4>Dataset</h4>
+
 <p>These properties should be used with <a href="http://schema.org/Dataset"><code>schema:Dataset</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-dataset"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1139,6 +1755,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
@@ -1147,6 +1764,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
@@ -1155,6 +1773,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1163,6 +1782,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/contactPoint"><code title="http://schema.org/contactPoint">schema:contactPoint</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1171,6 +1791,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/distribution"><code title="http://schema.org/distribution">schema:distribution</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1179,6 +1800,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/keywords"><code title="http://schema.org/keywords">schema:keywords</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1187,6 +1809,25 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/publisher"><code title="http://schema.org/publisher">schema:publisher</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>spatial / geographic coverage</td>
+<td><a data-cite="DCTERMS#terms-spatial"><code title="http://purl.org/dc/terms/spatial">dct:spatial</code></a></td>
+<td><a href="http://schema.org/spatialCoverage"><code title="http://schema.org/spatialCoverage">schema:spatialCoverage</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>temporal coverage</td>
+<td><a data-cite="DCTERMS#terms-temporal"><code title="http://purl.org/dc/terms/temporal">dct:temporal</code></a></td>
+<td><a href="http://schema.org/temporalCoverage"><code title="http://schema.org/temporalCoverage">schema:temporalCoverage</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1195,6 +1836,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/about"><code title="http://schema.org/about">schema:about</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1216,19 +1858,12 @@ The views expressed are purely those of the author and may not in any circumstan
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
-<td>author</td>
-<td><a data-cite="DCTERMS#terms-creator"><code title="http://purl.org/dc/terms/creator">dct:creator</code></a></td>
-<td><a href="http://schema.org/creator"><code title="http://schema.org/creator">schema:creator</code></a></td>
-<td></td>
-</tr>
-<tr>
-<td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
 <td>conformance result / conformity (data quality)</td>
 <td><a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1237,12 +1872,22 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>creation date</td>
 <td><a data-cite="DCTERMS#terms-created"><code title="http://purl.org/dc/terms/created">dct:created</code></a></td>
 <td><a href="http://schema.org/dateCreated"><code title="http://schema.org/dateCreated">schema:dateCreated</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creator</td>
+<td><a data-cite="DCTERMS#terms-creator"><code title="http://purl.org/dc/terms/creator">dct:creator</code></a></td>
+<td><a href="http://schema.org/creator"><code title="http://schema.org/creator">schema:creator</code></a></td>
 <td></td>
 </tr>
 
@@ -1263,6 +1908,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/mainEntityOfPage"><code title="http://schema.org/mainEntityOfPage">schema:mainEntityOfPage</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1271,6 +1917,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1279,6 +1926,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1287,6 +1935,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/identifier"><code title="http://schema.org/identifier">schema:identifier</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>is referenced by</td>
+<td><a data-cite="DCTERMS#terms-isReferencedBy"><code title="http://purl.org/dc/terms/isReferencedBy">dct:isReferencedBy</code></a></td>
+<td><a href="http://schema.org/citation"><code title="http://schema.org/citation">schema:citation</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1295,6 +1953,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1303,6 +1962,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/url"><code title="http://schema.org/url">schema:url</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1316,7 +1976,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[StatDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>number of data series</td>
-<td><a href="http://data.europa.eu/m8g/numberOfDataSeries"><code title="http://data.europa.eu/m8g/numberOfDataSeries">stat:numberOfDataSeries</code></a></td>
+<td><a href="http://data.europa.eu/m8g/numSeries"><code title="http://data.europa.eu/m8g/numSeries">stat:numSeries</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
@@ -1329,14 +1989,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/identifier"><code title="http://schema.org/identifier">schema:identifier</code></a></td>
 <td>Schema.org does not currently provide a way to denote "other" identifiers.</td>
 </tr>
-<tr>
-<td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
-<td>owner</td>
-<td><a data-cite="DCTERMS#terms-rightsHolder"><code title="http://purl.org/dc/terms/rightsHolder">dct:rightsHolder</code></a></td>
-<td><a href="http://schema.org/copyrightHolder"><code title="http://schema.org/copyrightHolder">schema:copyrightHolder</code></a></td>
-<td></td>
-</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1363,6 +2016,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1371,6 +2025,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/mentions"><code title="http://schema.org/mentions">schema:mentions</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1379,22 +2034,35 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/datePublished"><code title="http://schema.org/datePublished">schema:datePublished</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>rights holder</td>
+<td><a data-cite="DCTERMS#terms-rightsHolder"><code title="http://purl.org/dc/terms/rightsHolder">dct:rightsHolder</code></a></td>
+<td><a href="http://schema.org/copyrightHolder"><code title="http://schema.org/copyrightHolder">schema:copyrightHolder</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>sample</td>
-<td><a data-cite="VOCAB-ADMS#adms_sample"><code title="http://www.w3.org/ns/adms#sample">amds:sample</code></a></td>
+<td><a data-cite="VOCAB-ADMS#adms_sample"><code title="http://www.w3.org/ns/adms#sample">adms:sample</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>source</td>
 <td><a data-cite="DCTERMS#terms-source"><code title="http://purl.org/dc/terms/source">dct:source</code></a></td>
-<td><a href="http://schema.org/isBasedOnUrl"><code title="http://schema.org/isBasedOnUrl">schema:isBasedOnUrl</code></a></td>
+<td><a href="http://schema.org/isBasedOn"><code title="http://schema.org/isBasedOn">schema:isBasedOn</code></a></td>
 <td></td>
 </tr>
+
+<!-- Moved to RECOMMENDED to comply with DCAT-AP 2
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1403,14 +2071,36 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/spatialCoverage"><code title="http://schema.org/spatialCoverage">schema:spatialCoverage</code></a></td>
 <td></td>
 </tr>
+-->
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>spatial resolution</td>
+<td><a data-cite="VOCAB-DQV#dqv:hasQualityMeasurement"><code title="http://www.w3.org/ns/dqv#hasQualityMeasurement">dqv:hasQualityMeasurement</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution in metres</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_spatial_resolution"><code title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">dcat:spatialResolutionInMeters</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution as text</td>
 <td><a data-cite="RDF-SCHEMA#ch_comment"><code title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<!-- Moved to RECOMMENDED to comply with DCAT-AP 2
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1419,6 +2109,17 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/temporalCoverage"><code title="http://schema.org/temporalCoverage">schema:temporalCoverage</code></a></td>
 <td></td>
 </tr>
+-->
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>temporal resolution</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_temporal_resolution"><code title="http://www.w3.org/ns/dcat#temporalResolution">dcat:temporalResolution</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1427,6 +2128,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/about"><code title="http://schema.org/about">schema:about</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1440,7 +2142,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[StatDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>unit of measurement</td>
-<td><a href="http://data.europa.eu/m8g/unitOfMeasurement"><code title="http://data.europa.eu/m8g/unitOfMeasurement">stat:unitOfMeasurement</code></a></td>
+<td><a href="http://data.europa.eu/m8g/statUnitMeasure"><code title="http://data.europa.eu/m8g/statUnitMeasure">stat:statUnitMeasure</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
@@ -1453,6 +2155,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/dateModified"><code title="http://schema.org/dateModified">schema:dateModified</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1461,6 +2164,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/version"><code title="http://schema.org/version">schema:version</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1469,16 +2173,89 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>custodian</td>
+<td><a data-cite="GeoDCAT-AP#dataset-custodian"><code title="http://data.europa.eu/930/custodian">geodcat:custodian</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>distributor</td>
+<td><a data-cite="GeoDCAT-AP#dataset-distributor"><code title="http://data.europa.eu/930/distributor">geodcat:distributor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>originator</td>
+<td><a data-cite="GeoDCAT-AP#dataset-originator"><code title="http://data.europa.eu/930/originator">geodcat:originator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>principal investigator</td>
+<td><a data-cite="GeoDCAT-AP#dataset-principalInvestigator"><code title="http://data.europa.eu/930/principalInvestigator">geodcat:principalInvestigator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>processor</td>
+<td><a data-cite="GeoDCAT-AP#dataset-processor"><code title="http://data.europa.eu/930/processor">geodcat:processor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>resource provider</td>
+<td><a data-cite="GeoDCAT-AP#dataset-resourceProvider"><code title="http://data.europa.eu/930/resourceProvider">geodcat:resourceProvider</code></a></td>
+<td><a href="http://schema.org/provider"><code title="http://schema.org/provider">schema:provider</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>user</td>
+<td><a data-cite="GeoDCAT-AP#dataset-user"><code title="http://data.europa.eu/930/user">geodcat:user</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 </tbody>
 </table>
+
 </section>
+
 </section>
+
 <section id="mapping-properties-recommended">
+
 <h3>Properties for recommended classes</h3>
+
 <!-- Properties: Category -->
+
 <section id="mapping-properties-category">
+
 <h4>Category</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-category"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1506,17 +2283,23 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>originating controlled vocabulary</td>
-<td><a data-cite="VOCAB-DCAT#class-inScheme"><code title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</code></a></td>
+<td><a data-cite="SKOS-REFERENCE#inScheme"><code title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Category scheme -->
+
 <section id="mapping-properties-category-scheme">
+
 <h4>Category scheme</h4>
+
 <p>These properties should be used with <a href="http://schema.org/Enumeration"><code title="http://schema.org/Enumeration">schema:Enumeration</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-category-scheme"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1564,13 +2347,29 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/dateModified"><code title="http://schema.org/dateModified">schema:dateModified</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>version</td>
+<td><a data-cite="OWL-REF#versionInfo-def"><code title="http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</code></a></td>
+<td><a href="http://schema.org/version"><code title="http://schema.org/version">schema:version</code></a></td>
+<td></td>
+</tr>
+
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Distribution -->
+
 <section id="mapping-properties-distribution">
+
 <h4>Distribution</h4>
+
 <p>These properties should be used with <a href="http://schema.org/DataDownload"><code>schema:DataDownload</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-distribution"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1602,6 +2401,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>availability</td>
+<td><code title="http://data.europa.eu/r5r/availability">dcatap:availability</code></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1618,6 +2427,25 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/license"><code title="http://schema.org/license">schema:license</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>access rights</td>
+<td><a data-cite="DCTERMS#terms-accessRights"><code title="http://purl.org/dc/terms/accessRights">dct:accessRights</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>access service</td>
+<td><a data-cite="VOCAB-DCAT#Property:distribution_access_service"><code title="http://www.w3.org/ns/dcat#accessService">dcat:accessService</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1642,6 +2470,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>compression format</td>
+<td><a data-cite="VOCAB-DCAT#Property:distribution_compression_format"><code title="http://www.w3.org/ns/dcat#compressionFormat">dcat:compressionFormat</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1658,6 +2496,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/contentURL"><code title="http://schema.org/contentURL">schema:contentURL</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>has policy</td>
+<td><a data-cite="VOCAB-ODRL#term-hasPolicy"><code title="http://www.w3.org/ns/odrl/2/hasPolicy">odrl:hasPolicy</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1679,9 +2527,28 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><abbr title="Optional">O</abbr></td>
 <td>media type</td>
 <td><a data-cite="VOCAB-DCAT#Property:distribution_media_type"><code title="http://www.w3.org/ns/dcat#mediaType">dcat:mediaType</code></a></td>
-<td><a href="http://schema.org/fileFormat"><code title="http://schema.org/fileFormat">schema:fileFormat</code></a></td>
+<td><a href="http://schema.org/encodingFormat"><code title="http://schema.org/encodingFormat">schema:encodingFormat</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>packaging format</td>
+<td><a data-cite="VOCAB-DCAT#Property:distribution_package_format"><code title="http://www.w3.org/ns/dcat#packageFormat">dcat:packageFormat</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>reference system</td>
+<td><a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1702,18 +2569,56 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>spatial representation type</td>
-<td><a data-cite="VOCAB-ADMS#adms_representationTechnique"><code title="http://www.w3.org/ns/adms#representationTechnique">amds:representationTechnique</code></a></td>
+<td><a data-cite="VOCAB-ADMS#adms_representationTechnique"><code title="http://www.w3.org/ns/adms#representationTechnique">adms:representationTechnique</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution</td>
+<td><a data-cite="VOCAB-DQV#dqv:hasQualityMeasurement"><code title="http://www.w3.org/ns/dqv#hasQualityMeasurement">dqv:hasQualityMeasurement</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution in metres</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_spatial_resolution"><code title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">dcat:spatialResolutionInMeters</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution as text</td>
+<td><a data-cite="RDF-SCHEMA#ch_comment"><code title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>status</td>
-<td><a data-cite="VOCAB-ADMS#adms_status"><code title="http://www.w3.org/ns/adms#status">amds:status</code></a></td>
+<td><a data-cite="VOCAB-ADMS#adms_status"><code title="http://www.w3.org/ns/adms#status">adms:status</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>temporal resolution</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_temporal_resolution"><code title="http://www.w3.org/ns/dcat#temporalResolution">dcat:temporalResolution</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1742,11 +2647,17 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Licence document -->
+
 <section id="mapping-properties-licence">
+
 <h4>Licence document</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-licence"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1784,12 +2695,25 @@ The views expressed are purely those of the author and may not in any circumstan
 </section>
 
 <!-- Properties -->
+
 <section id="mapping-properties-optional">
+
 <h3>Properties for optional classes</h3>
-<!-- Properties: Catalogue record -->
-<section id="mapping-properties-catalogue-record">
-<h4>Catalogue record</h4>
-<p>These properties should be used with <a href="http://schema.org/ListItem"><code>schema:ListItem</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-catalogue-record"></a>).</p>
+
+<!-- Properties: Address -->
+
+<section id="mapping-properties-address">
+
+<h4>Address</h4>
+
+<p>These properties should be used with <a href="http://schema.org/PostalAddress"><code>schema:PostalAddress</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-address"></a>).</p>
+
+<p>In the table, [[LOCN]] properties are used to specify the address of an <a href="#mapping-properties-agent">Agent</a>, via property <code>locn:address</code>, whereas [[VCARD-RDF]] properties are used to specify the address of a <a href="#mapping-properties-kind">Kind</a>, via property <code>vcard:hasAddress</code>. Their domains are, respectively, <code>locn:Address</code> and <code>vcard:Address</code>.</p>
+
+<aside class="note">
+<p>These mappings, as well as those of properties <code>locn:address</code> and <code>vcard:hasAddress</code>, are based on those defined in [[LOCN-MAPPING]].</p>
+</aside>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1805,6 +2729,110 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td rowspan="2">administrative area</td>
+<td><a data-cite="LOCN#locn:adminUnitL2"><code title="http://www.w3.org/ns/locn#adminUnitL2">locn:adminUnitL2</code></a></td>
+<td rowspan="2"><a href="http://schema.org/addressRegion"><code title="http://schema.org/addressRegion">schema:addressRegion</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td><a data-cite="VCARD-RDF#d4e1157"><code title="http://www.w3.org/2006/vcard/ns#region">vcard:region</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td rowspan="2">city</td>
+<td><a data-cite="LOCN#locn:postName"><code title="http://www.w3.org/ns/locn#postName">locn:postName</code></a></td>
+<td rowspan="2"><a href="http://schema.org/addressLocality"><code title="http://schema.org/addressLocality">schema:addressLocality</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td><a data-cite="VCARD-RDF#d4e999"><code title="http://www.w3.org/2006/vcard/ns#locality">vcard:locality</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td rowspan="2">country</td>
+<td><a data-cite="LOCN#locn:adminUnitL1"><code title="http://www.w3.org/ns/locn#adminUnitL1">locn:adminUnitL1</code></a></td>
+<td rowspan="2"><a href="http://schema.org/addressCountry"><code title="http://schema.org/addressCountry">schema:addressCountry</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td><a data-cite="VCARD-RDF#d4e844"><code title="http://www.w3.org/2006/vcard/ns#country-name">vcard:country-name</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td rowspan="2">postal code</td>
+<td><a data-cite="LOCN#locn:postCode"><code title="http://www.w3.org/ns/locn#postCode">locn:postCode</code></a></td>
+<td rowspan="2"><a href="http://schema.org/postalCode"><code title="http://schema.org/postalCode">schema:postalCode</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td><a data-cite="VCARD-RDF#d4e1126"><code title="http://www.w3.org/2006/vcard/ns#postal-code">vcard:postal-code</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td rowspan="2">street address</td>
+<td><a data-cite="LOCN#locn:thoroughfare"><code title="http://www.w3.org/ns/locn#thoroughfare">locn:thoroughfare</code></a></td>
+<td rowspan="2"><a href="http://schema.org/streetAddress"><code title="http://schema.org/streetAddress">schema:streetAddress</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td><a data-cite="VCARD-RDF#d4e1218"><code title="http://www.w3.org/2006/vcard/ns#street-address">vcard:street-address</code></a></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+
+</section>
+<!-- Properties: Catalogue record -->
+
+<section id="mapping-properties-catalogue-record">
+
+<h4>Catalogue record</h4>
+
+<p>These properties should be used with <a href="http://schema.org/ListItem"><code>schema:ListItem</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-catalogue-record"></a>).</p>
+
+<table class="simple">
+<thead>
+<tr>
+<th colspan="4">DCAT-AP</th>
+<th rowspan="2">Schema.org</th>
+<th rowspan="2">Comments</th>
+</tr>
+<tr>
+<th>Specification</th>
+<th><abbr title="Obligation">Obl.</abbr></th>
+<th>Label</th>
+<th><abbr title="Qualified name">QName</abbr></th>
+</tr>
+</thead>
+<tbody>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
@@ -1813,6 +2841,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/item"><code title="http://schema.org/item">schema:item</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><strong><abbr title="Mandatory">M</abbr></strong></td>
@@ -1821,6 +2850,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/dateModified"><code title="http://schema.org/dateModified">schema:dateModified</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1829,14 +2859,16 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
 <td>change type</td>
-<td><a data-cite="VOCAB-ADMS#adms_status"><code title="http://www.w3.org/ns/adms#status">amds:status</code></a></td>
+<td><a data-cite="VOCAB-ADMS#adms_status"><code title="http://www.w3.org/ns/adms#status">adms:status</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
@@ -1845,6 +2877,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/datePublished"><code title="http://schema.org/datePublished">schema:datePublished</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1853,6 +2886,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD</td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1861,6 +2895,25 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/contactPoint"><code title="http://schema.org/contactPoint">schema:contactPoint</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creation date</td>
+<td><a data-cite="DCTERMS#terms-created"><code title="http://purl.org/dc/terms/created">dct:created</code></a></td>
+<td><a href="http://schema.org/dateCreated"><code title="http://schema.org/dateCreated">schema:dateCreated</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creator</td>
+<td><a data-cite="DCTERMS#terms-creator"><code title="http://purl.org/dc/terms/creator">dct:creator</code></a></td>
+<td><a href="http://schema.org/creator"><code title="http://schema.org/creator">schema:creator</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1869,6 +2922,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1877,6 +2931,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/identifier"><code title="http://schema.org/identifier">schema:identifier</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1885,14 +2940,34 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/inLanguage"><code title="http://schema.org/inLanguage">schema:inLanguage</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>publisher</td>
+<td><a data-cite="DCTERMS#terms-publisher"><code title="http://purl.org/dc/terms/publisher">dct:publisher</code></a></td>
+<td><a href="http://schema.org/publisher"><code title="http://schema.org/publisher">schema:publisher</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>rights holder</td>
+<td><a data-cite="DCTERMS#terms-rightsHolder"><code title="http://purl.org/dc/terms/rightsHolder">dct:rightsHolder</code></a></td>
+<td><a href="http://schema.org/copyrightHolder"><code title="http://schema.org/copyrightHolder">schema:copyrightHolder</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>source metadata</td>
 <td><a data-cite="DCTERMS#terms-source"><code title="http://purl.org/dc/terms/source">dct:source</code></a></td>
-<td><a href="http://schema.org/isBasedOnUrl"><code title="http://schema.org/isBasedOnUrl">schema:isBasedOnUrl</code></a></td>
+<td><a href="http://schema.org/isBasedOn"><code title="http://schema.org/isBasedOn">schema:isBasedOn</code></a></td>
 <td></td>
 </tr>
+
 <tr>
 <td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -1901,13 +2976,83 @@ The views expressed are purely those of the author and may not in any circumstan
 <td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>custodian</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-custodian"><code title="http://data.europa.eu/930/custodian">geodcat:custodian</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>distributor</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-distributor"><code title="http://data.europa.eu/930/distributor">geodcat:distributor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>originator</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-originator"><code title="http://data.europa.eu/930/originator">geodcat:originator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>principal investigator</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-principalInvestigator"><code title="http://data.europa.eu/930/principalInvestigator">geodcat:principalInvestigator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>processor</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-processor"><code title="http://data.europa.eu/930/processor">geodcat:processor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>resource provider</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-resourceProvider"><code title="http://data.europa.eu/930/resourceProvider">geodcat:resourceProvider</code></a></td>
+<td><a href="http://schema.org/provider"><code title="http://schema.org/provider">schema:provider</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>user</td>
+<td><a data-cite="GeoDCAT-AP#catalogue-record-user"><code title="http://data.europa.eu/930/user">geodcat:user</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Checksum -->
+
 <section id="mapping-properties-checksum">
+
 <h4>Checksum</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-checksum"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1941,11 +3086,401 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+
+<!-- Properties: Data Service -->
+
+<section id="mapping-properties-data-service">
+
+<h4>Data Service</h4>
+
+<p>These properties should be used with <a href="http://schema.org/Service"><code>schema:Service</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-data-service"></a>).</p>
+
+<table class="simple">
+<thead>
+<tr>
+<th colspan="4">DCAT-AP</th>
+<th rowspan="2">Schema.org</th>
+<th rowspan="2">Comments</th>
+</tr>
+<tr>
+<th>Specification</th>
+<th><abbr title="Obligation">Obl.</abbr></th>
+<th>Label</th>
+<th><abbr title="Qualified name">QName</abbr></th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><strong><abbr title="Mandatory">M</abbr></strong></td>
+<td>endpoint URL</td>
+<td><a data-cite="VOCAB-DCAT#Property:data_service_endpoint_url"><code title="http://www.w3.org/ns/dcat#endpointURL">dcat:endpointURL</code></a></td>
+<td><a href="http://schema.org/url"><code title="http://schema.org/url">schema:url</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><strong><abbr title="Mandatory">M</abbr></strong></td>
+<td>title</td>
+<td><a data-cite="DCTERMS#terms-title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
+<td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>endpoint description</td>
+<td><a data-cite="VOCAB-DCAT#Property:data_service_endpoint_description"><code title="http://www.w3.org/ns/dcat#endpointDescription">dcat:endpointDescription</code></a></td>
+<td><a href="http://schema.org/mainEntityOfPage"><code title="http://schema.org/mainEntityOfPage">schema:mainEntityOfPage</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>serves dataset</td>
+<td><a data-cite="VOCAB-DCAT#Property:data_service_serves_dataset"><code title="http://www.w3.org/ns/dcat#servesDataset">dcat:servesDataset</code></a></td>
+<td><a href="http://schema.org/serviceOutput"><code title="http://schema.org/serviceOutput">schema:serviceOutput</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>access rights</td>
+<td><a data-cite="DCTERMS#terms-accessRights"><code title="http://purl.org/dc/terms/accessRights">dct:accessRights</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>conformance result / conformity (data quality)</td>
+<td><a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>conforms to</td>
+<td><a data-cite="DCTERMS#terms-conformsTo"><code title="http://purl.org/dc/terms/conformsTo">dct:conformsTo</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>contact point</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_contactPoint"><code title="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</code></a></td>
+<td><a href="http://schema.org/contactPoint"><code title="http://schema.org/contactPoint">schema:contactPoint</code></a></td>
+<td></td>
+</tr>
+
+<!-- DEPRECATED: Replaced by dcat:servesDataset starting from DCAT-AP 2
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>coupled resource</td>
+<td><a data-cite="DCTERMS#terms-hasPart"><code title="http://purl.org/dc/terms/hasPart">dct:hasPart</code></a></td>
+<td><a href="http://schema.org/hasPart"><code title="http://schema.org/hasPart">schema:hasPart</code></a></td>
+<td></td>
+</tr>
+-->
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creation date</td>
+<td><a data-cite="DCTERMS#terms-created"><code title="http://purl.org/dc/terms/created">dct:created</code></a></td>
+<td><a href="http://schema.org/dateCreated"><code title="http://schema.org/dateCreated">schema:dateCreated</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>creator</td>
+<td><a data-cite="DCTERMS#terms-creator"><code title="http://purl.org/dc/terms/creator">dct:creator</code></a></td>
+<td><a href="http://schema.org/creator"><code title="http://schema.org/creator">schema:creator</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>description</td>
+<td><a data-cite="DCTERMS#terms-description"><code title="http://purl.org/dc/terms/description">dct:description</code></a></td>
+<td><a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>identifier</td>
+<td><a data-cite="DCTERMS#terms-identifier"><code title="http://purl.org/dc/terms/identifier">dct:identifier</code></a></td>
+<td><a href="http://schema.org/identifier"><code title="http://schema.org/identifier">schema:identifier</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>keyword (free text)</td>
+<td><a data-cite="VOCAB-DCAT#Property:resource_keyword"><code title="http://www.w3.org/ns/dcat#keyword">dcat:keyword</code></a></td>
+<td><a href="http://schema.org/keywords"><code title="http://schema.org/keywords">schema:keywords</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>keyword (from a controlled vocabulary)</td>
+<td><a data-cite="VOCAB-DCAT#Property:resource_theme"><code title="http://www.w3.org/ns/dcat#theme">dcat:theme</code></a></td>
+<td><a href="http://schema.org/about"><code title="http://schema.org/about">schema:about</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>language</td>
+<td><a data-cite="DCTERMS#terms-language"><code title="http://purl.org/dc/terms/language">dct:language</code></a></td>
+<td><a href="http://schema.org/inLanguage"><code title="http://schema.org/inLanguage">schema:inLanguage</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>licence</td>
+<td><a data-cite="DCTERMS#terms-license"><code title="http://purl.org/dc/terms/license">dct:license</code></a></td>
+<td><a href="http://schema.org/license"><code title="http://schema.org/license">schema:license</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>publisher</td>
+<td><a data-cite="DCTERMS#terms-publisher"><code title="http://purl.org/dc/terms/publisher">dct:publisher</code></a></td>
+<td><a href="http://schema.org/publisher"><code title="http://schema.org/publisher">schema:publisher</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>release date</td>
+<td><a data-cite="DCTERMS#terms-issued"><code title="http://purl.org/dc/terms/issued">dct:issued</code></a></td>
+<td><a href="http://schema.org/datePublished"><code title="http://schema.org/datePublished">schema:datePublished</code></a></td>
+<td></td>
+</tr>
+
+<!-- DEPRECATED: Replaced by dcat:endpointURL starting from DCAT 2
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>resource locator</td>
+<td><a data-cite="FOAF#term_homepage"><code title="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</code></a></td>
+<td><a href="http://schema.org/url"><code title="http://schema.org/??">schema:url</code></a></td>
+<td>TBD</td>
+</tr>
+-->
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>rights holder</td>
+<td><a data-cite="DCTERMS#terms-rightsHolder"><code title="http://purl.org/dc/terms/rightsHolder">dct:rightsHolder</code></a></td>
+<td><a href="http://schema.org/copyrightHolder"><code title="http://schema.org/copyrightHolder">schema:copyrightHolder</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial / geographic coverage</td>
+<td><a data-cite="DCTERMS#terms-spatial"><code title="http://purl.org/dc/terms/spatial">dct:spatial</code></a></td>
+<td><a href="http://schema.org/spatialCoverage"><code title="http://schema.org/spatialCoverage">schema:spatialCoverage</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial data service category</td>
+<td><a data-cite="DCTERMS#terms-type"><code title="http://purl.org/dc/terms/type">dct:type</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial data service type</td>
+<td><a data-cite="DCTERMS#terms-type"><code title="http://purl.org/dc/terms/type">dct:type</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution</td>
+<td><a data-cite="VOCAB-DQV#dqv:hasQualityMeasurement"><code title="http://www.w3.org/ns/dqv#hasQualityMeasurement">dqv:hasQualityMeasurement</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution in metres</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_spatial_resolution"><code title="http://www.w3.org/ns/dcat#spatialResolutionInMeters">dcat:spatialResolutionInMeters</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>spatial resolution as text</td>
+<td><a data-cite="RDF-SCHEMA#ch_comment"><code title="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>temporal coverage</td>
+<td><a data-cite="DCTERMS#terms-temporal"><code title="http://purl.org/dc/terms/temporal">dct:temporal</code></a></td>
+<td><a href="http://schema.org/temporalCoverage"><code title="http://schema.org/temporalCoverage">schema:temporalCoverage</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>temporal resolution</td>
+<td><a data-cite="VOCAB-DCAT#Property:dataset_temporal_resolution"><code title="http://www.w3.org/ns/dcat#temporalResolution">dcat:temporalResolution</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>topic category</td>
+<td><a data-cite="DCTERMS#terms-subject"><code title="http://purl.org/dc/terms/subject">dct:subject</code></a></td>
+<td><a href="http://schema.org/about"><code title="http://schema.org/about">schema:about</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>type</td>
+<td><a data-cite="DCTERMS#terms-type"><code title="http://purl.org/dc/terms/type">dct:type</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>update / modification date</td>
+<td><a data-cite="DCTERMS#terms-modified"><code title="http://purl.org/dc/terms/modified">dct:modified</code></a></td>
+<td><a href="http://schema.org/dateModified"><code title="http://schema.org/dateModified">schema:dateModified</code></a></td>
+<td></td>
+</tr>
+
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>custodian</td>
+<td><a data-cite="GeoDCAT-AP#data-service-custodian"><code title="http://data.europa.eu/930/custodian">geodcat:custodian</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>distributor</td>
+<td><a data-cite="GeoDCAT-AP#data-service-distributor"><code title="http://data.europa.eu/930/distributor">geodcat:distributor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>originator</td>
+<td><a data-cite="GeoDCAT-AP#data-service-originator"><code title="http://data.europa.eu/930/originator">geodcat:originator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>principal investigator</td>
+<td><a data-cite="GeoDCAT-AP#data-service-principalInvestigator"><code title="http://data.europa.eu/930/principalInvestigator">geodcat:principalInvestigator</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>processor</td>
+<td><a data-cite="GeoDCAT-AP#data-service-processor"><code title="http://data.europa.eu/930/processor">geodcat:processor</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>resource provider</td>
+<td><a data-cite="GeoDCAT-AP#data-service-resourceProvider"><code title="http://data.europa.eu/930/resourceProvider">geodcat:resourceProvider</code></a></td>
+<td><a href="http://schema.org/provider"><code title="http://schema.org/provider">schema:provider</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>user</td>
+<td><a data-cite="GeoDCAT-AP#data-service-user"><code title="http://data.europa.eu/930/user">geodcat:user</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+</tbody>
+</table>
+
+</section>
+
 <!-- Properties: Document -->
+
 <section id="mapping-properties-document">
+
 <h4>Document</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-document"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -1963,7 +3498,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <tbody>
 <tr>
 <td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>description</td>
 <td><a data-cite="DCTERMS#terms-description"><code title="http://purl.org/dc/terms/description">dct:description</code></a></td>
 <td><a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a></td>
@@ -1971,7 +3506,7 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 <tr>
 <td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>title</td>
 <td><a data-cite="DCTERMS#terms-title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
 <td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
@@ -1979,11 +3514,17 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Identifier -->
+
 <section id="mapping-properties-identifier">
+
 <h4>Identifier</h4>
+
 <p>These properties should be used with <a href="http://schema.org/PropertyValue"><code>schema:PropertyValue</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-identifier"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2016,11 +3557,17 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>The type of identifier</td>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Kind -->
+
 <section id="mapping-properties-kind">
+
 <h4>Kind</h4>
+
 <p>These properties should be used with <a href="http://schema.org/ContactPoint"><code>schema:ContactPoint</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-kind"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2037,59 +3584,100 @@ The views expressed are purely those of the author and may not in any circumstan
 </thead>
 <tbody>
 <tr>
-<td>[[DCAT-AP-IG]]</td>
+<td>[[GeoDCAT-AP]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
-<td>name</td>
-<td><a data-cite="vCARD-RDF#d4e891"><code title="http://www.w3.org/2006/vcard/ns#fn">vcard:fn</code></a></td>
-<td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
-<td></td>
+<td rowspan="2">name</td>
+<td rowspan="2"><a data-cite="VCARD-RDF#d4e891"><code title="http://www.w3.org/2006/vcard/ns#fn">vcard:fn</code></a></td>
+<td rowspan="2"><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
+<td rowspan="2"></td>
 </tr>
 <tr>
 <td>[[DCAT-AP-IG]]</td>
 <td><em><abbr title="Recommended">R</abbr></em></td>
+</tr>
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td rowspan="2">email</td>
-<td rowspan="2"><a data-cite="vCARD-RDF#d4e183"><code title="http://www.w3.org/2006/vcard/ns#hasEmail">vcard:hasEmail</code></a></td>
+<td rowspan="2"><a data-cite="VCARD-RDF#d4e183"><code title="http://www.w3.org/2006/vcard/ns#hasEmail">vcard:hasEmail</code></a></td>
 <td rowspan="2"><a href="http://schema.org/email"><code title="http://schema.org/email">schema:email</code></a></td>
 <td rowspan="2"></td>
 </tr>
 <tr>
+<td>[[DCAT-AP-IG]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+</tr>
+
+<tr>
 <td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td rowspan="2">homepage</td>
+<td rowspan="2"><a data-cite="VCARD-RDF#d4e605"><code title="http://www.w3.org/2006/vcard/ns#hasURL">vcard:hasURL</code></a></td>
+<td rowspan="2"><a href="http://schema.org/url"><code title="http://schema.org/url">schema:url</code></a></td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>[[DCAT-AP-IG]]</td>
 <td><abbr title="Optional">O</abbr></td>
 </tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
-<td>organisation name</td>
-<td><a data-cite="vCARD-RDF#d4e1077"><code title="http://www.w3.org/2006/vcard/ns#organization-name">vcard:organization-name</code></a></td>
-<td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
+<td>address</td>
+<td><a data-cite="VCARD-RDF#d4e101"><code title="http://www.w3.org/2006/vcard/ns#hasAddress">vcard:hasAddress</code></a></td>
+<td><a href="http://schema.org/address"><code title="http://schema.org/address">schema:address</code></a></td>
+<td>See <a href="#mapping-properties-address"></a>.</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>affiliation</td>
+<td><a data-cite="VCARD-RDF#d4e1077"><code title="http://www.w3.org/2006/vcard/ns#organization-name">vcard:organization-name</code></a></td>
+<td><a href="http://schema.org/memberOf"><code title="http://schema.org/memberOf">schema:memberOf</code></a> / <a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
 <td></td>
 </tr>
+
+<!-- Moved to RECOMMENDED to compy with GeoDCAT-AP 2
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td rowspan="2"><abbr title="Optional">O</abbr></td>
 <td rowspan="2">homepage</td>
-<td rowspan="2"><a data-cite="vCARD-RDF#d4e605"><code title="http://www.w3.org/2006/vcard/ns#hasURL">vcard:hasURL</code></a></td>
+<td rowspan="2"><a data-cite="VCARD-RDF#d4e605"><code title="http://www.w3.org/2006/vcard/ns#hasURL">vcard:hasURL</code></a></td>
 <td rowspan="2"><a href="http://schema.org/url"><code title="http://schema.org/url">schema:url</code></a></td>
 <td rowspan="2"></td>
 </tr>
 <tr>
 <td>[[DCAT-AP-IG]]</td>
 </tr>
+-->
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td rowspan="2">telephone</td>
+<td rowspan="2"><a data-cite="VCARD-RDF#d4e563"><code title="http://www.w3.org/2006/vcard/ns#hasTelephone">vcard:hasTelephone</code></a></td>
+<td rowspan="2"><a href="http://schema.org/name"><code title="http://schema.org/telephone">schema:telephone</code></a></td>
+<td rowspan="2"></td>
+</tr>
 <tr>
 <td>[[DCAT-AP-IG]]</td>
 <td><abbr title="Optional">O</abbr></td>
-<td>telephone</td>
-<td><a data-cite="vCARD-RDF#d4e563"><code title="http://www.w3.org/2006/vcard/ns#hasTelephone">vcard:hasTelephone</code></a></td>
-<td><a href="http://schema.org/name"><code title="http://schema.org/telephone">schema:telephone</code></a></td>
-<td></td>
 </tr>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Location -->
+
 <section id="mapping-properties-location">
+
 <h4>Location</h4>
+
 <p>These properties should be used with <a href="http://schema.org/Place"><code>schema:Place</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-location"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2105,6 +3693,33 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>bounding box</td>
+<td><a data-cite="VOCAB-DCAT#Property:location_bbox"><code title="http://www.w3.org/ns/dcat#bbox">dcat:bbox</code></a></td>
+<td><a href="http://schema.org/box"><code title="http://schema.org/box">schema:box</code></a></td>
+<td>
+<p>Schema.org expects bounding boxes to be specified with a literal, consisting of two points (corresponding to the lower corner and the upper corner, respectively).</p>
+<p>[[VOCAB-DCAT]] allows any type of geometry encoding.</p>
+<p>As a consequence, the <a data-cite="VOCAB-DCAT#Property:location_bbox"><code title="http://www.w3.org/ns/dcat#bbox">dcat:bbox</code></a> mapping might require further processing to encode the geometry according to the Schema.org format.</p>
+</td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>centroid</td>
+<td><a data-cite="VOCAB-DCAT#Property:location_centroid"><code title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</code></a></td>
+<td><a href="http://schema.org/latitude"><code title="http://schema.org/latitude">schema:latitude</code></a> + <a href="http://schema.org/longitude"><code title="http://schema.org/longitude">schema:longitude</code></a> + <a href="http://schema.org/elevation"><code title="http://schema.org/elevation">schema:elevation</code></a></td>
+<td>
+<p>Schema.org expects point coordinates to be specified with distinct properties (latitude, longitude, and elevation).</p>
+<p>[[VOCAB-DCAT]] uses instead a single property, and supports any type of geometry encoding.</p>
+<p>As a consequence, the <a data-cite="VOCAB-DCAT#Property:location_centroid"><code title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</code></a> mapping might require further processing to encode the geometry according to the Schema.org format.</p>
+</td>
+</tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -2117,7 +3732,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>geographical identifier / name authority</td>
-<td><a data-cite="VOCAB-DCAT#class-inScheme"><code title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</code></a></td>
+<td><a data-cite="SKOS-REFERENCE#inScheme"><code title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
 <td>TBD. The "authority" denotes the reference register for the geographical name / identifier (typically, a gazetteer).</td>
 </tr>
@@ -2125,12 +3740,12 @@ The views expressed are purely those of the author and may not in any circumstan
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>geographical name</td>
-<td><a data-cite="VOCAB-DCAT#class-prefLabel"><code title="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</code></a></td>
+<td><a data-cite="SKOS-REFERENCE#prefLabel"><code title="http://www.w3.org/2004/02/skos/core#prefLabel">skos:prefLabel</code></a></td>
 <td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td>[[GeoDCAT-AP]]</td>
+<td>[[DCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
 <td>geometry</td>
 <td><a data-cite="LOCN#locn:geometry"><code title="http://www.w3.org/ns/locn#geometry">locn:geometry</code></a></td>
@@ -2143,11 +3758,17 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Media type or extent -->
+
 <section id="mapping-properties-media-type">
+
 <h4>Media type or extent</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-media-type"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2165,18 +3786,23 @@ The views expressed are purely those of the author and may not in any circumstan
 <tbody>
 <tr>
 <td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>label</td>
 <td><a data-cite="RDF-SCHEMA#ch_label"><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></a></td>
-<td><a href="http://schema.org/name"><code title="http://schema.org/startDate">schema:name</code></a></td>
+<td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+
 </section>
+
 <!-- Properties: Period of time -->
+
 <section id="mapping-properties-period-of-time">
+
 <h4>Period of time</h4>
+
 <p>These properties should be used with <a href="http://schema.org/DateTime"><code>schema:DateTime</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-period-of-time"></a>).</p>
 <table class="simple">
 <thead>
@@ -2195,27 +3821,52 @@ The views expressed are purely those of the author and may not in any circumstan
 <tbody>
 <tr>
 <td>[[DCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>start date / time</td>
-<td><a href="http://schema.org/startDate"><code title="http://schema.org/startDate">schema:startDate</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Property:period_startDate"><code title="http://www.w3.org/ns/dcat#startDate">dcat:startDate</code></a></td>
 <td><a href="http://schema.org/startDate"><code title="http://schema.org/startDate">schema:startDate</code></a></td>
 <td></td>
 </tr>
 <tr>
 <td>[[DCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>end date / time</td>
-<td><a href="http://schema.org/endDate"><code title="http://schema.org/endDate">schema:endDate</code></a></td>
+<td><a data-cite="VOCAB-DCAT#Property:period_endDate"><code title="http://www.w3.org/ns/dcat#endDate">dcat:endDate</code></a></td>
 <td><a href="http://schema.org/endDate"><code title="http://schema.org/endDate">schema:endDate</code></a></td>
 <td></td>
 </tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>has beginning</td>
+<td><a data-cite="OWL-TIME#time:hasBeginning"><code title="http://www.w3.org/2006/time#hasBeginning">time:hasBeginning</code></a></td>
+<td><a href="http://schema.org/startDate"><code title="http://schema.org/startDate">schema:startDate</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[DCAT-AP]]</td>
+<td><abbr title="Optional">O</abbr></td>
+<td>has end</td>
+<td><a data-cite="OWL-TIME#time:hasEnd"><code title="http://www.w3.org/2006/time#hasEnd">time:hasEnd</code></a></td>
+<td><a href="http://schema.org/endDate"><code title="http://schema.org/endDate">schema:endDate</code></a></td>
+<td></td>
+</tr>
+
 </tbody>
 </table>
+
 </section>
-<!-- Properties: Rights statement -->
+
+<!-- Properties: Provenance statement -->
+
 <section id="mapping-properties-provenance">
+
 <h4>Provenance statement</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-provenance"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2233,7 +3884,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <tbody>
 <tr>
 <td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>name / description</td>
 <td><a data-cite="RDF-SCHEMA#ch_label"><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
@@ -2241,11 +3892,73 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+
+<!-- Properties: Quality measurement -->
+
+<section id="mapping-properties-quality-measurement">
+
+<h4>Quality measurement</h4>
+
+<p>These properties should be used with <a href="http://schema.org/QuantitativeValue"><code>schema:QuantitativeValue</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-quality-measurement"></a>).</p>
+
+<table class="simple">
+<thead>
+<tr>
+<th colspan="4">DCAT-AP</th>
+<th rowspan="2">Schema.org</th>
+<th rowspan="2">Comments</th>
+</tr>
+<tr>
+<th>Specification</th>
+<th><abbr title="Obligation">Obl.</abbr></th>
+<th>Label</th>
+<th><abbr title="Qualified name">QName</abbr></th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>is measurement of</td>
+<td><a data-cite="VOCAB-DQV#dqv:isMeasurementOf"><code title="http://www.w3.org/ns/dqv#isMeasurementOf">dqv:isMeasurementOf</code></a></td>
+<td><a href="http://schema.org/valueReference"><code title="http://schema.org/valueReference">schema:valueReference</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>unit of measure</td>
+<td><a href="http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"><code title="http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure">sdmx-attribute:unitMeasure</code></a></td>
+<td><a href="http://schema.org/unitCode"><code title="http://schema.org/unitCode">schema:unitCode</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>is measurement of</td>
+<td><a data-cite="VOCAB-DQV#dqv:value"><code title="http://www.w3.org/ns/dqv#value">dqv:value</code></a></td>
+<td><a href="http://schema.org/value"><code title="http://schema.org/value">schema:value</code></a></td>
+<td></td>
+</tr>
+
+</tbody>
+</table>
+
+</section>
+
 <!-- Properties: Reference system -->
+<!-- Merged into Standard
 <section id="mapping-properties-reference-system">
+
 <h4>Reference system</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-reference-system"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2303,11 +4016,18 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+-->
+
 <!-- Properties: Rights statement -->
+
 <section id="mapping-properties-rights">
+
 <h4>Rights statement</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-rights"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2325,7 +4045,7 @@ The views expressed are purely those of the author and may not in any circumstan
 <tbody>
 <tr>
 <td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
 <td>name / description</td>
 <td><a data-cite="RDF-SCHEMA#ch_label"><code title="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</code></a></td>
 <td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
@@ -2333,11 +4053,18 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+
+<!-- DEPRECATED: Replaced by dcat:DataService starting from DCAT 2 -->
 <!-- Properties: Service -->
+<!--
 <section id="mapping-properties-service">
+
 <h4>Service</h4>
+
 <p>These properties should be used with <a href="http://schema.org/Service"><code>schema:Service</code></a> (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-service"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2523,11 +4250,18 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </tbody>
 </table>
+
 </section>
+-->
+
 <!-- Properties: Standard -->
+
 <section id="mapping-properties-standard">
+
 <h4>Standard</h4>
+
 <p>TBD (formal definition in <a class="no-sectionRef" href="#formal-definition-sparql-mapping-properties-standard"></a>).</p>
+
 <table class="simple">
 <thead>
 <tr>
@@ -2543,6 +4277,70 @@ The views expressed are purely those of the author and may not in any circumstan
 </tr>
 </thead>
 <tbody>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>description</td>
+<td><a data-cite="DCTERMS#terms-description"><code title="http://purl.org/dc/terms/description">dct:description</code></a></td>
+<td><a href="http://schema.org/description"><code title="http://schema.org/description">schema:description</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>identifier</td>
+<td><a data-cite="DCTERMS#terms-identifier"><code title="http://purl.org/dc/terms/identifier">dct:identifier</code></a></td>
+<td><a href="http://schema.org/identifier"><code title="http://schema.org/identifier">schema:identifier</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>reference register</td>
+<td><a data-cite="SKOS-REFERENCE#inScheme"><code title="http://www.w3.org/2004/02/skos/core#inScheme">skos:inScheme</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>release date</td>
+<td><a data-cite="DCTERMS#terms-issued"><code title="http://purl.org/dc/terms/issued">dct:issued</code></a></td>
+<td><a href="http://schema.org/datePublished"><code title="http://schema.org/datePublished">schema:datePublished</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>title</td>
+<td><a data-cite="DCTERMS#terms-title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
+<td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
+<td></td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>type</td>
+<td><a data-cite="DCTERMS#terms-type"><code title="http://purl.org/dc/terms/type">dct:type</code></a></td>
+<td><a href="http://schema.org/??"><code title="http://schema.org/??">schema:??</code></a></td>
+<td>TBD</td>
+</tr>
+
+<tr>
+<td>[[GeoDCAT-AP]]</td>
+<td><em><abbr title="Recommended">R</abbr></em></td>
+<td>version</td>
+<td><a data-cite="OWL-REF#versionInfo-def"><code title="http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</code></a></td>
+<td><a href="http://schema.org/version"><code title="http://schema.org/version">schema:version</code></a></td>
+<td></td>
+</tr>
+
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
@@ -2554,190 +4352,304 @@ The views expressed are purely those of the author and may not in any circumstan
 <tr>
 <td>[[GeoDCAT-AP]]</td>
 <td><abbr title="Optional">O</abbr></td>
-<td>release date</td>
-<td><a data-cite="DCTERMS#terms-issued"><code title="http://purl.org/dc/terms/issued">dct:issued</code></a></td>
-<td><a href="http://schema.org/datePublished"><code title="http://schema.org/datePublished">schema:datePublished</code></a></td>
-<td></td>
-</tr>
-<tr>
-<td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
-<td>title</td>
-<td><a data-cite="DCTERMS#terms-title"><code title="http://purl.org/dc/terms/title">dct:title</code></a></td>
-<td><a href="http://schema.org/name"><code title="http://schema.org/name">schema:name</code></a></td>
-<td></td>
-</tr>
-<tr>
-<td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
 <td>update / modification date</td>
 <td><a data-cite="DCTERMS#terms-modified"><code title="http://purl.org/dc/terms/modified">dct:modified</code></a></td>
 <td><a href="http://schema.org/dateModified"><code title="http://schema.org/dateModified">schema:dateModified</code></a></td>
 <td></td>
 </tr>
-<tr>
-<td>[[GeoDCAT-AP]]</td>
-<td><abbr title="Optional">O</abbr></td>
-<td>version</td>
-<td><a data-cite="OWL-REF#versionInfo-def"><code title="http://www.w3.org/2002/07/owl#versionInfo">owl:versionInfo</code></a></td>
-<td><a href="http://schema.org/version"><code title="http://schema.org/version">schema:version</code></a></td>
-<td></td>
-</tr>
+
 </tbody>
 </table>
+
 </section>
+
 </section>
+
 <!--
 </section>
 -->
 
 <section id="formal-definition-sparql" class="appendix">
+
 <h2>SPARQL implementation</h2>
+
 <p>This section illustrates a tentative implementation of the mappings defined in DCAT-AP-SDO, in the form of <a data-cite="SPARQL11-QUERY#construct">SPARQL <code>CONSTRUCT</code> queries</a>.</p>
+
 <p>The mappings have been defined in a modular way, with a separate SPARQL query for each of the DCAT-AP classes, and related properties. A complete representation of a given resource (e.g., a dataset) and related resource (e.g., distribution, licence, publisher) can be obtained by combining the relevant SPARQL queries.</p>
+
 <p>The source SPARQL queries are maintained in the dedicated <a href="https://github.com/ec-jrc/dcat-ap-to-schema-org/">GitHub repository</a>.</p>
 
 <section id="formal-definition-sparql-mapping-properties-agent">
+
 <h3>Agent</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-agent"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/agent.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/agent.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-catalogue">
+
 <h3>Catalogue</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-catalogue"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/catalogue.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/catalogue.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-dataset">
+
 <h3>Dataset</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-dataset"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/dataset.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/dataset.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-category">
+
 <h3>Category</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-category"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/category.rq" data-include-format="text">
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/category.rq" data-include-format="text">
+
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-category-scheme">
+
 <h3>Category scheme</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-category-scheme"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/category-scheme.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/category-scheme.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-distribution">
+
 <h3>Distribution</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-distribution"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/distribution.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/distribution.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-licence">
+
 <h3>Licence document</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-licence"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/licence.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/licence.rq" data-include-format="text">
 </pre>
+
+</section>
+
+<section id="formal-definition-sparql-mapping-properties-address">
+
+<h3>Address</h3>
+
+<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-address"></a>.</p>
+
+<section id="formal-definition-sparql-mapping-properties-address-agent">
+
+<h3>Address (Agent)</h3>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/address-agent.rq" data-include-format="text">
+</pre>
+
+</section>
+
+<section id="formal-definition-sparql-mapping-properties-address-kind">
+
+<h3>Address (Kind)</h3>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/address-kind.rq" data-include-format="text">
+</pre>
+
+</section>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-catalogue-record">
+
 <h3>Catalogue record</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-catalogue-record"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/catalogue-record.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/catalogue-record.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-checksum">
+
 <h3>Checksum</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-checksum"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/checksum.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/checksum.rq" data-include-format="text">
 </pre>
+
+</section>
+
+<section id="formal-definition-sparql-mapping-properties-data-service">
+
+<h3>Data Service</h3>
+
+<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-data-service"></a>.</p>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/data-service.rq" data-include-format="text">
+</pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-document">
+
 <h3>Document</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-document"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/document.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/document.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-identifier">
+
 <h3>Identifier</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-identifier"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/identifier.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/identifier.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-kind">
+
 <h3>Kind</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-kind"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/kind.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/kind.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-location">
+
 <h3>Location</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-location"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/location.rq" data-include-format="text">
+
+<aside class="note">
+<p>The following SPARQL query does not address the geometry encoding issues illustrated in <a class="sectionRef sec-ref" href="#mapping-properties-location"></a>.</p>
+</aside>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/location.rq" data-include-format="text">
 </pre>
+
 </section>
 
 <section id="formal-definition-sparql-mapping-properties-media-type">
-<h3>Media type of extent</h3>
-<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-media-type"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/media-type.rq" data-include-format="text">
-</pre>
-</section>
 
+<h3>Media type of extent</h3>
+
+<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-media-type"></a>.</p>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/media-type.rq" data-include-format="text">
+</pre>
+
+</section>
 
 <section id="formal-definition-sparql-mapping-properties-period-of-time">
-<h3>Period of time</h3>
-<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-period-of-time"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/period-of-time.rq" data-include-format="text">
-</pre>
-</section>
 
+<h3>Period of time</h3>
+
+<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-period-of-time"></a>.</p>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/period-of-time.rq" data-include-format="text">
+</pre>
+
+</section>
 
 <section id="formal-definition-sparql-mapping-properties-provenance">
+
 <h3>Provenance statement</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-provenance"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/provenance.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/provenance.rq" data-include-format="text">
 </pre>
+
 </section>
 
-<section id="formal-definition-sparql-mapping-properties-reference-system">
-<h3>Reference system</h3>
-<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-reference-system"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/reference-system.rq" data-include-format="text">
+<section id="formal-definition-sparql-mapping-properties-quality-measurement">
+
+<h3>Quality measurement</h3>
+
+<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-quality-measurement"></a>.</p>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/quality-measurement.rq" data-include-format="text">
 </pre>
+
 </section>
+
+<!-- Merged into Standard
+<section id="formal-definition-sparql-mapping-properties-reference-system">
+
+<h3>Reference system</h3>
+
+<p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-reference-system"></a>.</p>
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/reference-system.rq" data-include-format="text">
+</pre>
+
+</section>
+-->
 
 <section id="formal-definition-sparql-mapping-properties-rights">
+
 <h3>Rights statement</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-rights"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/rights.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/rights.rq" data-include-format="text">
 </pre>
+
 </section>
 
-
+<!-- DEPRECATED: Replaced by dcat:DataService starting from DCAT 2 -->
+<!--
 <section id="formal-definition-sparql-mapping-properties-service">
 <h3>Service</h3>
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-service"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/service.rq" data-include-format="text">
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/service.rq" data-include-format="text">
 </pre>
 </section>
+-->
 
 <section id="formal-definition-sparql-mapping-properties-standard">
+
 <h3>Standard</h3>
+
 <p>For the corresponding mapping table, see <a class="sectionRef sec-ref" href="#mapping-properties-standard"></a>.</p>
-<pre class="code" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/standard.rq" data-include-format="text">
+
+<pre class="def" data-include="https://raw.githubusercontent.com/ec-jrc/dcat-ap-to-schema-org/master/sparql/standard.rq" data-include-format="text">
 </pre>
+
 </section>
 
 </section>

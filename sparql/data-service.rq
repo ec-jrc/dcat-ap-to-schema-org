@@ -1,0 +1,82 @@
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX geodcat: <http://data.europa.eu/930/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?Service a schema:Service ;
+    schema:url ?endpointURL ;
+    schema:name ?title ;
+    schema:mainEntityOfPage ?endpointDescription ;
+    schema:serviceOutput ?Dataset ;
+#    schema:?? ?AccessRights ;
+    schema:creator ?Author ;
+#    schema:?? ?Standard ;
+    schema:contactPoint ?Kind ;
+    schema:dateCreated ?created ;
+    schema:description ?description ;
+    schema:identifier ?identifier ;
+    schema:keywords ?keyword ;
+    schema:about ?Theme ;
+    schema:about ?Category ;
+    schema:inLanguage ?Language ;
+    schema:publisher ?Publisher ;
+    schema:datePublished ?issued ;
+    schema:copyrightHolder ?CopyrightHolder ;
+    schema:spatialCoverage ?Location ;
+#    schema:?? ?SpatialResolution ;
+#    schema:?? ?SpatialResolutionInMetres ;
+#    schema:?? ?SpatialResolutionAsText ;
+    schema:temporalCoverage ?PeriodOfTime ;
+#    schema:?? ?TemporalResolution ;
+#    schema:?? ?Type ;
+    schema:dateModified ?modified ;
+#    schema:?? ?Custodian ;
+#    schema:?? ?Distributor ;
+#    schema:?? ?Originator ;
+#    schema:?? ?PrincipalInvestigator ;
+#    schema:?? ?Processor ;
+    schema:provider ?Provider 
+#    schema:?? ?User 
+} WHERE {
+  OPTIONAL { ?Service a dcat:DataService . }
+  OPTIONAL { ?Service dcat:endpointURL ?endpointURL . }
+  OPTIONAL { ?Service dct:title ?title . }
+  OPTIONAL { ?Service dcat:endpointDescription ?endpointDescription . }
+  OPTIONAL { ?Service dcat:servesDataset ?Dataset . }
+#  OPTIONAL { ?Service dct:accessRights ?AccessRights . }
+  OPTIONAL { ?Service dct:creator ?Author . }
+#  OPTIONAL { ?Service dct:conformsTo ?Standard . }
+  OPTIONAL { ?Service dcat:contactPoint ?Kind . }
+  OPTIONAL { ?Service dct:created ?created . }
+  OPTIONAL { ?Service dct:description ?description . }
+  OPTIONAL { ?Service dct:identifier ?identifier . }
+  OPTIONAL { ?Service dcat:keyword ?keyword . }
+  OPTIONAL { ?Service dcat:theme ?Theme . }
+  OPTIONAL { ?Service dct:subject ?Category . }
+  OPTIONAL { ?Service dct:language ?Language . }
+  OPTIONAL { ?Service dct:publisher ?Publisher . }
+  OPTIONAL { ?Service dct:issued ?issued . }
+  OPTIONAL { ?Dataset dct:rightsHolder ?CopyrightHolder . }
+  OPTIONAL { ?Service dct:spatial ?Location . }
+#  OPTIONAL { ?Dataset dqv:hasQualityMeasurement ?SpatialResolution . }
+#  OPTIONAL { ?Dataset dcat:spatialResolutionInMeters ?SpatialResolutionInMetres . }
+#  OPTIONAL { ?Dataset rdfs:comment ?SpatialResolutionAsText . }
+  OPTIONAL { ?Service dct:temporal ?PeriodOfTime . }
+#  OPTIONAL { ?Dataset dcat:temporalResolution ?TemporalResolution . }
+#  OPTIONAL { ?Service dct:type ?Type . }
+  OPTIONAL { ?Service dct:modified ?modified . }
+
+  OPTIONAL { ?Catalogue geodcat:custodian ?Custodian . }
+  OPTIONAL { ?Catalogue geodcat:distributor ?Distributor . }
+  OPTIONAL { ?Catalogue geodcat:originator ?Originator . }
+  OPTIONAL { ?Catalogue geodcat:principalInvestigator ?PrincipalInvestigator . }
+  OPTIONAL { ?Catalogue geodcat:processor ?Processor . }
+  OPTIONAL { ?Catalogue geodcat:resourceProvider ?Provider . }
+  OPTIONAL { ?Catalogue geodcat:user ?User . }
+}

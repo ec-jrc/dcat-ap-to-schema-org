@@ -1,11 +1,15 @@
-PREFIX vcard:   <http://www.w3.org/2006/vcard/ns#>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
 PREFIX schema: <http://schema.org/>
+PREFIX vcard:  <http://www.w3.org/2006/vcard/ns#>
 
 CONSTRUCT {
   ?Kind a schema:ContactPoint ;
     schema:name ?name ;
     schema:email ?email ;
-    schema:name ?organisationName ;
+    schema:address ?KindAddress ;
+    schema:memberOf [ a schema:Organization ;
+      schema:name ?organisationName 
+	] ;
     schema:url ?url ;
     schema:telephone ?telephone 
 } WHERE {
@@ -15,6 +19,7 @@ CONSTRUCT {
   OPTIONAL { ?Kind a vcard:Organization . }
   OPTIONAL { ?Kind vcard:fn ?name . }
   OPTIONAL { ?Kind vcard:hasEmail ?email . }
+  OPTIONAL { ?Kind vcard:hasAddress ?KindAddress . }
   OPTIONAL { ?Kind vcard:organization-name ?organisationName . }
   OPTIONAL { ?Kind vcard:hasURL ?url . }
   OPTIONAL { ?Kind vcard:hasTelephone ?telephone . }

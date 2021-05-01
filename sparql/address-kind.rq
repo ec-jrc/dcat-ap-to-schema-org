@@ -1,0 +1,19 @@
+PREFIX schema: <http://schema.org/>
+PREFIX vcard:  <http://www.w3.org/2006/vcard/ns#>
+
+CONSTRUCT {
+  ?Address a schema:PostalAddress ;
+    schema:addressRegion ?administrativeArea ;
+    schema:addressLocality ?city ;
+    schema:addressCountry ?country ;
+    schema:postalCode ?postalCode ;
+    schema:streetAddress ?streetAddress ;
+  .
+} WHERE {
+  OPTIONAL { ?Address a vcard:Address . }
+  OPTIONAL { ?Address vcard:region ?administrativeArea . }
+  OPTIONAL { ?Address vcard:locality ?city . }
+  OPTIONAL { ?Address vcard:country-name ?country . }
+  OPTIONAL { ?Address vcard:postal-code ?postalCode . }
+  OPTIONAL { ?Address vcard:street-address ?streetAddress . }
+}

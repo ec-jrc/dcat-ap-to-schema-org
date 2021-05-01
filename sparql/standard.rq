@@ -6,14 +6,26 @@ PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
 CONSTRUCT {
   ?Standard 
 #    a schema:?? ;
-    schema:dateCreated ?created ;
+    schema:description ?description ;
+    schema:description ?identifier ;
+#    schema:?? ?ReferenceRegister ;
     schema:datePublished ?issued ;
     schema:name ?title ;
+    schema:name ?prefLabel ;
+#    schema:?? ?type ;
+    schema:version ?version ;
+    schema:dateCreated ?created ;
     schema:dateModified ?modified 
 } WHERE {
   OPTIONAL { ?Standard a dct:Standard . }
-  OPTIONAL { ?Standard dct:created ?created . }
+  OPTIONAL { ?Standard dct:description ?description . }
+  OPTIONAL { ?Standard dct:identifier ?identifier . }
+#  OPTIONAL { ?Standard skos:inScheme ?ReferenceRegister . }
   OPTIONAL { ?Standard dct:issued ?issued . }
   OPTIONAL { ?Standard dct:title ?title . }
+  OPTIONAL { ?Standard skos:prefLabel ?prefLabel . }
+#  OPTIONAL { ?Standard dct:type ?type . }
+  OPTIONAL { ?Standard owl:versionInfo ?version . }
+  OPTIONAL { ?Standard dct:created ?created . }
   OPTIONAL { ?Standard dct:modified ?modified . }
 }

@@ -1,9 +1,10 @@
-PREFIX adms:   <http://www.w3.org/ns/adms#>
-PREFIX cnt:    <http://www.w3.org/2011/content#>
-PREFIX dcat:   <http://www.w3.org/ns/dcat#>
-PREFIX dct:    <http://purl.org/dc/terms/>
-PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
-PREFIX schema: <http://schema.org/>
+PREFIX adms:    <http://www.w3.org/ns/adms#>
+PREFIX cnt:     <http://www.w3.org/2011/content#>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+PREFIX geodcat: <http://data.europa.eu/930/>
+PREFIX schema:  <http://schema.org/> 
 
 CONSTRUCT {
   ?CatalogueRecord a schema:ListItem ;
@@ -12,13 +13,23 @@ CONSTRUCT {
 #    schema:?? ?MetadataStandard ;
 #    schema:?? ?ChangeType ;
     schema:datePublished ?issued ;
+    schema:creator ?Author ;
 #    schema:?? ?characterEncoding ;
     schema:contactPoint ?Kind ;
+    schema:dateCreated ?created ;
     schema:description ?description ;
     schema:identifier ?identifier ;
     schema:inLanguage ?Language ;
-    schema:isBasedOnUrl ?SourceMetadata ;
-    schema:name ?title 
+    schema:isBasedOn ?SourceMetadata ;
+    schema:name ?title ;
+
+#    schema:?? ?Custodian ;
+#    schema:?? ?Distributor ;
+#    schema:?? ?Originator ;
+#    schema:?? ?PrincipalInvestigator ;
+#    schema:?? ?Processor ;
+    schema:provider ?Provider 
+#    schema:?? ?User 
 } WHERE {
   OPTIONAL { ?CatalogueRecord a dcat:CatalogRecord . }
   OPTIONAL { ?CatalogueRecord foaf:primaryTopic ?Dataset . }
@@ -28,9 +39,20 @@ CONSTRUCT {
   OPTIONAL { ?CatalogueRecord dct:issued ?issued . }
 #  OPTIONAL { ?CatalogueRecord cnt:characterEncoding ?characterEncoding . }
   OPTIONAL { ?CatalogueRecord dcat:contactPoint ?Kind . }
+  OPTIONAL { ?CatalogueRecord dct:created ?created . }
+  OPTIONAL { ?CatalogueRecord dct:creator ?Author . }
   OPTIONAL { ?CatalogueRecord dct:description ?description . }
   OPTIONAL { ?CatalogueRecord dct:identifier ?identifier . }
   OPTIONAL { ?CatalogueRecord dct:language ?Language . }
   OPTIONAL { ?CatalogueRecord dct:source ?SourceMetadata . }
   OPTIONAL { ?CatalogueRecord dct:title ?title . }
+
+
+  OPTIONAL { ?Catalogue geodcat:custodian ?Custodian . }
+  OPTIONAL { ?Catalogue geodcat:distributor ?Distributor . }
+  OPTIONAL { ?Catalogue geodcat:originator ?Originator . }
+  OPTIONAL { ?Catalogue geodcat:principalInvestigator ?PrincipalInvestigator . }
+  OPTIONAL { ?Catalogue geodcat:processor ?Processor . }
+  OPTIONAL { ?Catalogue geodcat:resourceProvider ?Provider . }
+  OPTIONAL { ?Catalogue geodcat:user ?User . }
 }

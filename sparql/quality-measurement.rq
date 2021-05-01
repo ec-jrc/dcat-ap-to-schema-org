@@ -1,0 +1,15 @@
+PREFIX dqv:            <http://www.w3.org/ns/dqv#>
+PREFIX schema:         <http://schema.org/>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
+
+CONSTRUCT {
+  ?QualityMeasurement a schema:QuantityValue ;
+    schema:valueReference ?isMeasurementOf ;
+    schema:unitCode ?uom ;
+    schema:value ?value 
+} WHERE {
+  OPTIONAL { ?QualityMeasurement a dqv:QualityMeasurement . }
+  OPTIONAL { ?QualityMeasurement dqv:isMeasurementOf ?isMeasurementOf . }
+  OPTIONAL { ?QualityMeasurement sdmx-attribute:unitMeasure ?uom . }
+  OPTIONAL { ?QualityMeasurement dqv:value ?value . }
+}

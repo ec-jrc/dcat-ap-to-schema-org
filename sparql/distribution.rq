@@ -1,8 +1,12 @@
 PREFIX adms:   <http://www.w3.org/ns/adms#>
 PREFIX cnt:    <http://www.w3.org/2011/content#>
 PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dcatap: <http://data.europa.eu/r5r/>
 PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX dqv:     <http://www.w3.org/ns/dqv#>
 PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX odrl:   <http://www.w3.org/ns/odrl/2/>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
 PREFIX spdx:   <http://spdx.org/rdf/terms#>
 
@@ -10,33 +14,60 @@ CONSTRUCT {
   ?Distribution a schema:DataDownload ;
     schema:contentURL ?accessURL ;
     schema:description ?description ;
+#    schema:?? ?Availability ;	
     schema:encodingFormat ?Format ;
     schema:license ?Licence ;
+#    schema:?? ?AccessRights ;	
+#    schema:?? ?DataService ;	
     schema:contentSize ?byteSize ;
+#    schema:?? ?characterEncoding ;	
+#    schema:?? ?Checksum ;	
+#    schema:?? ?CompressionFormat ;	
     schema:mainEntityOfPage ?Document ;
     schema:contentURL ?downloadURL ;
+#    schema:?? ?Policy ;	
     schema:inLanguage ?Language ;
-    schema:fileFormat ?MediaType ;
+#    schema:?? ?Standard ;	
+    schema:encodingFormat ?MediaType ;
+#    schema:?? ?PackageFormat ;	
     schema:datePublished ?issued ;
-    schema:dateModified ?modified ;
-    schema:name ?title 
+#    schema:?? ?Rights ;
+#    schema:?? ?SpatialRepresentationType ;
+#    schema:?? ?SpatialResolution ;
+#    schema:?? ?SpatialResolutionInMetres ;
+#    schema:?? ?SpatialResolutionAsText ;
+#    schema:?? ?Status ;
+#    schema:?? ?TemporalResolution ;
+#    schema:?? ?type ;
+    schema:name ?title ;
+    schema:dateModified ?modified 
 } WHERE {
   OPTIONAL { ?Distribution a dcat:Distribution . }
   OPTIONAL { ?Distribution dcat:accessURL ?accessURL . }
   OPTIONAL { ?Distribution dct:description ?description . }
+#  OPTIONAL { ?Distribution dcatap:availability ?Availability . }
   OPTIONAL { ?Distribution dct:format ?Format . }
   OPTIONAL { ?Distribution dct:license ?Licence . }
+#  OPTIONAL { ?Distribution dct:accessRights ?AccessRights . }
+#  OPTIONAL { ?Distribution dcat:accessService ?DataService . }
   OPTIONAL { ?Distribution dcat:byteSize ?byteSize . }
-  OPTIONAL { ?Distribution cnt:characterEncoding ?characterEncoding . }
-  OPTIONAL { ?Distribution spdx:checksum ?Checksum . }
+#  OPTIONAL { ?Distribution cnt:characterEncoding ?characterEncoding . }
+#  OPTIONAL { ?Distribution spdx:checksum ?Checksum . }
+#  OPTIONAL { ?Distribution dcat:compressionFormat ?CompressionFormat . }
   OPTIONAL { ?Distribution foaf:page ?Document . }
   OPTIONAL { ?Distribution dcat:downloadURL ?downloadURL . }
+#  OPTIONAL { ?Distribution odrl:hasPolicy ?Policy . }
   OPTIONAL { ?Distribution dct:language ?Language . }
 #  OPTIONAL { ?Distribution dct:conformsTo ?Standard . }
   OPTIONAL { ?Distribution dcat:mediaType ?MediaType . }
+#  OPTIONAL { ?Distribution dcat:packageFormat ?PackageFormat . }
   OPTIONAL { ?Distribution dct:issued ?issued . }
 #  OPTIONAL { ?Distribution dct:rights ?Rights . }
 #  OPTIONAL { ?Distribution adms:representationTechnique ?SpatialRepresentationType . }
+#  OPTIONAL { ?Dataset dqv:hasQualityMeasurement ?SpatialResolution . }
+#  OPTIONAL { ?Dataset dcat:spatialResolutionInMeters ?SpatialResolutionInMetres . }
+#  OPTIONAL { ?Dataset rdfs:comment ?SpatialResolutionAsText . }
+#  OPTIONAL { ?Dataset dcat:temporalResolution ?TemporalResolution . }
 #  OPTIONAL { ?Distribution adms:status ?Status . }
 #  OPTIONAL { ?Distribution dct:type ?type . }
   OPTIONAL { ?Distribution dct:title ?title . }

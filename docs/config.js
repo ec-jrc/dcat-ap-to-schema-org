@@ -20,17 +20,14 @@ var respecConfig = {
 //    copyrightHolder: "European Union",
 //    copyrightURL: "https://europa.eu/",
     copyrightStart: 2016,
-    publishDate: "2019-09-13",
-/*
-    alternateFormats: [{
-      label: "PDF",
-      uri: "",
-    }, {
-      label: "DOCX",
-      uri: "",
-    }],    
-*/
-    license: "ec-notice",
+    publishDate: "2021-04-30",
+    alternateFormats: [
+	{
+      label: "SPARQL",
+      uri: "https://github.com/ec-jrc/dcat-ap-to-schema-org/tree/master/sparql",
+    }
+	],    
+    license: "cc-by",
     specStatus: "unofficial",
     shortName: "dcat-ap-to-schema-org",
     canonicalURI: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
@@ -92,8 +89,8 @@ var respecConfig = {
 //        },
 //        }]
 //      }],
-    wg: "JRC Data Support Team",
-    wgURI: "https://data.jrc.ec.europa.eu/contact",
+//    wg: "JRC Data Support Team",
+//    wgURI: "https://data.jrc.ec.europa.eu/contact",
 //    wgPublicList: "",
 //    wgPatentURI: "",
     inlineCSS: "true",
@@ -238,9 +235,14 @@ var respecConfig = {
         "publisher":"OJ L 326",
         "date":"4 December 2008"
       },
+      "INSPIRE-MF": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequency/",
+        "title":"INSPIRE Registry: Maintenance Frequency",
+        "publisher":"European Commission",
+      },
       "INSPIRE-MT": {
         "href":"http://inspire.ec.europa.eu/media-types/",
-        "title":"INSPIRE Media Type Register",
+        "title":"INSPIRE Registry: Media types",
 //        "authors":["European Commission"],
         "publisher":"European Commission",
 //        "date":"7 November 2011"
@@ -252,7 +254,7 @@ var respecConfig = {
       },
       "INSPIRE-RT": {
         "href":"http://inspire.ec.europa.eu/metadata-codelist/ResourceType/",
-        "title":"INSPIRE Resource Type Register",
+        "title":"INSPIRE Registry: Resource types",
 //        "authors":["European Commission"],
         "publisher":"European Commission",
 //        "date":"7 November 2011"
@@ -273,6 +275,11 @@ var respecConfig = {
         "title":"INSPIRE Registry: Spatial data service types",
         "publisher":"European Commission"
       },
+      "INSPIRE-SRT": {
+        "href":"http://inspire.ec.europa.eu/metadata-codelist/SpatialRepresentationType/",
+        "title":"INSPIRE Registry: Spatial Spatial representation types",
+        "publisher":"European Commission"
+      },
       "INSPIRE-TC": {
         "href":"http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/",
         "title":"INSPIRE Registry: Topic categories in accordance with EN ISO 19115",
@@ -280,7 +287,7 @@ var respecConfig = {
       },
       "INSPIRE-THEMES": {
         "href":"http://inspire.ec.europa.eu/theme/",
-        "title":"INSPIRE Theme Register",
+        "title":"INSPIRE Registry: Themes",
 //        "authors":["European Commission"],
         "publisher":"European Commission",
 //        "date":"7 November 2011"
@@ -293,62 +300,62 @@ var respecConfig = {
 //        "status":"OGC® Implementation Standard",
         "date": "4 August 2015"
       },
-      "MDR-AR":{
+      "EUV-AR":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/access-right",
         "title":"Named Authority List: Access rights",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-CB":{
+      "EUV-CB":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/corporate-body",
         "title":"Named Authority List: Corporate bodies",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-CONT":{
+      "EUV-CONT":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/continent",
         "title":"Named Authority List: Continents",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-COUNTRIES":{
+      "EUV-COUNTRIES":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/country",
         "title":"Named Authority List: Countries",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-DT":{
+      "EUV-DT":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/distribution-type",
         "title":"Named Authority List: Distribution types",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-EUROVOC":{
+      "EUV-EUROVOC":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/th-dataset/-/resource/dataset/eurovoc",
         "title":"EuroVoc",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-FREQ":{
+      "EUV-FREQ":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/frequency",
         "title":"Named Authority List: Frequencies",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-FT":{
+      "EUV-FT":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/file-type",
         "title":"Named Authority List: File types",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-LANG":{
+      "EUV-LANG":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/language",
         "title":"Named Authority List: Languages",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-LICENCES":{
+      "EUV-LICENCES":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/licence",
         "title":"Named Authority List: Licences",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-PLACES":{
+      "EUV-PLACES":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/place",
         "title":"Named Authority List: Places",
         "publisher":"Publications Office of the European Union"
        },
-      "MDR-THEMES":{
+      "EUV-THEMES":{
         "href":"https://publications.europa.eu/en/web/eu-vocabularies/at-dataset/-/resource/dataset/data-theme",
         "title":"Named Authority List: Data Themes",
         "publisher":"Publications Office of the European Union"
@@ -363,6 +370,16 @@ var respecConfig = {
       "SCHEMA-ORG":{
         "href":"http://schema.org/",
         "title":"Schema.org"
+      },
+      "SCHEMA-ORG-20201130":{
+        "href":"http://schema.org/version/11.0/",
+        "title":"Schema.org version 11.0",
+        "date":"30 November 2020"
+      },
+      "SCHEMA-ORG-20210308":{
+        "href":"http://schema.org/version/12.0/",
+        "title":"Schema.org version 12.0",
+        "date":"8 March 2021"
       },
       "SCHEMA-ORG-20190801":{
         "href":"http://schema.org/version/3.9/",
@@ -424,13 +441,23 @@ var respecConfig = {
         "date":"22 June 2014"
       },
       "GUHA-2015":{
-        "href":"https://queue.acm.org/detail.cfm?id=2857276",
+        "href":"https://doi.org/10.1145/2857274.2857276",
         "title":"Schema.org: Evolution of Structured Data on the Web",
         "authors":["R.V. Guha","Dan Brickley","Steve Macbeth"],
         "publisher":"ACM Queue, Volume 13, Issue 9",
         "date":"15 December 2015"
       },
+      "GSC-DATASET":{
+        "href":"https://developers.google.com/search/docs/data-types/dataset",
+        "title":"Google Search Central - Documentation: Dataset",
+        "publisher":"Google",
+      },
       "SPDX":{
+        "href":"http://spdx.org/rdf/terms#",
+        "title":"SPDX 2.2",
+        "publisher":"SPDX"
+      },
+      "SPDX-21":{
         "href":"https://spdx.org/spdx-specification-21-web-version",
         "title":"Software Package Data Exchange (SPDX®) Specification – Version 2.1",
         "publisher":"SPDX",
@@ -442,11 +469,29 @@ var respecConfig = {
         "publisher":"European Commission",
 //        "date":"2016"
       },
+      "DCAT-AP-DA":{
+        "href":"http://data.europa.eu/r5r/availability/",
+        "title":"DCAT-AP Distribution Availability Vocabulary",
+        "publisher":"European Commission",
+      },
       "DCAT-AP-IG":{
         "href":"https://joinup.ec.europa.eu/solution/dcat-application-profile-implementation-guidelines",
         "title":"DCAT application profile implementation guidelines",
         "publisher":"European Commission",
 //        "date":"2016"
+      },
+      "LOCN-MAPPING": {
+        "href": "https://semiceu.github.io/locn-mapping/",
+        "title": "LOCN mappings to vCard and Schema.org",
+        "authors": ["Andrea Perego"],
+        "status": "Working Draft",
+        "publisher":"European Commission, Joint Research Centre (JRC)",
+        "date": "2019"
+      },
+      "OGC-EPSG": {
+        "href":"http://www.opengis.net/def/crs/EPSG/",
+        "title":"EPSG CRS Register",
+        "publisher":"OGC"
       },
     }
   };
