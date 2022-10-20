@@ -35,9 +35,10 @@ var respecConfig = {
 //    previousPublishDate:  "2016-08-02",
 //    previousMaturity:     "final",
 //    previousURI:          "",
-    edDraftURI:           "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
-    issueBase:            "https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/",
-    github:               "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
+    latestVersion: "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
+    edDraftURI:    "https://ec-jrc.github.io/dcat-ap-to-schema-org/",
+    issueBase:     "https://github.com/ec-jrc/dcat-ap-to-schema-org/issues/",
+    github:        "https://github.com/ec-jrc/dcat-ap-to-schema-org/",
 //    overrideCopyright: '<p class="copyright"><a href="https://europa.eu/european-union/abouteuropa/legal_notices_en#copyright_notice">Copyright</a> © 2016-2019 <a href="https://europa.eu/">European Union</a>. This document is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.</p>',
     editors: [
     {
